@@ -1,0 +1,16 @@
+%h1= t('.title')
+%p= link_to t('.new_list'), new_list_path
+
+%table
+  %thead
+    %tr
+      %th= List.human_attribute_name :name
+      %th{:colspan => 3}= t 'actions'
+  
+  %tbody
+    - for list in @lists
+      %tr{ :class => cycle(:odd, :even) }
+        %td= list.name
+        %td.action= link_to t('show'), list
+        %td.action= link_to t('edit'), edit_list_path(list)
+        %td.action= link_to t('destroy'), list, :confirm => t('are_you_sure'), :method => :delete
