@@ -1,0 +1,16 @@
+%h1= t('.title')
+%p= link_to t('.new_article'), new_article_path
+
+%table
+  %thead
+    %tr
+      %th= Article.human_attribute_name :name
+      %th{:colspan => 3}= t 'actions'
+  
+  %tbody
+    - for article in @articles
+      %tr{ :class => cycle(:odd, :even) }
+        %td= article.name
+        %td.action= link_to t('show'), article
+        %td.action= link_to t('edit'), edit_article_path(article)
+        %td.action= link_to t('destroy'), article, :confirm => t('are_you_sure'), :method => :delete
