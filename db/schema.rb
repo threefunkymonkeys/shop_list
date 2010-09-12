@@ -10,10 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100912070727) do
+ActiveRecord::Schema.define(:version => 20100912072107) do
 
   create_table "articles", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", :force => true do |t|
+    t.integer  "list_id"
+    t.integer  "article_id"
+    t.float    "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
