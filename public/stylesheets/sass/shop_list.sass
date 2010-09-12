@@ -1,0 +1,36 @@
+@import mixins
+
+body
+  background-color: #E8E4DF
+  text-align: center
+  height: 100%
+
+  input[type='submit'], input[type='button'], button
+    font-size: 10px
+    font-weight: bold
+    padding: 5px
+    background-color: #666
+    color: #F6F6F6
+    +border_radius(5px)
+    border: solid 1px #666
+
+  input[type='text'], input[type='password']
+    background-color: white
+    color: #666
+    line-height: 20px
+    font-size: 20px
+    font-weight: bold
+    border: solid 1px black
+    +border_radius(5px)
+
+  #content
+    width: 80%
+    height: 100%
+    background-color: white
+    display: inline-block
+    text-align: left
+    padding: 10px
+    +border_radius(10px)
+    +box_shadow(5px, 5px, 2px)
+
+
