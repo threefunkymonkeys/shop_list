@@ -19,3 +19,15 @@ en:
 
     show:
       title: List details
+
+  articles:
+    index:
+      title: Articles
+      new_article: New Article
+
+    new:
+      title: New Article
+
+    show:
+      title: Article details
+
