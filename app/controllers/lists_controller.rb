@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  before_filter :set_current_list, :only => [:show, :edit, :create]
   # GET /lists
   # GET /lists.xml
   def index
@@ -13,7 +14,7 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.xml
   def show
-    @list = List.find(params[:id])
+    #@list = List.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -59,8 +60,6 @@ class ListsController < ApplicationController
   # PUT /lists/1.xml
   def update
     @list = List.find(params[:id])
-    debugger
-
     respond_to do |format|
       if @list.update_attributes(params[:list])
         params[:new_price].each do |article_id, price|
@@ -84,5 +83,11 @@ class ListsController < ApplicationController
       format.html { redirect_to(lists_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  private
+  def set_current_list
+    self.current_list = List.find(params[:id]) if self.current_list.nil? or self.current_list.id != params[:id]
+    @list = self.current_list
   end
 end
