@@ -1,13 +1,13 @@
 .hBox
-  = form_for(@list, :html => {:class => "vBox half"}) do |f|
-    - if @list.errors.any?
-      #errorExplanation
-        %h2= "#{pluralize(@list.errors.count, 'error')} prohibited this user from being saved:"
-        %ul
-        - @list.errors.full_messages.each do |msg|
-          %li= msg
-   
-    #listEditForm
+  #listEditForm
+    = form_for(@list, :html => {:class => "vBox"}) do |f|
+      - if @list.errors.any?
+        #errorExplanation
+          %h2= "#{pluralize(@list.errors.count, 'error')} prohibited this user from being saved:"
+          %ul
+          - @list.errors.full_messages.each do |msg|
+            %li= msg
+     
       .field
         = f.label :name
         %br
@@ -15,27 +15,33 @@
           = f.text_field :name
           = f.submit
 
-        %h3= t('application.titles.article').pluralize
-        #itemsList
-          .listHead
-            .articleName= t('application.titles.article')
-            .lastPrice= t('application.titles.last_price')
-            .newPrice= t('application.titles.new_price')
-          %br 
-          %ul#items
-            =render :partial => "lists/item", :collection => @list.items
+      -#%h3= t('application.titles.article').pluralize
+      #itemsList
+        .listHead
+          .articleName= t('application.titles.article')
+          .lastPrice= t('application.titles.last_price')
+          .newPrice= t('application.titles.new_price')
+        %br 
+        %ul#items
+          =render :partial => "lists/item", :collection => @list.items
 
   #listEditArticles.vBox
     %label= t('lists.edit.articles')
-    %ul#articleList
-      = render :partial => "articles/article", :collection => @articles
-      
+    = form_tag(search_articles_path, :method => :get, :remote => true) do
+      = t('search')
+      = text_field_tag :query
+      = submit_tag t('search')
+    #availableArticles
+      %ul#articleList
+        = render :partial => "articles/article", :collection => @articles
+        
     %hr
-    %h3= t('articles.new.title')
-    = form_for(@article, :remote => true) do |af|
-      .field
-        = af.label :name
-        %br
-        = af.text_field :name
-        = hidden_field_tag :list_id, @list.id
-        = af.submit 
+    #newArticle
+      %h3= t('articles.new.title')
+      = form_for(@article, :remote => true) do |af|
+        .field
+          = af.label :name
+          %br
+          = af.text_field :name
+          = hidden_field_tag :list_id, @list.id
+          = af.submit 

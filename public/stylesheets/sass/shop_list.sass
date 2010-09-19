@@ -68,12 +68,27 @@ body
         padding: 5px 0px 5px 0px
 
 
-  #listEditForm
-    padding-right: 5px
+  #listEditForm, #listEditArticles
+    padding: 5px 5px 25px 5px
+    background-color: #A7B4F8
+    //background-color: #9DA8E8
+    min-height: 200px
+    max-width: 48%
+    +border_radius_top(5px)
+
 
   #listEditArticles
-    width: 49%
-    padding-left: 5px
+    width: 48%
+    padding: 5px
+    background-color: #B1F89D
+
+    #availableArticles
+      width: 100%
+      min-width: 100%
+
+      #articleList
+        border: solid 1px gray
+        min-height: 185px 
 
     ul#articleList
       list-style: none
