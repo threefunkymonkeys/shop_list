@@ -42,5 +42,7 @@ module ShopList
     config.generators do |g|
       g.template_engine :haml
     end
+    
+    config.action_view.javascript_expansions[:defaults] = %w(jquery-1.4.2.min rails application)
   end
 end
