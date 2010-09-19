@@ -1,7 +1,16 @@
 ShopList::Application.routes.draw do
+
+  get "items/add"
+
   resources :articles
 
-  resources :lists
+  resources :lists do
+    resources :items do
+      post 'add', :on => :collection
+      post 'remove', :on => :member
+    end
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

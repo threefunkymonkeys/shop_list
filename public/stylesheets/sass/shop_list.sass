@@ -13,6 +13,7 @@ body
     color: #F6F6F6
     +border_radius(5px)
     border: solid 1px #666
+    cursor: pointer
 
   input[type='text'], input[type='password']
     background-color: white
@@ -21,6 +22,7 @@ body
     font-size: 20px
     font-weight: bold
     border: solid 1px black
+    width: 50%
     +border_radius(5px)
 
   #content
@@ -33,4 +35,89 @@ body
     +border_radius(10px)
     +box_shadow(5px, 5px, 2px)
 
+  
+  #itemsList
+    padding: 5px
+    
+    .listHead
+      padding-bottom: 10px
+      border-bottom: solid 1px #666
 
+    .articleName, .lastPrice, .newPrice
+      display: inline-block
+      font-weight: bold
+
+    .articleName
+      width: 50%
+    
+    .lastPrice
+      width: 20%
+
+    .newPrice
+      width: 25%
+      input[type='text']
+        width: 85%
+
+    #items
+      width: 100%
+      display: inline-block
+      height: 10px
+
+      .listItem
+        //border-bottom: solid 1px black
+        padding: 5px 0px 5px 0px
+
+
+  #listEditForm
+    padding-right: 5px
+
+  #listEditArticles
+    width: 49%
+    padding-left: 5px
+
+    ul#articleList
+      list-style: none
+      height: 100%
+      padding-left: 0px
+
+      li
+        padding-left: 5px
+        vertical-align: middle
+
+        div
+          display: inline-block
+        
+        .articleName
+          font-size: 16px
+          font-weight: bold
+          min-width: 70%
+        
+        .actions
+          text-align: right
+
+      li.odd
+        background-color: #E8E4DF
+  
+  ul#items
+    list-style: none
+    padding-left: 0px
+
+    li
+      padding-left: 5px
+
+.hBox
+  div
+    display: inline-block
+    text-align: left
+    vertical-align: top
+
+.vBox
+  div
+    display: block
+    text-align: left
+    vertical-align: top
+
+.half
+  width: 49%
+  max-width: 49%
+  display: inline-block

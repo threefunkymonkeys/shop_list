@@ -1,0 +1,7 @@
+%li{ :class => cycle(:odd, :even) }
+  = form_tag(add_list_items_path(@list), :method => :post, :remote => true) do 
+    .articleName
+      = article.name
+      = hidden_field_tag :article_id, article.id
+    .actions
+      = submit_tag t('add_to_list')

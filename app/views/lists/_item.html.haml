@@ -1,0 +1,7 @@
+%li{ :id => "item_#{ item.id }"}
+  .listItem
+    %label.articleName= item.article.name
+    %label.lastPrice= "$ #{item.price}"
+    .newPrice
+      %input{ :type => 'text', :name => "new_price[#{item.article.id}]"}
+      =link_to 'x', remove_list_item_path(@list, item), :method => :post, :remote => true

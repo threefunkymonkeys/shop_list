@@ -1,0 +1,9 @@
+<%  if @article.errors.any? %>
+  $("#flashError").html("<div id='errorExplanation'><ul id='errors'/>");
+  <% @article.errors.full_messages.each do |msg| -%>
+    $("#errorExplanation #errors").append("<li><%= msg %></li>");
+  <% end %>
+<% else %>
+  $("#itemsList #items").append("<%= render(:partial => "lists/item", :locals => { :item => @item }).gsub("\"","'").gsub("\n","").strip -%>");
+  $("#listEditArticles #articleList").append("<%= render(:partial => "articles/article", :locals => { :article => @item.article }).gsub("\n", "").gsub("\"", "'").strip -%>");
+<% end %>

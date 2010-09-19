@@ -8,10 +8,21 @@ en:
   destroy: Destroy
   actions: Actions
   are_you_sure: Are you sure?
+  add_to_list: Add
+
+  application:
+    titles:
+      article: Article
+      last_price: Last price
+      new_price: New price
 
   lists:
     new:
       title: New List
+
+    edit:
+      title: Edit details
+      articles: Available articles
 
     index:
       title: Lists

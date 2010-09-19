@@ -35,6 +35,8 @@ class ListsController < ApplicationController
   # GET /lists/1/edit
   def edit
     @list = List.find(params[:id])
+    @article = Article.new
+    @articles = Article.all
   end
 
   # POST /lists
@@ -57,9 +59,12 @@ class ListsController < ApplicationController
   # PUT /lists/1.xml
   def update
     @list = List.find(params[:id])
+    debugger
 
     respond_to do |format|
       if @list.update_attributes(params[:list])
+        params[:new_price].each do |article_id, price|
+        end
         format.html { redirect_to(@list, :notice => 'List was successfully updated.') }
         format.xml  { head :ok }
       else

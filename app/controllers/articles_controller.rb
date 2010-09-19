@@ -44,11 +44,14 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
+        @item = Item.create(:article_id => @article.id, :list_id => params[:list_id], :price => 0) if params[:list_id]
         format.html { redirect_to(@article, :notice => 'Article was successfully created.') }
         format.xml  { render :xml => @article, :status => :created, :location => @article }
+        format.js { @list = @item.list}
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @article.errors, :status => :unprocessable_entity }
+        format.js
       end
     end
   end
