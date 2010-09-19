@@ -4,6 +4,6 @@
     $("#errorExplanation #errors").append("<li><%= msg %></li>");
   <% end %>
 <% else %>
-  $("#itemsList #items").append("<%= render(:partial => "lists/item", :locals => { :item => @item }).gsub("\"","'").gsub("\n","").strip -%>");
-  $("#listEditArticles #articleList").append("<%= render(:partial => "articles/article", :locals => { :article => @item.article }).gsub("\n", "").gsub("\"", "'").strip -%>");
+  $("#itemsList #items").append("<%= sanitize_partial(render(:partial => "lists/item", :locals => { :item => @item })) -%>");
+  $("#listEditArticles #articleList").append("<%= sanitize_partial(render(:partial => "articles/article", :locals => { :article => @item.article })) -%>");
 <% end %>

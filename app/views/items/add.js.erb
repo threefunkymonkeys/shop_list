@@ -4,5 +4,5 @@
     $("#errorExplanation #errors").append("<li><%= msg %></li>");
   <% end %>
 <% else %>
-  $("#itemsList #items").append("<%= render(:partial => "lists/item", :locals => { :item => @item }).gsub("\"","'").gsub("\n","").strip -%>");
+  $("#itemsList #items").append("<%= sanitize_partial(render(:partial => "lists/item", :locals => { :item => @item })) -%>");
 <% end %>
