@@ -3,7 +3,7 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
       t.references :list
       t.references :article
-      t.float :price
+      t.float :price, :default => 0.0
 
       t.timestamps
     end
