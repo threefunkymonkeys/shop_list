@@ -1,5 +1,5 @@
 %li{ :class => cycle(:odd, :even) }
-  = form_tag(add_list_items_path(@list), :method => :post, :remote => true) do 
+  = form_tag(add_list_items_path(current_list), :method => :post, :remote => true) do 
     .articleName
       = article.name
       = hidden_field_tag :article_id, article.id
