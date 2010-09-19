@@ -83,4 +83,9 @@ class ArticlesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def search
+    @articles = Article.where("name LIKE ?", "%#{params[:query]}%")
+  end
+
 end

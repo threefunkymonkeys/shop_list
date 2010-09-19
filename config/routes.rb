@@ -2,7 +2,11 @@ ShopList::Application.routes.draw do
 
   get "items/add"
 
-  resources :articles
+  resources :articles do
+    collection do
+      get 'search'
+    end
+  end
 
   resources :lists do
     resources :items do
