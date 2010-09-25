@@ -76,6 +76,12 @@ body
     max-width: 48%
     +border_radius_top(5px)
 
+    .title
+      font-weight: bold
+      font-size: 14px
+      padding: 3px
+
+
 
   #listEditArticles
     width: 48%
@@ -95,20 +101,25 @@ body
       height: 100%
       padding-left: 0px
 
-      li
+      li.article
         padding-left: 5px
         vertical-align: middle
+        height: 30px
 
         div
+          line-height: 36px
           display: inline-block
         
         .articleName
-          font-size: 16px
+          font-size: 14px
           font-weight: bold
           min-width: 70%
+          margin-top: -2px
         
         .actions
           text-align: right
+          margin-top: -3px
+          width: 27%
 
       li.odd
         background-color: #E8E4DF

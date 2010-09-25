@@ -1,4 +1,4 @@
-%li{ :class => cycle(:odd, :even) }
+%li.article{ :id => "article_#{article.id}", :class => cycle(:odd, :even) }
   = form_tag(add_list_items_path(current_list), :method => :post, :remote => true) do 
     .articleName
       = article.name

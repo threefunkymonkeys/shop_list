@@ -37,7 +37,7 @@ class ListsController < ApplicationController
   def edit
     @list = List.find(params[:id])
     @article = Article.new
-    @articles = Article.all
+    @articles = Article.for_list(@list).limit(10)
   end
 
   # POST /lists
