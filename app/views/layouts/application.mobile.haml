@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title ShopList
+    = stylesheet_link_tag "/jqtouch/jqtouch.css", "/themes/apple/theme.css", "mobile"
+    = javascript_include_tag "jquery-1.4.2.min.js", "/jqtouch/jqtouch.js", "mobile.js"
+    = csrf_meta_tag
+  %body
+    #jqt
+      #wrapper.current
+        .toolbar
+          -#= link_to "Back", nil, :class => "back" unless current_page? "/"
+          %h1= @content_for_title
+          = link_to "Lists", lists_path, :class => "button"
+
+        -unless flash.empty?
+          - flash.each do |name, msg|
+            =content_tag :div, msg, :id => "flash_#{name}" 
+        
+        = yield

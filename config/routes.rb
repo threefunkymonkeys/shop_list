@@ -1,6 +1,7 @@
 ShopList::Application.routes.draw do
 
-  get "items/add"
+  #get "items/add"
+  resources :items
 
   resources :articles do
     collection do
@@ -11,7 +12,7 @@ ShopList::Application.routes.draw do
   resources :lists do
     resources :items do
       post 'add', :on => :collection
-      post 'remove', :on => :member
+      #post 'remove', :on => :member
     end
   end
 

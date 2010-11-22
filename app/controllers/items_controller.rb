@@ -12,12 +12,28 @@ class ItemsController < ApplicationController
     end
   end
 
-  def remove
+  def edit
     @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.update_attributes(params[:item])
+
+    redirect_to list_path(@item.list)
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @list = @item.list
     @item.destroy
 
     respond_to do |format|
       format.js
+      format.mobile 
+      format.html {
+        respond_with @list, :notice => "Item removed successfully"
+      }
     end
   end
 

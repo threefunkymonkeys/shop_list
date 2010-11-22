@@ -1,0 +1,10 @@
+
+%ul
+  -@lists.each do |list|
+    %li.arrow
+      = link_to list.name, list
+      %small.counter= list.items.size
+
+%ul
+  %li.arrow
+    =link_to "New List", new_list_path

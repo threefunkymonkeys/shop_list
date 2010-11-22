@@ -1,0 +1,18 @@
+-title @item.article.name
+%h1=@item.article.name 
+
+= form_for(@item, :html => {:class => "vBox"}) do |f|
+  - if @item.errors.any?
+    #errorExplanation.mobileIgnore
+      %h2= "#{pluralize(@item.errors.count, 'error')} prohibited this item from being saved:"
+      %ul
+      - @item.errors.full_messages.each do |msg|
+        %li.error= msg
+ 
+  %ul
+    %li.field
+      = f.label :price, :class => "title"
+      = f.text_field :price
+    %li.actions
+      = f.submit 
+      = link_to 'Back', list_path(@item.list), :class => "back"

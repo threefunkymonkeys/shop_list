@@ -1,8 +1,14 @@
-%h1= t '.title'
-%p
-  = link_to t('back'), lists_path
-  = link_to t('edit'), edit_list_path(@list)
+-title @list.name
+#showList
+  .mobileIgnore
+    %h1= t '.title'
+    %p
+      = link_to t('back'), lists_path
+      = link_to t('edit'), edit_list_path(@list)
 
-%dl
-  %dt= List.human_attribute_name :name
-  %dd= @list.name
+    %dl
+      %dt= List.human_attribute_name :name
+      %dd= @list.name
+    
+
+  = render :partial => 'lists/items.html'

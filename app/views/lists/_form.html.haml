@@ -16,14 +16,7 @@
           = f.submit
 
       -#%h3= t('application.titles.article').pluralize
-      #itemsList
-        .listHead
-          .articleName= t('application.titles.article')
-          .lastPrice= t('application.titles.last_price')
-          .newPrice= t('application.titles.new_price')
-        %br 
-        %ul#items
-          =render :partial => "lists/item", :collection => @list.items
+      = render :partial => 'lists/items'
 
   #listEditArticles.vBox
     .title= t('lists.edit.articles')
