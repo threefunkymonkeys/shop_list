@@ -14,27 +14,27 @@
         .actions
           = f.text_field :name
           = f.submit
+      - unless @list.new_record?
+        = render :partial => 'lists/items'
 
-      -#%h3= t('application.titles.article').pluralize
-      = render :partial => 'lists/items'
-
-  #listEditArticles.vBox
-    .title= t('lists.edit.articles')
-    = form_tag(search_articles_path, :method => :get, :remote => true) do
-      = t('search')
-      = text_field_tag :query
-      = submit_tag t('search')
-    #availableArticles
-      %ul#articleList
-        = render :partial => "articles/article", :collection => @articles
-        
-    %hr
-    #newArticle
-      %h3= t('articles.new.title')
-      = form_for(@article, :remote => true) do |af|
-        .field
-          = af.label :name
-          %br
-          = af.text_field :name
-          = hidden_field_tag :list_id, @list.id
-          = af.submit 
+  - unless @list.new_record?
+    #listEditArticles.vBox
+      .title= t('lists.edit.articles')
+      = form_tag(search_articles_path, :method => :get, :remote => true) do
+        = t('search')
+        = text_field_tag :query
+        = submit_tag t('search')
+      #availableArticles
+        %ul#articleList
+          = render :partial => "articles/article", :collection => @articles
+          
+      %hr
+      #newArticle
+        %h3= t('articles.new.title')
+        = form_for(@article, :remote => true) do |af|
+          .field
+            = af.label :name
+            %br
+            = af.text_field :name
+            = hidden_field_tag :list_id, @list.id
+            = af.submit 

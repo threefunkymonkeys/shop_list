@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_filter :set_current_list, :only => [:show, :edit, :create]
+  before_filter :set_current_list, :only => [:show, :edit]
   # GET /lists
   # GET /lists.xml
   def index
@@ -48,7 +48,7 @@ class ListsController < ApplicationController
 
     respond_to do |format|
       if @list.save
-        format.html { redirect_to(@list, :notice => 'List was successfully created.') }
+        format.html { redirect_to(edit_list_path(@list), :notice => 'List was successfully created.') }
         format.xml  { render :xml => @list, :status => :created, :location => @list }
       else
         format.html { render :action => "new" }
