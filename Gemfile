@@ -36,6 +36,6 @@ gem 'haml'
   gem 'rspec-rails', '>=2.0.0.beta.17'
   gem 'spork'
   gem 'launchy'    # So you can do Then show me the page
-  gem 'factory_girl'
+  gem 'summoner'
   gem 'faker'
  end
