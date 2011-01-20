@@ -17,9 +17,9 @@ class ListsController < ApplicationController
     #@list = List.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.xml  { render :xml => @list }
-      format.mobile { render "show.html" }
+      format.mobile
     end
   end
 
