@@ -1,4 +1,14 @@
 class ItemsController < ApplicationController
+  def new
+    @item = Item.new(:list_id => params[:list_id])
+    @list = List.find(params[:list_id])
+    @articles = Article.select([:id, :name]).order(:name)
+
+    respond_to do |format|
+      format.mobile
+    end
+  end
+
   def add
     @item = Item.create(:article_id => params[:article_id], :list_id => params[:list_id], :price => 0)
     @list = @item.list
