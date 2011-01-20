@@ -1,0 +1,12 @@
+- content_for :title do
+  = @list.name
+
+%ul#items
+  - @list.items.each do |item|
+    %li
+      %a{ :href => edit_list_item_path(@list, item) }
+        %span.total= item.quantity * item.price
+        %strong= item.article.name
+        %span.quantity= "#{item.quantity} x #{item.price}"
+  %li
+    %a#add{ :href => new_list_item_path(@list) } Agregar producto
