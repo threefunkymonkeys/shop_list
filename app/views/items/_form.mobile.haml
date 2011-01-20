@@ -1,0 +1,33 @@
+- form_for(@item) do |f|
+  - if @item.article.nil?
+    %label
+      %span Existente
+      %select
+        %option
+        - @articles.each do |article|
+          %option{ :value => article.id }= article.name
+
+    %label
+      %span Nuevo
+      %input
+
+  - else
+    %label
+      %span Nombre
+      %input{ :value => @item.article.name }
+
+  %label
+    %span Precio
+    %input.number{ :type => :number, :min => 1.0, :step => 0.5, :value => @item.price }
+
+  %label
+    %span Cantidad
+    %input.number{ :type => :number, :value => 1, :min => 1, :value => @item.quantity }
+
+  %div.buttons
+    - if @item.article.nil?
+      %button#add-item{ :type => :submit } Agregar
+    - else
+      %button#edit-item{ :type => :submit } Grabar
+      %input{ :type => :hidden, :value => @item.article.id }
+    %a.button.cancel{ :href => list_path(@list) } Cancelar

@@ -1,26 +1,4 @@
 - content_for :title do
   Agregar producto
 
-- form_for(@item) do |f|
-  %label
-    %span Existente
-    %select
-      %option
-      - @articles.each do |article|
-        %option{ :value => article.id }= article.name
-
-  %label
-    %span Nuevo
-    %input
-
-  %label
-    %span Precio
-    %input.number{ :type => :number, :min => 1.0, :step => 0.5 }
-
-  %label
-    %span Cantidad
-    %input.number{ :type => :number, :value => 1, :min => 1 }
-
-  %div.buttons
-    %button#add-item{ :type => :submit } Agregar
-    %a.button.cancel{ :href => list_path(@list) } Cancelar
+= render :partial => "form"
