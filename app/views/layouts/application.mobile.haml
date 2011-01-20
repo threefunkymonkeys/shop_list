@@ -2,19 +2,19 @@
 %html
   %head
     %title ShopList
-    = stylesheet_link_tag "/jqtouch/jqtouch.css", "/themes/apple/theme.css", "mobile"
-    = javascript_include_tag "jquery-1.4.2.min.js", "/jqtouch/jqtouch.js", "mobile.js"
+    %meta{ :name => "viewport", :content => "user-scalable=no; width=device-width; initial-scale=1.0" }
+    %meta{ :name => "apple-mobile-web-app-capable", :content => "yes" }
+    %meta{ :name => "apple-mobile-web-app-status-bar-style", :content => "black" }
+    = stylesheet_link_tag "mobile"
+    -# = javascript_include_tag "jquery-1.4.2.min.js", "mobile.js"
     = csrf_meta_tag
   %body
-    #jqt
-      #wrapper.current
-        .toolbar
-          -#= link_to "Back", nil, :class => "back" unless current_page? "/"
-          %h1= @content_for_title
-          = link_to "Lists", lists_path, :class => "button"
+    - if content_for? :title
+      %h1= content_for :title
 
-        -unless flash.empty?
-          - flash.each do |name, msg|
-            =content_tag :div, msg, :id => "flash_#{name}" 
-        
-        = yield
+    - unless flash.empty?
+      %ul#flash
+        - flash.each do |name, msg|
+          %li{ :id => "flash-#{name}" }= msg
+
+    = yield
