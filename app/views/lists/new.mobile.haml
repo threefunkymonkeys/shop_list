@@ -1,0 +1,11 @@
+- content_for :title do
+  Crear nueva lista
+
+- form_for(@list) do |f|
+  %label
+    %span Nombre
+    = f.text_field :name
+
+  %div.buttons
+    %button#create-list{ :type => :submit } Crear
+    %a.button.cancel{ :href => lists_path } Cancelar

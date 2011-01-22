@@ -50,9 +50,11 @@ class ListsController < ApplicationController
       if @list.save
         format.html { redirect_to(edit_list_path(@list), :notice => 'List was successfully created.') }
         format.xml  { render :xml => @list, :status => :created, :location => @list }
+        format.mobile { redirect_to(list_path(@list), :notice => 'List was successfully created.') }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @list.errors, :status => :unprocessable_entity }
+        format.mobile { render :action => "new" }
       end
     end
   end
