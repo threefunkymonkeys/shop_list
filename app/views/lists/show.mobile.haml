@@ -1,6 +1,9 @@
 - content_for :title do
   = @list.name
 
+- content_for :footer do
+  = render :partial => 'footer'
+
 %ul#items
   - @list.items.each do |item|
     %li
