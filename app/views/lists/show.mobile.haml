@@ -10,3 +10,7 @@
         %span.quantity= "#{item.quantity} x #{item.price}"
   %li
     %a#add{ :href => new_list_item_path(@list) } Agregar producto
+
+%div#total
+  %span.label Total
+  %span.amount= number_to_currency(@list.total)
