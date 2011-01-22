@@ -5,9 +5,9 @@
   - @list.items.each do |item|
     %li
       %a{ :href => edit_list_item_path(@list, item) }
-        %span.total= item.quantity * item.price
+        %span.total= number_to_currency(item.quantity * item.price)
         %strong= item.article.name
-        %span.quantity= "#{item.quantity} x #{item.price}"
+        %span.quantity= "#{item.quantity} x #{number_to_currency(item.price)}"
   %li
     %a#add{ :href => new_list_item_path(@list) } Agregar producto
 
