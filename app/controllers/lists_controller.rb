@@ -63,15 +63,18 @@ class ListsController < ApplicationController
   # PUT /lists/1.xml
   def update
     @list = List.find(params[:id])
+
+    old_name = @list.name
+
     respond_to do |format|
       if @list.update_attributes(params[:list])
-        params[:new_price].each do |article_id, price|
-        end
         format.html { redirect_to(@list, :notice => 'List was successfully updated.') }
         format.xml  { head :ok }
+        format.mobile { redirect_to(@list, :notice => "#{old_name} => #{@list.name}") }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @list.errors, :status => :unprocessable_entity }
+        format.html { render :action => "edit" }
       end
     end
   end
@@ -86,6 +89,13 @@ class ListsController < ApplicationController
       format.html { redirect_to(lists_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def empty
+    @list = List.find(params[:id])
+    @list.items.destroy_all
+
+    redirect_to @list, :notice => 'List emptied!'
   end
   
   private

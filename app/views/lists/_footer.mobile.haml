@@ -1,3 +1,5 @@
 %nav#footer
   - if @lists.nil?
     %a{ :href => lists_path } Tus listas
+  - unless @list.nil?
+    %a{ :href => edit_list_path(@list) } Editar
