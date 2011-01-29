@@ -1,9 +1,15 @@
 @import mixins
 
+@font-face
+  font-family: DomesticManners
+  src: url(DomesticManners.ttf) format("truetype")
+
 body
   background-color: #E8E4DF
   text-align: center
   height: 100%
+  font-family: Verdana, Tahoma, Arial
+  font-size: 14pt
 
   input[type='submit'], input[type='button'], button
     font-size: 10px
@@ -35,6 +41,25 @@ body
     +border_radius(10px)
     +box_shadow(5px, 5px, 2px)
 
+
+  #homeContainer
+    vertical-align: top
+    h1
+      font-family: "DomesticManners"
+      font-size: 60pt
+      text-align: center
+
+    #loginForm, #picture
+      display: inline-block
+      text-align: center
+    
+    #picture
+      img
+        width: 168px
+        height: 209px
+
+
+  
   
   #itemsList
     padding: 5px
