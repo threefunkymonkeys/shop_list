@@ -10,6 +10,8 @@ ShopList::Application.routes.draw do
   end
 
   resources :lists do
+    post 'empty', :on => :member
+
     resources :items do
       post 'add', :on => :collection
       #post 'remove', :on => :member

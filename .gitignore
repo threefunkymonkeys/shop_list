@@ -5,3 +5,4 @@ tmp/**/*
 *.lock
 tags
 public/stylesheets/*.css
+.sass-cache/

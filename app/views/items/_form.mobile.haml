@@ -1,0 +1,33 @@
+- form_for(@item) do |f|
+  = f.hidden_field :list_id
+  - if @item.article.nil?
+    - unless @articles.empty?
+      %label
+        %span Existente
+        %select{ :name => "item[article_id]" }
+          %option
+          = options_from_collection_for_select(@articles, :id, :name)
+
+    %label
+      %span Nuevo
+      %input{ :name => "article[name]" }
+
+  - else
+    %label
+      %span Nombre
+      %input{ :value => @item.article.name, :name => "article[name]" }
+
+  %label
+    %span Precio
+    = f.number_field :price, :min => 1, :step => 0.5
+
+  %label
+    %span Cantidad
+    = f.number_field :quantity, :min => 1
+
+  %div.buttons
+    - if @item.new_record?
+      %button#add-item{ :type => :submit } Agregar
+    - else
+      %button#edit-item{ :type => :submit } Grabar
+    %a.button.cancel{ :href => list_path(@list) } Cancelar

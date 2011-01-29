@@ -1,0 +1,19 @@
+- content_for :title do
+  = @list.name
+
+- content_for :footer do
+  = render :partial => 'footer'
+
+%ul#items
+  - @list.items.each do |item|
+    %li
+      %a{ :href => edit_list_item_path(@list, item) }
+        %span.total= number_to_currency(item.quantity * item.price)
+        %strong= item.article.name
+        %span.quantity= "#{item.quantity} x #{number_to_currency(item.price)}"
+  %li
+    %a#add{ :href => new_list_item_path(@list) } Agregar producto
+
+%div#total
+  %span.label Total
+  %span.amount= number_to_currency(@list.total)

@@ -1,5 +1,182 @@
-.mobileIgnore
-  display: none
+@import "mixins"
 
-.whiteButton
-  width: 100%
+html
+  height: 100%
+  margin: 0px
+  padding: 0px
+
+body
+  margin: 0px
+  padding: 10px 5px
+  font:
+    family: sans-serif
+  +vertical-linear-gradient(#bdbdbd, #8a8080)
+
+$default-radius = 0.5em
+$elements-background = #fff
+
+h1
+  font-size: 1.3em
+  background: $elements-background
+  margin: 0px 0px 0.5em
+  padding: 0.25em
+  text-align: center
+  border: 1px solid black
+  +border-radius($default-radius)
+
+ul
+  background: transparent
+  margin: 0px 0px 0.5em
+  padding: 0px
+  list-style: none
+
+li
+  background: $elements-background
+  padding: 0px
+  border: 1px solid black
+  border-top: none
+  height: 2.5em
+
+  &:first-child
+    border-top: 1px solid black
+    +border-radius-top($default-radius)
+
+  &:last-child
+    +border-radius-bottom($default-radius)
+
+  a
+    display: block
+    padding: 0px 0.5em
+    width: 100%
+    height: 100%
+    text-decoration: none
+    color: #000
+    &:visited
+      color: #000
+
+  span.counter
+    float: right
+    margin-right: 0.5em
+    font-size: 1.2em
+
+ul#lists li
+  line-height: 2.5em
+
+ul#items
+  li
+    line-height: 2.5em
+    position: relative
+    strong
+      display: block
+      font-size: 1.1em
+    span.quantity
+      position: absolute
+      left: 1em
+      bottom: -1.5em
+      font-size: 0.5em
+    span.total
+      position: absolute
+      top: 0px
+      right: 0.5em
+      font-size: 1.2em
+      line-height: 2.1em
+    a#add
+      text-align: center
+      color: #fff
+      padding: 0
+      +border-radius-bottom($default_radius)
+      +vertical-linear-gradient(#54BD0D, #418A1D)
+
+/* http://robots.thoughtbot.com/post/2718077289/make-css3-buttons-like-a-boss
+a.button, button
+  +vertical-linear-gradient(#52a8e8, #377ad0)
+  border-top: 1px solid #4081af
+  border-right: 1px solid #2e69a3
+  border-bottom: 1px solid #20559a
+  border-left: 1px solid #2e69a3
+  -webkit-box-shadow: inset 0 1px 0 0 #72b9eb, 0 1px 2px 0 #b3b3b3
+  text-shadow: 0 -1px 1px #3275bc
+  +border-radius(16px)
+  display: inline-block
+  text:
+    decoration: none
+    align: center
+  padding: 0.5em 0px
+  color: #fff
+  font-size: 1em
+
+a#add-list
+  display: block
+
+form
+  background: $elements-background
+  +border-radius($default_radius)
+  border: 1px solid black
+  padding: 0.5em
+  margin-bottom: 1em
+
+  label
+    display: block
+    margin-bottom: 0.5em
+
+    span
+      display: block
+
+    select, input
+      font-size: 1.2em
+
+    select
+      width: 100%
+
+    input
+      border: 1px solid black
+      display: inline-block
+      width: 100%
+      box-sizing: border-box
+      -moz-box-sizing: border-box
+      -webkit-box-sizing: border-box
+
+    input[type=number]
+      text-align: right
+
+  .buttons
+    text-align: center
+
+    button, a.button
+      width: 40%
+
+    button[type=submit]
+      +vertical-linear-gradient(#54BD0D, #418A1D)
+      -webkit-box-shadow: inset 0 1px 0 0 #54BD0D, 0 1px 2px 0 #418A1D
+      border: none
+
+    a.cancel, button.cancel
+      +vertical-linear-gradient(#bd2020, #8a1717)
+      -webkit-box-shadow: inset 0 1px 0 0 #bd2020, 0 1px 2px 0 #8a1717
+      border: none
+
+#total
+  background: $elements-background
+  padding: 0.5em
+  margin: 0px 0px 0.5em
+  border: 1px solid black
+  +border-radius($default-radius)
+  font-size: 1.5em
+
+  .amount
+    float: right
+
+footer
+  display: block
+  nav
+    display: block
+    text-align: left
+    a
+      display: inline-block
+      padding: 0.25em 0.5em
+      +vertical-linear-gradient(#666, #333)
+      color: #fff
+      height: 2.5em
+      line-height: 2.5em
+      text-decoration: none
+      +border-radius(0.25em)
