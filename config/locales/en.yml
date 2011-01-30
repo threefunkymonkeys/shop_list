@@ -18,6 +18,9 @@ en:
       new_price: New price
     actions:
       login: Login
+    messages:
+      need_logout: You need to be logged out for this action
+      forbidden: You don't have permissions to do this
 
   lists:
     new:

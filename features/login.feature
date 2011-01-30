@@ -5,12 +5,12 @@ I want users to login
 
 Scenario: User should be able to login
   Given the following users
-    |login|password|
-    |test |secret  |
+    |email              |password|
+    |test@somewhere.com |secret  |
 
     And I am an anonymous user
    When I go to the login page
-    And I fill in "login" with "test"
+    And I fill in "email" with "test@somewhere.com"
     And I fill in "password" with "secret"
     And I click the "Login" action in the current locale
    Then I should be logged in 
@@ -19,9 +19,10 @@ Scenario: User should be able to login
 
 Scenario: User should be able to logout
   Given the following users
-    |login|password|
-    |test |secret  |
-    And I am logged in as "test" with password "secret"
+    |email              |password|
+    |test@somewhere.com |secret  |
+
+    And I am logged in as "test@somewhere.com" with password "secret"
    When I go to the logout page
    Then I should be logged out
     And I should be on the homepage
