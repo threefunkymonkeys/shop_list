@@ -1,8 +1,8 @@
 Given /^the following users$/ do |table|
   table.hashes.each do |attrs|
-    user = User.find_by_login(attrs["login"])
+    user = User.find_by_email(attrs["login"])
     user = User.new({ 
-      :login => attrs["login"],
+      :email => attrs["login"],
       :password => attrs["password"],
       :password_confirmation => attrs["password"],
       :email => "#{attrs["login"]}@somewhere.com"
@@ -25,13 +25,17 @@ end
 
 Given /^I am logged in as "([^"]*)" with password "([^"]*)"$/ do |login, password|
 
-  user = User.find_by_login(login)
-  user.should_not be_nil
-  UserSession.create(user)
+  #user = User.find_by_login(login)
+  #user.should_not be_nil
+  #UserSession.create(user)
 
-  current_user = UserSession.find.record
-  current_user.should_not be_nil
-  current_user.login.should == login
+  #current_user = UserSession.find.record
+  #current_user.should_not be_nil
+  #current_user.login.should == login
+  visit "/login"
+  fill_in :email, :with => login
+  fill_in :password, :with => password
+  click_link_or_button :login_button
 end
 
 Then /^I should be logged out$/ do

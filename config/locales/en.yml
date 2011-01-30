@@ -16,6 +16,8 @@ en:
       article: Article
       last_price: Last price
       new_price: New price
+    actions:
+      login: Login
 
   lists:
     new:
