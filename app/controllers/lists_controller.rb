@@ -88,13 +88,13 @@ class ListsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(lists_url) }
       format.xml  { head :ok }
+      format.mobile { redirect_to(lists_url) }
     end
   end
 
   def empty
     @list = List.find(params[:id])
     @list.items.destroy_all
-
     redirect_to @list, :notice => 'List emptied!'
   end
   

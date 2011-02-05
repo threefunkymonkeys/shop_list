@@ -10,7 +10,7 @@
     %button#create-list{ :type => :submit } Renombrar
     %a.button.cancel{ :href => lists_path } Cancelar
 
-- form_for(@list, :url => { :action => :empty }) do |f|
+- form_for(@list, :url => empty_list_path(@list), :html => { :method => :delete }) do |f|
   %p
     Elegí esta opción si deseas que &ldquo;#{@list.name}&rdquo; sea
     vaciada de productos.
@@ -21,7 +21,7 @@
     %button#clear-list.cancel{ :type => :submit } Vaciar
 
 
-- form_for(@list, :method => :delete) do |f|
+- form_for(@list, :url => { :action => :destroy }, :html => { :method => :delete }) do |f|
   %p
     Elegí esta opción si deseas que &ldquo;#{@list.name}&rdquo; sea
     vaciada de productos y no vuelva a aparecer en tu listado.
