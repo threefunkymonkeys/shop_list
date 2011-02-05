@@ -1,5 +1,5 @@
 - content_for :title do
-  Tus listas
+  = t '.title'
 
 %ul#lists
   - @lists.each do |list|
@@ -7,4 +7,4 @@
       %span.counter= list.items.size
       = link_to list.name, list
 
-%a.button#add-list{ :href => new_list_path } Nueva lista
+%a.button#add-list{ :href => new_list_path }= t '.new'

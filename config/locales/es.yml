@@ -1,0 +1,76 @@
+es:
+  number:
+    format:
+      separator: ','
+      delimiter: '.'
+      precision: 2
+  currency:
+    format:
+      separator: ','
+      delimiter: '.'
+      precision: 2
+
+  layouts:
+    application:
+      title: Changuito
+  lists:
+    footer:
+      index: Tus listas
+      edit: Editar
+    index:
+      title: Tus listas
+      new: Nueva lista
+    new:
+      title: Crear nueva lista
+      buttons:
+        create: Crear
+        cancel: Cancelar
+    show:
+      buttons:
+        add_product: Agregar producto
+      total: Total
+    edit:
+      title: Editar %{name}
+      rename:
+        new_name: Nuevo nombre
+      empty:
+        note: Elegí esta opción si deseas vaciar «%{name}» de productos. Esta opción no borrar la lista, solamente elimina los productos agregados y deja el total en cero.
+      warning:
+        undone: Esta opción no se puede deshacer.
+      destroy:
+        note: Elegí esta opción si deseas borrar permamente la lista «%{name}». Los productos que hayas creado al utilizar esta lista no serán borrados.
+      buttons:
+        rename: Renombrar
+        cancel: Cancelar
+        empty: Vaciar
+        destroy: Eliminar
+  items:
+    new:
+      title: Agregar producto
+    edit:
+      title: Editar «%{name}»
+    form:
+      product:
+        existent: Existente
+        new: Nuevo
+      buttons:
+        add: Agregar
+        edit: Editar
+        cancel: Cancelar
+
+  activerecord:
+    attributes:
+      list:
+        name: Nombre
+      item:
+        price: Precio
+        quantity: Cantidad
+
+  controllers:
+    items:
+      item:
+        created: Agregaste %{count} %{name}
+    lists:
+      list:
+        renamed: Renombraste «%{old}» como «%{new}»
+        emptied: ¡Vaciaste la lista «%{name}»!

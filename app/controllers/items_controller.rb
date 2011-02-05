@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
     end
 
     if @item.save
-      redirect_to(list_path(@list), :notice => "Added #{@item.quantity} x #{@item.article.name}")
+      redirect_to(list_path(@list), :notice => t('controllers.items.item.created', :count => @item.quantity, :name => @item.article.name))
     else
       render :action => "edit"
     end
