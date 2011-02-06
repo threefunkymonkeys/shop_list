@@ -12,7 +12,7 @@
         = f.label :name, :class => "title"
         %br
         .actions
-          = f.text_field :name
+          = f.text_field :name, :id => :name
           = f.submit
       - unless @list.new_record?
         = render :partial => 'lists/items'

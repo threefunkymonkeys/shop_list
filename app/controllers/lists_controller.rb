@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
   before_filter :set_current_list, :only => [:show, :edit]
+  before_filter :require_user
   # GET /lists
   # GET /lists.xml
   def index
