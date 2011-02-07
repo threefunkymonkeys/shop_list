@@ -66,6 +66,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.update_attributes(params[:item])
 
+    unless params[:article].nil? or params[:article][:id].nil?
+      article = Article.find(params[:article][:id])
+      article.update_attributes(params[:article])
+    end
+
     redirect_to list_path(@item.list)
   end
 

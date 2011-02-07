@@ -15,7 +15,9 @@
   - else
     %label
       %span= Article.human_attribute_name(:name)
-      %input{ :value => @item.article.name, :name => "article[name]" }
+      = fields_for @item.article do |af|
+        = af.text_field :name
+        = af.hidden_field :id
 
   %label
     %span= Item.human_attribute_name(:price)
