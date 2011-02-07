@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
                      article.id
                    end
                  else
-                   Article.find(params[:item][:article_id])
+                   Article.find(params[:item][:article_id]).id
                  end
 
     @item = @list.items.find_by_article_id(article_id)
