@@ -1,5 +1,13 @@
 ShopList::Application.routes.draw do
 
+  get "home/index"
+
+  resource :user_session
+  match 'login' => 'user_sessions#new', :as => :login
+  match 'logout' => 'user_sessions#destroy', :as => :logout
+  
+  resources :users
+
   #get "items/add"
   resources :items
 
@@ -8,7 +16,6 @@ ShopList::Application.routes.draw do
       get 'search'
     end
   end
-
   resources :lists do
     delete 'items', :on => :member, :to => 'Lists#empty', :as => :empty
 
@@ -68,7 +75,7 @@ ShopList::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 
