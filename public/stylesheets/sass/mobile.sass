@@ -128,7 +128,7 @@ form
     select
       width: 100%
 
-    input
+    input:not([type="checkbox"])
       border: 1px solid black
       display: inline-block
       width: 100%
@@ -138,6 +138,20 @@ form
 
     input[type=number]
       text-align: right
+
+    &.checkbox
+      cursor: pointer
+      span
+        margin-left: .5em
+        display: inline-block
+
+    input[type=checkbox]
+      display: inline-block
+      width: 1em
+      height: 1em
+      float: left
+      margin: 0px
+      padding: 0px
 
   .buttons
     text-align: center
@@ -201,4 +215,9 @@ footer
 #flash-notice
   +vertical-linear-gradient(#F7F72B, #E6D810)
   color: #000
+  +notification
+
+#flash-error
+  +vertical-linear-gradient(#bd2020, #8a1717)
+  color: #fff
   +notification

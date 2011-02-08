@@ -1,0 +1,16 @@
+= form_for @user_session, :url => user_session_path do |f| 
+  - if @user_session.errors.any?
+    .errors
+      - @user_session.errors.full_messages.each do |msg|
+        %li= msg
+
+  %label
+    %span= User.human_attribute_name(:email)
+    = f.text_field :email, :type => :email
+
+  %label
+    %span= User.human_attribute_name(:password)
+    = f.password_field :password
+
+  .buttons
+    %button{ :type => :submit }= t('.signup')

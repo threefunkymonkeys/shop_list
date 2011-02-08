@@ -1,0 +1,20 @@
+= form_for @user_session, :url => signin_path do |f| 
+  - if @user_session.errors.any?
+    %ul.errors
+      - @user_session.errors.full_messages.each do |msg|
+        %li= msg
+
+  %label
+    %span= User.human_attribute_name(:email)
+    = f.text_field :email, :type => :email
+
+  %label
+    %span= User.human_attribute_name(:password)
+    = f.password_field :password
+
+  %label.checkbox
+    %span Remember me
+    %input{ :type => :checkbox, :name => "user_session[remember_me]", :value => 1 }
+
+  .buttons
+    %button{ :type => :submit }= t('.login')
