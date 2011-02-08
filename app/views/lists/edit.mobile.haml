@@ -13,11 +13,11 @@
 - form_for(@list, :url => empty_list_path(@list), :html => { :method => :delete }) do |f|
   %p= t '.empty.note', :name => @list.name
   %div.buttons
-    %button#clear-list.cancel{ :type => :submit }= t '.buttons.empty'
+    %button#clear-list.destroy{ :type => :submit }= t '.buttons.empty'
 
 
 - form_for(@list, :url => { :action => :destroy }, :html => { :method => :delete }) do |f|
   %p= t '.destroy.note', :name => @list.name
   %p= t '.warning.undone'
   %div.buttons
-    %button#delete-list.cancel{ :type => :submit }= t '.buttons.destroy'
+    %button#delete-list.destroy{ :type => :submit }= t '.buttons.destroy'
