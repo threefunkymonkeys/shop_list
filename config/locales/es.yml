@@ -61,6 +61,10 @@ es:
       note:
         destroy: Elegí esta opción si deseas borrar el artículo «%{name}» de la lista «%{list}». Esta opción no borrará el artículo de otras listas.
 
+  user_sessions:
+    form:
+      login: Ingresar
+
   activerecord:
     attributes:
       list:
@@ -69,6 +73,12 @@ es:
         price: Precio
         quantity: Cantidad
         article_id: Artículo
+      user_session:
+        email: Correo electrónico
+        password: Contraseña
+      user:
+        email: Correo electrónico
+        password: Contraseña
     errors:
       models:
         item:
@@ -98,3 +108,10 @@ es:
       list:
         renamed: Renombraste «%{old}» como «%{new}»
         emptied: ¡Vaciaste la lista «%{name}»!
+    user_session:
+      login_successful: ¡Bienvenido!
+      logout_successful: ¡Hasta pronto!
+
+  application:
+    messages:
+      forbidden: Debes haber ingresado para ver tus listas

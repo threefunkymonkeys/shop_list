@@ -51,8 +51,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user
-    flash[:error] = t('application.messages.forbidden')
-    redirect_to '/login' unless current_user
+    redirect_to '/login', :error => t('application.messages.forbidden') unless current_user
   end
 
   def require_no_user
