@@ -57,6 +57,9 @@ es:
         add: Agregar
         edit: Editar
         cancel: Cancelar
+        destroy: Borrar
+      note:
+        destroy: Elegí esta opción si deseas borrar el artículo «%{name}» de la lista «%{list}». Esta opción no borrará el artículo de otras listas.
 
   activerecord:
     attributes:
@@ -87,6 +90,7 @@ es:
     items:
       item:
         created: Agregaste %{count} %{name}
+        destroyed: Borraste el artículo «%{name}» de esta lista
       errors:
         article:
           not_found: Debes elegir un artículo existente o ingresar uno nuevo

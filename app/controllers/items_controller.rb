@@ -82,7 +82,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       format.js
-      format.mobile 
+      format.mobile { redirect_to @list, :notice => t('controllers.items.item.destroyed', :name => @item.article.name) }
       format.html {
         respond_with @list, :notice => "Item removed successfully"
       }
