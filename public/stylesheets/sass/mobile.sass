@@ -180,3 +180,20 @@ footer
       line-height: 2.5em
       text-decoration: none
       +border-radius(0.25em)
+
+=notification
+  text-align: left
+  height: auto
+  font-size: 0.9em
+  line-height: 1.5em
+  padding-left: 0.5em
+
+.errors li
+  +vertical-linear-gradient(#bd2020, #8a1717)
+  color: #fff
+  +notification
+
+#flash-notice
+  +vertical-linear-gradient(#F7F72B, #E6D810)
+  color: #000
+  +notification
