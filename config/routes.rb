@@ -2,8 +2,9 @@ ShopList::Application.routes.draw do
 
   get "home/index"
 
-  resource :user_session
-  match 'login' => 'user_sessions#new', :as => :login
+  resources :user_session
+  match 'login'  => 'user_sessions#new',     :as => :login
+  match 'signin' => 'user_sessions#create',  :as => :signin
   match 'logout' => 'user_sessions#destroy', :as => :logout
   
   resources :users
