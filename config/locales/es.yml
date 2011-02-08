@@ -65,11 +65,31 @@ es:
       item:
         price: Precio
         quantity: Cantidad
+        article_id: Artículo
+    errors:
+      models:
+        item:
+          attributes:
+            price:
+              greater_than: El precio debe ser mayor que %{count}
+              not_a_number: Debes ingresar un precio válido
+            quantity:
+              greater_than: La cantidad debe ser mayor que %{count}
+              not_a_number: Debes ingresar una cantidad válida
+            article_id:
+              blank: Debes elegir un artículo o ingresar el nombre de uno nuevo
+        list:
+          attributes:
+            name:
+              blank: Debes ingresar un nombre para tu lista
 
   controllers:
     items:
       item:
         created: Agregaste %{count} %{name}
+      errors:
+        article:
+          not_found: Debes elegir un artículo existente o ingresar uno nuevo
     lists:
       list:
         renamed: Renombraste «%{old}» como «%{new}»
