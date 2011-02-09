@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_filter :require_user
+
   # GET /articles
   # GET /articles.xml
   def index

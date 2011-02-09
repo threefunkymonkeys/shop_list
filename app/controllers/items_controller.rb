@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_filter :require_user
+
   def new
     @item = Item.new(:list_id => params[:list_id])
     @list = List.find(params[:list_id])
@@ -17,7 +19,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       format.js
       format.html do
-        respond_with @list, :notice => "Item created successfully" 
+        respond_with @list, :notice => "Item created successfully"
       end
     end
   end
