@@ -128,7 +128,7 @@ form
     select
       width: 100%
 
-    input
+    input:not([type="checkbox"])
       border: 1px solid black
       display: inline-block
       width: 100%
@@ -138,6 +138,20 @@ form
 
     input[type=number]
       text-align: right
+
+    &.checkbox
+      cursor: pointer
+      span
+        margin-left: .5em
+        display: inline-block
+
+    input[type=checkbox]
+      display: inline-block
+      width: 1em
+      height: 1em
+      float: left
+      margin: 0px
+      padding: 0px
 
   .buttons
     text-align: center
@@ -151,6 +165,11 @@ form
       border: none
 
     a.cancel, button.cancel
+      +vertical-linear-gradient(#72969C, #6F8D9C)
+      -webkit-box-shadow: inset 0 1px 0 0 #72969C, 0 1px 2px 0 #6F8D9C
+      border: none
+
+    a.destroy, button.destroy
       +vertical-linear-gradient(#bd2020, #8a1717)
       -webkit-box-shadow: inset 0 1px 0 0 #bd2020, 0 1px 2px 0 #8a1717
       border: none
@@ -180,3 +199,25 @@ footer
       line-height: 2.5em
       text-decoration: none
       +border-radius(0.25em)
+
+=notification
+  text-align: left
+  height: auto
+  font-size: 0.9em
+  line-height: 1.5em
+  padding-left: 0.5em
+
+.errors li
+  +vertical-linear-gradient(#bd2020, #8a1717)
+  color: #fff
+  +notification
+
+#flash-notice
+  +vertical-linear-gradient(#F7F72B, #E6D810)
+  color: #000
+  +notification
+
+#flash-error, #flash-alert
+  +vertical-linear-gradient(#bd2020, #8a1717)
+  color: #fff
+  +notification

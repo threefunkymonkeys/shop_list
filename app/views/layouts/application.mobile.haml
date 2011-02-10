@@ -11,6 +11,8 @@
   %body
     - if content_for? :title
       %h1= content_for :title
+    - else
+      %h1= t '.title'
 
     - unless flash.empty?
       %ul#flash
@@ -21,3 +23,5 @@
 
     - if content_for? :footer
       %footer= content_for :footer
+
+    = link_to "logout", logout_path, :class => :button

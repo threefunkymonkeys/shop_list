@@ -1,4 +1,9 @@
 - form_for(@item) do |f|
+  - if @item.errors.any?
+    %ul.errors
+      - @item.errors.each do |field, msg|
+        %li= msg
+
   = f.hidden_field :list_id
   - if @item.article.nil?
     - unless @articles.empty?
@@ -33,3 +38,9 @@
     - else
       %button#edit-item{ :type => :submit }= t '.buttons.edit'
     %a.button.cancel{ :href => list_path(@list) }= t '.buttons.cancel'
+
+- unless @item.new_record?
+  - form_for(@item, :url => { :action => :destroy }, :html => { :method => :delete }) do |f|
+    %p= t '.note.destroy', :name => @item.article.name, :list => @list.name
+    %div.buttons
+      %button.destroy{ :type => :submit }= t '.buttons.destroy'

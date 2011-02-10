@@ -4,16 +4,6 @@ class Item < ActiveRecord::Base
 
   validates :list_id, :presence => true
   validates :article_id, :presence => true
-  validates :price, :numericality => true
-  validates :quantity, :numericality => true
-
-  class ItemValidator
-    def validate item
-      item.errors[:base] << "Price should be greater than zero" unless item.price > 0
-
-      item.errors[:base] << "Quantity should be greater than zero" unless item.quantity > 0
-    end
-  end
-
-  validates_with ItemValidator
+  validates_numericality_of :price, :greater_than => 0
+  validates_numericality_of :quantity, :greater_than => 0
 end

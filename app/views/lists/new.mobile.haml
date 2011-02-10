@@ -2,6 +2,11 @@
   = t '.title'
 
 - form_for(@list) do |f|
+  - if @list.errors.any?
+    %ul.errors
+      - @list.errors.each do |field, msg|
+        %li= msg
+
   %label
     %span= List.human_attribute_name(:name)
     = f.text_field :name

@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_filter :require_user
+
   def new
     @item = Item.new(:list_id => params[:list_id])
     @list = List.find(params[:list_id])
@@ -17,7 +19,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       format.js
       format.html do
-        respond_with @list, :notice => "Item created successfully" 
+        respond_with @list, :notice => "Item created successfully"
       end
     end
   end
@@ -37,7 +39,7 @@ class ItemsController < ApplicationController
                      article.id
                    end
                  else
-                   Article.find(params[:item][:article_id]).id
+                   Article.find(params[:item][:article_id]).id rescue nil
                  end
 
     @item = @list.items.find_by_article_id(article_id)
@@ -53,7 +55,8 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to(list_path(@list), :notice => t('controllers.items.item.created', :count => @item.quantity, :name => @item.article.name))
     else
-      render :action => "edit"
+      @articles = Article.select([:id, :name]).order(:name)
+      render :action => "new"
     end
   end
 
@@ -81,7 +84,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       format.js
-      format.mobile 
+      format.mobile { redirect_to @list, :notice => t('controllers.items.item.destroyed', :name => @item.article.name) }
       format.html {
         respond_with @list, :notice => "Item removed successfully"
       }

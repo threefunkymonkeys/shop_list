@@ -57,6 +57,13 @@ es:
         add: Agregar
         edit: Editar
         cancel: Cancelar
+        destroy: Borrar
+      note:
+        destroy: Elegí esta opción si deseas borrar el artículo «%{name}» de la lista «%{list}». Esta opción no borrará el artículo de otras listas.
+
+  user_sessions:
+    form:
+      login: Ingresar
 
   activerecord:
     attributes:
@@ -65,12 +72,68 @@ es:
       item:
         price: Precio
         quantity: Cantidad
+        article_id: Artículo
+      user_session:
+        email: Correo electrónico
+        password: Contraseña
+      user:
+        email: Correo electrónico
+        password: Contraseña
+    errors:
+      models:
+        item:
+          attributes:
+            price:
+              greater_than: El precio debe ser mayor que %{count}
+              not_a_number: Debes ingresar un precio válido
+            quantity:
+              greater_than: La cantidad debe ser mayor que %{count}
+              not_a_number: Debes ingresar una cantidad válida
+            article_id:
+              blank: Debes elegir un artículo o ingresar el nombre de uno nuevo
+        list:
+          attributes:
+            name:
+              blank: Debes ingresar un nombre para tu lista
 
   controllers:
     items:
       item:
         created: Agregaste %{count} %{name}
+        destroyed: Borraste el artículo «%{name}» de esta lista
+      errors:
+        article:
+          not_found: Debes elegir un artículo existente o ingresar uno nuevo
     lists:
       list:
         renamed: Renombraste «%{old}» como «%{new}»
         emptied: ¡Vaciaste la lista «%{name}»!
+    user_session:
+      login_successful: ¡Bienvenido!
+      logout_successful: ¡Hasta pronto!
+
+  application:
+    messages:
+      forbidden: Debes haber ingresado para ver tus listas
+
+  authlogic:
+    error_messages:
+      login_blank: no puede estar vacío
+      login_not_found: inválido
+      login_invalid: debes utilizar solamente letras, números y .-_@ por favor.
+      consecutive_failed_logins_limit_exceeded: La cuenta fue desactivada debido a que superaste el número de accesos inválidos permitidos.
+      email_invalid: debe ser una dirección de correo.
+      password_blank: no puede estar vacío
+      password_invalid: inválida
+      not_active: Tu cuenta no está activada aún
+      not_confirmed: Tu cuenta no ha sido confirmada aún
+      not_approved: Tu cuenta no está aprobada aún
+      no_authentication_details: No ingresaste ningún correo y contraseña para ingresar.
+    models:
+      user_session: Sesión
+    attributes:
+      user_session:
+        login: login
+        email: Correo electrónico
+        password: Contraseña
+        remember_me: Recordar estos datos
