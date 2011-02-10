@@ -1,32 +1,23 @@
 - content_for :title do
-  = "Editar #{@list.name}"
+  = t '.title', :name => @list.name
 
 - form_for(@list) do |f|
   %label
-    %span Nuevo nombre
+    %span= t '.rename.new_name'
     = f.text_field :name
 
   %div.buttons
-    %button#create-list{ :type => :submit } Renombrar
-    %a.button.cancel{ :href => lists_path } Cancelar
+    %button#create-list{ :type => :submit }= t '.buttons.rename'
+    %a.button.cancel{ :href => lists_path }= t '.buttons.cancel'
 
 - form_for(@list, :url => empty_list_path(@list), :html => { :method => :delete }) do |f|
-  %p
-    Elegí esta opción si deseas que &ldquo;#{@list.name}&rdquo; sea
-    vaciada de productos.
-
-  %p
-    Esta operación no se puede deshacer.
+  %p= t '.empty.note', :name => @list.name
   %div.buttons
-    %button#clear-list.cancel{ :type => :submit } Vaciar
+    %button#clear-list.cancel{ :type => :submit }= t '.buttons.empty'
 
 
 - form_for(@list, :url => { :action => :destroy }, :html => { :method => :delete }) do |f|
-  %p
-    Elegí esta opción si deseas que &ldquo;#{@list.name}&rdquo; sea
-    vaciada de productos y no vuelva a aparecer en tu listado.
-
-  %p
-    Esta operación no se puede deshacer.
+  %p= t '.destroy.note', :name => @list.name
+  %p= t '.warning.undone'
   %div.buttons
-    %button#delete-list.cancel{ :type => :submit } Borrar
+    %button#delete-list.cancel{ :type => :submit }= t '.buttons.destroy'

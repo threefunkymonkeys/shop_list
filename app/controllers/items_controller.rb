@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
                      article.id
                    end
                  else
-                   Article.find(params[:item][:article_id])
+                   Article.find(params[:item][:article_id]).id
                  end
 
     @item = @list.items.find_by_article_id(article_id)
@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
     end
 
     if @item.save
-      redirect_to(list_path(@list), :notice => "Added #{@item.quantity} x #{@item.article.name}")
+      redirect_to(list_path(@list), :notice => t('controllers.items.item.created', :count => @item.quantity, :name => @item.article.name))
     else
       render :action => "edit"
     end
@@ -65,6 +65,11 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update_attributes(params[:item])
+
+    unless params[:article].nil? or params[:article][:id].nil?
+      article = Article.find(params[:article][:id])
+      article.update_attributes(params[:article])
+    end
 
     redirect_to list_path(@item.list)
   end

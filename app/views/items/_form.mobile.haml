@@ -3,31 +3,33 @@
   - if @item.article.nil?
     - unless @articles.empty?
       %label
-        %span Existente
+        %span= t '.product.existent'
         %select{ :name => "item[article_id]" }
           %option
           = options_from_collection_for_select(@articles, :id, :name)
 
     %label
-      %span Nuevo
+      %span= t '.product.new'
       %input{ :name => "article[name]" }
 
   - else
     %label
-      %span Nombre
-      %input{ :value => @item.article.name, :name => "article[name]" }
+      %span= Article.human_attribute_name(:name)
+      = fields_for @item.article do |af|
+        = af.text_field :name
+        = af.hidden_field :id
 
   %label
-    %span Precio
+    %span= Item.human_attribute_name(:price)
     = f.number_field :price, :min => 1, :step => 0.5
 
   %label
-    %span Cantidad
+    %span= Item.human_attribute_name(:quantity)
     = f.number_field :quantity, :min => 1
 
   %div.buttons
     - if @item.new_record?
-      %button#add-item{ :type => :submit } Agregar
+      %button#add-item{ :type => :submit }= t '.buttons.add'
     - else
-      %button#edit-item{ :type => :submit } Grabar
-    %a.button.cancel{ :href => list_path(@list) } Cancelar
+      %button#edit-item{ :type => :submit }= t '.buttons.edit'
+    %a.button.cancel{ :href => list_path(@list) }= t '.buttons.cancel'

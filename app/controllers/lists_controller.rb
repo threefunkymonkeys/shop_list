@@ -52,7 +52,7 @@ class ListsController < ApplicationController
       if @list.save
         format.html { redirect_to(edit_list_path(@list), :notice => t('application.messages.list_created_ok')) }
         format.xml  { render :xml => @list, :status => :created, :location => @list }
-        format.mobile { redirect_to(list_path(@list), :notice => 'List was successfully created.') }
+        format.mobile { redirect_to(list_path(@list)) }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @list.errors, :status => :unprocessable_entity }
@@ -72,7 +72,7 @@ class ListsController < ApplicationController
       if @list.update_attributes(params[:list])
         format.html { redirect_to(@list, :notice => 'List was successfully updated.') }
         format.xml  { head :ok }
-        format.mobile { redirect_to(@list, :notice => "#{old_name} => #{@list.name}") }
+        format.mobile { redirect_to(@list, :notice => t('controllers.lists.list.renamed', :old => old_name, :new => @list.name)) }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @list.errors, :status => :unprocessable_entity }
@@ -97,7 +97,7 @@ class ListsController < ApplicationController
   def empty
     @list = List.find(params[:id])
     @list.items.destroy_all
-    redirect_to @list, :notice => 'List emptied!'
+    redirect_to @list, :notice => t('controllers.lists.list.emptied', :name => @list.name)
   end
   
   private

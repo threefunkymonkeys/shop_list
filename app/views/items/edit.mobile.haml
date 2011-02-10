@@ -1,4 +1,4 @@
 - content_for :title do
-  = "Editar \"#{@item.article.name}\""
+  = t '.title', :name => @item.article.name
 
 = render :partial => "form"

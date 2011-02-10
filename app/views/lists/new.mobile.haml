@@ -1,11 +1,11 @@
 - content_for :title do
-  Crear nueva lista
+  = t '.title'
 
 - form_for(@list) do |f|
   %label
-    %span Nombre
+    %span= List.human_attribute_name(:name)
     = f.text_field :name
 
   %div.buttons
-    %button#create-list{ :type => :submit } Crear
-    %a.button.cancel{ :href => lists_path } Cancelar
+    %button#create-list{ :type => :submit }= t '.buttons.create'
+    %a.button.cancel{ :href => lists_path }= t '.buttons.cancel'
