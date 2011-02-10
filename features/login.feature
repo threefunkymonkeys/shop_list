@@ -12,7 +12,7 @@ Scenario: User should be able to login
    When I go to the login page
     And I fill in "email" with "test@somewhere.com"
     And I fill in "password" with "secret"
-    And I click the "Login" action in the current locale
+    And I click the "Login" action
    Then I should be logged in 
     And I should be on the homepage
 

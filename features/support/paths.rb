@@ -14,6 +14,11 @@ module NavigationHelpers
     when /the post named "(.+)" page/
       post = Post.find_by_name($1)
       post_path(post)
+
+    when /the (.+) edit page/
+      model = $1.to_s.capitalize.constantize
+      record = model.last
+      "/#{$1.to_s.downcase.pluralize}/#{record.id}/edit"
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

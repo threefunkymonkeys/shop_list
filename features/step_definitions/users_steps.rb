@@ -33,10 +33,9 @@ Given /^I am logged in as "([^"]*)" with password "([^"]*)"$/ do |email, passwor
   #current_user.email.should == email
   
   visit "/login"
-  fill_in(:email, :with => email)
-  fill_in(:password, :with => password)
-  click_link_or_button(:login)
-  response.should be_ok
+  fill_in("email", :with => email)
+  fill_in("password", :with => password)
+  click_link_or_button("login")
   UserSession.find.should_not be_nil
 end
 
@@ -44,7 +43,13 @@ Then /^I should be logged out$/ do
   UserSession.find.should be_nil
 end
 
-Given /^I have (\d+) lists$/ do |count|
+Given /^I have no lists$/ do 
+  current_user = UserSession.find.record
+  current_user.should_not be_nil
+  current_user.lists = []
+end
+
+Then /^I should have (\d+) list(s?)$/ do |count, _|
   current_user = UserSession.find.record
   current_user.lists.count.should == count.to_i
 end

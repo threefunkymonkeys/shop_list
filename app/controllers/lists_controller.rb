@@ -46,10 +46,11 @@ class ListsController < ApplicationController
   # POST /lists.xml
   def create
     @list = List.new(params[:list])
+    @list.user = current_user
 
     respond_to do |format|
       if @list.save
-        format.html { redirect_to(edit_list_path(@list), :notice => 'List was successfully created.') }
+        format.html { redirect_to(edit_list_path(@list), :notice => t('application.messages.list_created_ok')) }
         format.xml  { render :xml => @list, :status => :created, :location => @list }
         format.mobile { redirect_to(list_path(@list), :notice => 'List was successfully created.') }
       else

@@ -16,11 +16,11 @@ I want to users to authenticate for create lists
       |test@example.com |secret  |
 
       And I am logged in as "test@example.com" with password "secret"
-      And I have 0 lists
+      And I have no lists
      When I go to the new list page
       And I fill in "name" with "Sample List"
-      And I click "Create" action
+      And I click the "Create" action
      Then I should see the "List created OK" message
-      And I shold be on the list edit page
+      And I should be on the list edit page
       And I should have 1 list
 

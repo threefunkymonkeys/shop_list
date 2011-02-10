@@ -18,9 +18,11 @@ en:
       new_price: New price
     actions:
       login: Login
+      create: Create
     messages:
       need_logout: You need to be logged out for this action
       forbidden: You don't have permissions to do this
+      list_created_ok: List Created Successfuly
 
   lists:
     new:

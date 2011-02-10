@@ -4,7 +4,7 @@ Then /^I should see the "([^"]*)" message$/ do |message|
   page.should have_content locale_msg
 end
 
-When /^I click the "([^"]*)" action in the current locale$/ do |action|
+When /^I click the "([^"]*)" action$/ do |action|
   locale_action = I18n.translate("application.actions.#{action.downcase.gsub(" ", "_")}")
   locale_action.should_not include "translation missing:"
 
