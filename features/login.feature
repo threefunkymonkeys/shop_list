@@ -14,7 +14,7 @@ Scenario: User should be able to login
     And I fill in "password" with "secret"
     And I click the "Login" action
    Then I should be logged in 
-    And I should be on the homepage
+    And I should be on the lists page
 
 
 Scenario: User should be able to logout
