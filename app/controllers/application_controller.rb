@@ -17,6 +17,13 @@ class ApplicationController < ActionController::Base
     @@current_list = list
   end
 
+  def require_owner
+    unless current_user.list_ids.include? params[:id]
+      flash[:error] = t('application.messages.forbidden')
+      redirect_to lists_path
+    end
+  end
+
   private
   def mobile_device?
     puts request.user_agent

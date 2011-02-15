@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
   before_filter :require_user
   before_filter :set_current_list, :only => [:show, :edit]
+  before_filter :require_owner, :only => [:show, :edit, :update, :destroy]
 
   # GET /lists
   # GET /lists.xml
