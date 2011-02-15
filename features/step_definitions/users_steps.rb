@@ -53,3 +53,9 @@ Then /^I should have (\d+) list(s?)$/ do |count, _|
   current_user = UserSession.find.record
   current_user.lists.count.should == count.to_i
 end
+
+Then /^I should be able to authenticate with email "([^"]*)" and password "([^"]*)"$/ do |email, password|
+  user = User.find_by_email(email)
+  user.should_not be_nil
+  user.should be_valid_password password
+end
