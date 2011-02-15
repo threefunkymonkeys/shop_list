@@ -6,5 +6,5 @@
     %li
       %span.counter= list.items.size
       = link_to list.name, list
-
-%a.button#add-list{ :href => new_list_path }= t '.new'
+  %li
+    %a#add{ :href => new_list_path }= t '.new'

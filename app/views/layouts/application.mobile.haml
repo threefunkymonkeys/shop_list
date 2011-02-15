@@ -1,18 +1,16 @@
+- title = content_for?(:title) && content_for(:title) || t('.title')
+
 !!!
 %html
   %head
-    %title= t '.title'
+    %title= title
     %meta{ :name => "viewport", :content => "user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" }
     %meta{ :name => "apple-mobile-web-app-capable", :content => "yes" }
     %meta{ :name => "apple-mobile-web-app-status-bar-style", :content => "black" }
     = stylesheet_link_tag "mobile"
-    -# = javascript_include_tag "jquery-1.4.2.min.js", "mobile.js"
     = csrf_meta_tag
   %body
-    - if content_for? :title
-      %h1= content_for :title
-    - else
-      %h1= t '.title'
+    %h1= title
 
     - unless flash.empty?
       %ul#flash
@@ -21,7 +19,12 @@
 
     = yield
 
-    - if content_for? :footer
-      %footer= content_for :footer
+    %footer
+      - if content_for? :footer
+        = content_for :footer
 
-    = link_to "logout", logout_path, :class => :button
+      %nav
+        - if content_for? :nav
+          = content_for :nav
+        - if current_user
+          = link_to t(".logout"), logout_path, :id => :logout

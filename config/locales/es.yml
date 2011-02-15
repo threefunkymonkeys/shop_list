@@ -13,10 +13,8 @@ es:
   layouts:
     application:
       title: Changuito
+      logout: Salir
   lists:
-    footer:
-      index: Tus listas
-      edit: Editar
     index:
       title: Tus listas
       new: Nueva lista
@@ -29,6 +27,8 @@ es:
       buttons:
         add_product: Agregar producto
       total: Total
+      index: Tus listas
+      edit: Editar
     edit:
       title: Editar %{name}
       rename:
