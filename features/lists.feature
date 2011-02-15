@@ -19,7 +19,7 @@ I want to users to authenticate for create lists
       And I have no lists
      When I go to the new list page
       And I fill in "name" with "Sample List"
-      And I click the "Create" action
+      And I click the "Save" action
      Then I should see the "List created OK" message
       And I should be on the list edit page
       And I should have 1 list
