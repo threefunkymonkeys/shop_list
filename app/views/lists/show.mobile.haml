@@ -1,8 +1,9 @@
 - content_for :title do
   = @list.name
 
-- content_for :footer do
-  = render :partial => 'footer'
+- content_for :nav do
+  %a{ :href => lists_path }= t '.index'
+  %a{ :href => edit_list_path(@list) }= t '.edit'
 
 %ul#items
   - @list.items.each do |item|

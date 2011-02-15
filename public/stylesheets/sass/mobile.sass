@@ -80,12 +80,13 @@ ul#items
       right: 0.5em
       font-size: 1.2em
       line-height: 2.1em
-    a#add
-      text-align: center
-      color: #fff
-      padding: 0
-      +border-radius-bottom($default_radius)
-      +vertical-linear-gradient(#54BD0D, #418A1D)
+
+ul li a#add
+  text-align: center
+  color: #fff
+  padding: 0
+  +border-radius-bottom($default_radius)
+  +vertical-linear-gradient(#54BD0D, #418A1D)
 
 /* http://robots.thoughtbot.com/post/2718077289/make-css3-buttons-like-a-boss
 a.button, button
@@ -221,3 +222,8 @@ footer
   +vertical-linear-gradient(#bd2020, #8a1717)
   color: #fff
   +notification
+
+#logout
+  +vertical-linear-gradient(#bd2020, #8a1717)
+  color: #fff
+  float: right
