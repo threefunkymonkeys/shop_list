@@ -1,52 +1,140 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
-en:
-  back: Back
-  edit: Edit
-  show: Show details
-  search: Search
-  destroy: Destroy
+--- 
+en: 
   actions: Actions
-  are_you_sure: Are you sure?
   add_to_list: Add
-
-  application:
-    titles:
+  activerecord: 
+    attributes: 
+      item: 
+        article_id: Article
+        price: Price
+        quantity: Quantity
+      list: 
+        name: Name
+      user: 
+        email: Email
+        password: Password
+      user_session: 
+        email: Email
+        password: Password
+    errors: 
+      models: 
+        item: 
+          attributes: 
+            article_id: 
+              blank: You must choose an article or enter a new name
+            price: 
+              greater_than: Price must be greater than %{count}
+              not_a_number: You must enter a valid price
+            quantity: 
+              greater_than: Quantity must be greater than %{count}
+              not_a_number: You must enter a valid quantity
+        list: 
+          attributes: 
+            name: 
+              blank: You must enter a name for your list
+  application: 
+    actions: 
+      create: Create
+      login: Login
+    messages: 
+      forbidden: "You don't have permissions to do this"
+      list_created_ok: List Created Successfuly
+      need_logout: You need to be logged out for this action
+    titles: 
       article: Article
       last_price: Last price
       new_price: New price
-    actions:
-      login: Login
-      create: Create
-    messages:
-      need_logout: You need to be logged out for this action
-      forbidden: You don't have permissions to do this
-      list_created_ok: List Created Successfuly
-
-  lists:
-    new:
-      title: New List
-
-    edit:
-      title: Edit details
-      articles: Available articles
-
-    index:
-      title: Lists
-      new_list: New List
-
-    show:
-      title: List details
-
-  articles:
-    index:
-      title: Articles
+  are_you_sure: Are you sure?
+  articles: 
+    index: 
       new_article: New Article
-
-    new:
+      title: Articles
+    new: 
       title: New Article
-
-    show:
+    show: 
       title: Article details
-
+  back: Back
+  controllers: 
+    items: 
+      errors: 
+        article: 
+          not_found: You must choose an existing article or create a new one
+      item: 
+        created: Added %{count} %{name}
+        destroyed: "You've removed the article «%{name}» from this list"
+    lists: 
+      list: 
+        emptied: "You've emptied the list «%{name}»!"
+        renamed: "You've renamed «%{old}» as «%{new}»"
+    user_session: 
+      login_successful: Welcome!
+      logout_successful: Goodbye!
+  currency: 
+    format: 
+      delimiter: .
+      precision: 2
+      separator: "."
+  destroy: Destroy
+  edit: Edit
+  items: 
+    edit: 
+      title: "Edit «%{name}»"
+    form: 
+      buttons: 
+        add: Add
+        cancel: Cancel
+        destroy: Destroy
+        edit: Edit
+      note: 
+        destroy: "Select this option if you would like to remove the article «%{name}» from the list «%{list}». This option will not remove the article from other lists."
+      product: 
+        existent: Existing
+        new: New
+    new: 
+      title: Add product
+  layouts: 
+    application: 
+      title: Shop List
+  lists: 
+    edit: 
+      articles: Available articles
+      buttons: 
+        cancel: Cancel
+        destroy: Remove
+        empty: Empty
+        rename: Rename
+      destroy: 
+        note: "Select this option if you would like to permanently remove the list «%{name}». Products added or created for this list will not be removed."
+      empty: 
+        note: "Select this option if you would like to permanently empty the list «%{name}» of all its products. This option will not remove the list, it will only remove all the associated products and leave the total in zero."
+      rename: 
+        new_name: New name
+      title: "Edit «%{name}»"
+      warning: 
+        undone: This option cannot be undone.
+    footer: 
+      edit: Edit
+      index: Your lists
+    index: 
+      new: New list
+      title: Your lists
+    new: 
+      buttons: 
+        cancel: Cancel
+        create: Create
+      title: Create new list
+    show: 
+      buttons: 
+        add_product: Add product
+      title: List details
+      total: Total
+  number: 
+    format: 
+      delimiter: .
+      precision: 2
+      separator: "."
+  search: Search
+  show: Show details
+  user_sessions: 
+    form: 
+      login: Login
