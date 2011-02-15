@@ -1,4 +1,4 @@
-%h1= t '.title'
+%h1= t '.title', :name => @list.name
 %p
   = link_to t('back'), lists_path
   = link_to t('show'), @list
