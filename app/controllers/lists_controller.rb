@@ -5,7 +5,7 @@ class ListsController < ApplicationController
   # GET /lists
   # GET /lists.xml
   def index
-    @lists = List.all
+    @lists = current_user.lists
 
     respond_to do |format|
       format.html # index.html.erb
@@ -71,7 +71,7 @@ class ListsController < ApplicationController
 
     respond_to do |format|
       if @list.update_attributes(params[:list])
-        format.html { redirect_to(@list, :notice => 'List was successfully updated.') }
+        format.html { redirect_to(@list, :notice => t('application.messages.list_updated_ok')) }
         format.xml  { head :ok }
         format.mobile { redirect_to(@list, :notice => t('controllers.lists.list.renamed', :old => old_name, :new => @list.name)) }
       else

@@ -116,8 +116,10 @@ es:
     messages:
       forbidden: Debes haber ingresado para ver tus listas
       user_register_ok: Te has registrado correctamente
+      list_updated_ok: La lista se actualizó correctamente
     actions:
       register: Registrarse
+      save: Guardar
     titles:
       register: Registro
       confirm_password: Confirmar contraseña

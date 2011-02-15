@@ -13,7 +13,7 @@
         %br
         .actions
           = f.text_field :name, :id => :name
-          = f.submit
+          = f.submit t('application.actions.save')
       - unless @list.new_record?
         = render :partial => 'lists/items'
 

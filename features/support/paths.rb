@@ -15,10 +15,19 @@ module NavigationHelpers
       post = Post.find_by_name($1)
       post_path(post)
 
+    when /the list named "(.+)" edit page/
+      list = List.find_by_name($1)
+      list.should_not be_nil
+      edit_list_path(list)
+
     when /the (.+) edit page/
       model = $1.to_s.capitalize.constantize
       record = model.last
       "/#{$1.to_s.downcase.pluralize}/#{record.id}/edit"
+
+    when /the new (.+) page/
+      noun = $1.to_s.downcase.pluralize
+      "/#{noun}/new"
 
     when /the (.+) page/
       "/#{$1}"
