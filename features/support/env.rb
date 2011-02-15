@@ -63,6 +63,7 @@ Spork.prefork do
 
   Before do
     activate_authlogic
+    I18n.locale = :es
   end
 end
 

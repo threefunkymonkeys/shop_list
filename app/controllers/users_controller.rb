@@ -9,8 +9,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      flash[:notice] = "Account registered!"
-      redirect_back_or_default account_url
+      flash[:notice] = t('application.messages.user_register_ok')
+      UserSession.create(@user)
+      redirect_to lists_path
     else
       render :action => :new
     end

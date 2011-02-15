@@ -8,6 +8,7 @@ ShopList::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy', :as => :logout
   
   resources :users
+  match 'register' => 'users#new', :as => :register
 
   #get "items/add"
   resources :items

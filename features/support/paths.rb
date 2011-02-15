@@ -19,6 +19,9 @@ module NavigationHelpers
       model = $1.to_s.capitalize.constantize
       record = model.last
       "/#{$1.to_s.downcase.pluralize}/#{record.id}/edit"
+
+    when /the (.+) page/
+      "/#{$1}"
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
