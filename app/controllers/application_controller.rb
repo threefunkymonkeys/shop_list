@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_owner
-    unless current_user.list_ids.include? params[:id]
+    unless current_user.list_ids.include? params[:id].to_i
       flash[:error] = t('application.messages.forbidden')
       redirect_to lists_path
     end
