@@ -1,9 +1,5 @@
-#itemsList
-  .mobileIgnore
-    .listHead
-      .articleName= t('application.titles.article')
-      .lastPrice= t('application.titles.last_price')
-      .newPrice= t('application.titles.new_price')
-    %br 
-  %ul#items
-    =render :partial => "lists/item", :collection => @list.items
+#listEditItems.vBox
+  %h4.title= t('lists.edit.items') 
+  #listItems
+    %ul#itemList
+      =render :partial => "lists/item", :collection => @list.items

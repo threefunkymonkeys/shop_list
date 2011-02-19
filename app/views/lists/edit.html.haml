@@ -1,5 +1,5 @@
-%h1= t '.title'
+%h1= t '.title', :name => @list.name
 %p
-  = link_to t('back'), lists_path
-  = link_to t('show'), @list
+  = link_to t('application.actions.back'), lists_path
+  = link_to t('application.actions.show'), @list
 = render 'form'

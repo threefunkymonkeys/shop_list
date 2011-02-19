@@ -31,6 +31,8 @@ es:
       edit: Editar
     edit:
       title: Editar %{name}
+      articles: Tus Articulos
+      items: Articulos en tu lista
       rename:
         new_name: Nuevo nombre
       empty:
@@ -120,6 +122,8 @@ es:
     actions:
       register: Registrarse
       save: Guardar
+      back: Volver
+      show: Mostrar
     titles:
       register: Registro
       confirm_password: Confirmar contraseña
