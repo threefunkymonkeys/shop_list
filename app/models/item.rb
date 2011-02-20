@@ -4,6 +4,6 @@ class Item < ActiveRecord::Base
 
   validates :list_id, :presence => true
   validates :article_id, :presence => true
-  validates_numericality_of :price, :greater_than => 0
+  validates_numericality_of :price
   validates_numericality_of :quantity, :greater_than => 0
 end
