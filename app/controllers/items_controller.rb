@@ -81,6 +81,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @list = @item.list
     @item.destroy
+    @articles = Article.for_list(@list).limit(10)
 
     respond_to do |format|
       format.js
