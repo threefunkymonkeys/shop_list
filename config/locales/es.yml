@@ -63,6 +63,10 @@ es:
       note:
         destroy: Elegí esta opción si deseas borrar el artículo «%{name}» de la lista «%{list}». Esta opción no borrará el artículo de otras listas.
 
+  articles:
+    new:
+      title: Crear un nuevo artículo
+
   user_sessions:
     form:
       login: Ingresar
@@ -119,11 +123,16 @@ es:
       forbidden: Debes haber ingresado para ver tus listas
       user_register_ok: Te has registrado correctamente
       list_updated_ok: La lista se actualizó correctamente
+      query_placeholder: Buscar artículo
     actions:
       register: Registrarse
       save: Guardar
+      create: Crear
       back: Volver
       show: Mostrar
+      search: Buscar
+      login: Ingresar
+      add_to_list: Agregar
     titles:
       register: Registro
       confirm_password: Confirmar contraseña

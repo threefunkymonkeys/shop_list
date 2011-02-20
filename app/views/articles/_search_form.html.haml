@@ -1,0 +1,4 @@
+#articleSearchFormContainer.hBox
+  = form_tag(search_articles_path, :method => :get, :remote => true) do
+    = text_field_tag :query, nil, :placeholder => t('application.messages.query_placeholder')
+    = submit_tag t('application.actions.search')

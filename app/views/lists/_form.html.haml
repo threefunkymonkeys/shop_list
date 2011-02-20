@@ -13,13 +13,12 @@
     = render :partial => 'lists/items'
     = render :partial => 'lists/available_articles'
           
+= render :partial => 'articles/search_form'
+
 %hr
 #newArticle
-  %h3= t('articles.new.title')
   = form_for(@article, :remote => true) do |af|
     .field
-      = af.label :name
-      %br
-      = af.text_field :name
+      = af.text_field :name, :placeholder => t('articles.new.title')
       = hidden_field_tag :list_id, @list.id
-      = af.submit 
+      = af.submit :value => t('application.actions.create')
