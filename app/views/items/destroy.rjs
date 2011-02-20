@@ -1,0 +1,2 @@
+page["#listItems #itemList li#item_#{@item.id}"].remove();
+page["#availableArticles #articleList"].html(sanitize_partial(render(:partial =>"articles/article", :collection => @articles)))
