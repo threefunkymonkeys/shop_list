@@ -46,6 +46,10 @@ es:
         cancel: Cancelar
         empty: Vaciar
         destroy: Eliminar
+    item:
+      new_item: Artículo nuevo
+      set_new_price: Poner precio
+
   items:
     new:
       title: Agregar producto

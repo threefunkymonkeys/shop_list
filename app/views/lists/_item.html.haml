@@ -1,7 +1,20 @@
 %li{ :id => "item_#{ item.id }"}
   .listItem
     %label.articleName= item.article.name
-    %small.counter= "$ #{item.price}"
-    .newPrice
-      %input{ :type => 'text', :name => "new_price[#{item.article.id}]"}
-      =link_to 'x', list_item_path(@list, item), :method => :delete, :remote => true
+    - if item.price > 0
+      %small.counter= "$ #{item.price}"
+    -else
+      %span.newArticle
+        %label= t('.new_item')
+        =link_to 'x', list_item_path(@list, item), :method => :delete, :remote => true
+        %a.setPrice{ :href => "#" }=t('.set_new_price')
+        #priceForm
+          =form_for item, :remote => true, :method => :post, :html => {:'data-type' => 'html', :id => 'priceForm'} do |f|
+            = f.text_field :price
+            = f.submit
+
+
+
+    -#.newPrice
+      -#%input{ :type => 'text', :name => "new_price[#{item.article.id}]"}
+      -#=link_to 'x', list_item_path(@list, item), :method => :delete, :remote => true
