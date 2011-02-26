@@ -3,3 +3,18 @@
   = link_to t('application.actions.back'), lists_path
   = link_to t('application.actions.show'), @list
 = render 'form'
+
+.hBox
+  - unless @list.new_record?
+    = render :partial => 'lists/items'
+    = render :partial => 'lists/available_articles'
+          
+= render :partial => 'articles/search_form'
+
+%hr
+#newArticle
+  = form_for(@article, :remote => true) do |af|
+    .field
+      = af.text_field :name, :placeholder => t('articles.new.title')
+      = hidden_field_tag :list_id, @list.id
+      = af.submit :value => t('application.actions.create')
