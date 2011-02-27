@@ -75,59 +75,48 @@ es:
     form:
       login: Ingresar
 
-  activerecord:
-    attributes:
+  actions: Acciones
+  add_to_list: Agregar
+  activerecord: 
+    attributes: 
       list:
         name: Nombre
-      item:
+      item: 
+        article_id: "Artículo"
         price: Precio
         quantity: Cantidad
-        article_id: Artículo
-      user_session:
-        email: Correo electrónico
-        password: Contraseña
-      user:
-        email: Correo electrónico
-        password: Contraseña
-    errors:
-      models:
-        item:
-          attributes:
-            price:
+      list: 
+        name: Nombre
+      user: 
+        email: "Correo electrónico"
+        password: "Contraseña"
+      user_session: 
+        email: "Correo electrónico"
+        password: "Contraseña"
+    errors: 
+      models: 
+        item: 
+          attributes: 
+            article_id: 
+              blank: "Debes elegir un artículo o ingresar el nombre de uno nuevo"
+            price: 
               greater_than: El precio debe ser mayor que %{count}
-              not_a_number: Debes ingresar un precio válido
-            quantity:
+              not_a_number: "Debes ingresar un precio válido"
+            quantity: 
               greater_than: La cantidad debe ser mayor que %{count}
-              not_a_number: Debes ingresar una cantidad válida
-            article_id:
-              blank: Debes elegir un artículo o ingresar el nombre de uno nuevo
-        list:
-          attributes:
-            name:
+              not_a_number: "Debes ingresar una cantidad válida"
+        list: 
+          attributes: 
+            name: 
               blank: Debes ingresar un nombre para tu lista
-
-  controllers:
-    items:
-      item:
-        created: Agregaste %{count} %{name}
-        destroyed: Borraste el artículo «%{name}» de esta lista
-      errors:
-        article:
-          not_found: Debes elegir un artículo existente o ingresar uno nuevo
-    lists:
-      list:
-        renamed: Renombraste «%{old}» como «%{new}»
-        emptied: ¡Vaciaste la lista «%{name}»!
-    user_session:
-      login_successful: ¡Bienvenido!
-      logout_successful: ¡Hasta pronto!
-
-  application:
-    messages:
+  application: 
+    messages: 
       forbidden: Debes haber ingresado para ver tus listas
       user_register_ok: Te has registrado correctamente
       list_updated_ok: La lista se actualizó correctamente
+      list_created_ok: ¡Lista creada!
       query_placeholder: Buscar artículo
+      need_logout: Necesitás salir para realizar esta acción
     actions:
       register: Registrarse
       save: Guardar
@@ -140,9 +129,26 @@ es:
     titles:
       register: Registro
       confirm_password: Confirmar contraseña
-
-  authlogic:
-    error_messages:
+      article: Artículo
+      last_price: Último precio
+      new_price: Nuevo precio
+  are_you_sure: ¿Estás seguro?
+  articles: 
+    index: 
+      new_article: Nuevo Artículo
+      title: Artículos
+    new: 
+      title: Nuevo Artículo
+    show: 
+      title: Detalles del artículo
+  authlogic: 
+    attributes: 
+      user_session: 
+        login: login
+        password: "Contraseña"
+        remember_me: Recordar estos datos
+    error_messages: 
+      consecutive_failed_logins_limit_exceeded: "La cuenta fue desactivada debido a que superaste el número de accesos inválidos permitidos."
       login_blank: no puede estar vacío
       login_not_found: inválido
       login_invalid: debes utilizar solamente letras, números y .-_@ por favor.
@@ -154,11 +160,101 @@ es:
       not_confirmed: Tu cuenta no ha sido confirmada aún
       not_approved: Tu cuenta no está aprobada aún
       no_authentication_details: No ingresaste ningún correo y contraseña para ingresar.
-    models:
-      user_session: Sesión
-    attributes:
-      user_session:
-        login: login
-        email: Correo electrónico
-        password: Contraseña
-        remember_me: Recordar estos datos
+      email_invalid: "debe ser una dirección de correo."
+      login_blank: "no puede estar vacío"
+      login_invalid: "debes utilizar solamente letras, números y .-_@ por favor."
+      login_not_found: "inválido"
+      no_authentication_details: "No ingresaste ningún correo y contraseña para ingresar."
+      not_active: "Tu cuenta no está activada aún"
+      not_approved: "Tu cuenta no está aprobada aún"
+      not_confirmed: "Tu cuenta no ha sido confirmada aún"
+      password_blank: "no puede estar vacío"
+      password_invalid: "inválida"
+    models: 
+      user_session: "Sesión"
+      email: "Correo electrónico"
+  back: Volver
+  controllers: 
+    items: 
+      errors: 
+        article: 
+          not_found: "Debes elegir un artículo existente o ingresar uno nuevo"
+      item: 
+        created: Agregaste %{count} %{name}
+        destroyed: "Borraste el artículo «%{name}» de esta lista"
+    lists: 
+      list: 
+        emptied: "¡Vaciaste la lista «%{name}»!"
+        renamed: "Renombraste «%{old}» como «%{new}»"
+    user_session: 
+      login_successful: "¡Bienvenido!"
+      logout_successful: "¡Hasta pronto!"
+  currency: 
+    format: 
+      delimiter: .
+      precision: 2
+      separator: ","
+  destroy: Eliminar
+  edit: Editar
+  items: 
+    edit: 
+      title: "Editar «%{name}»"
+    form: 
+      buttons: 
+        add: Agregar
+        cancel: Cancelar
+        destroy: Borrar
+        edit: Editar
+      note: 
+        destroy: "Elegí esta opción si deseas borrar el artículo «%{name}» de la lista «%{list}». Esta opción no borrará el artículo de otras listas."
+      product: 
+        existent: Existente
+        new: Nuevo
+    new: 
+      title: Agregar producto
+  layouts: 
+    application: 
+      title: Changuito
+  lists: 
+    edit: 
+      articles: Artículos disponibles
+      buttons: 
+        cancel: Cancelar
+        destroy: Eliminar
+        empty: Vaciar
+        rename: Renombrar
+      destroy: 
+        note: "Elegí esta opción si deseas borrar permamente la lista «%{name}». Los productos que hayas creado al utilizar esta lista no serán borrados."
+      empty: 
+        note: "Elegí esta opción si deseas vaciar «%{name}» de productos. Esta opción no borrar la lista, solamente elimina los productos agregados y deja el total en cero."
+      rename: 
+        new_name: Nuevo nombre
+      title: Editar «%{name}»
+      warning: 
+        undone: "Esta opción no se puede deshacer."
+    footer: 
+      edit: Editar
+      index: Tus listas
+    index: 
+      new: Nueva lista
+      title: Tus listas
+    new: 
+      buttons: 
+        cancel: Cancelar
+        create: Crear
+      title: Crear nueva lista
+    show: 
+      buttons: 
+        add_product: Agregar producto
+      title: Detalles de la lista
+      total: Total
+  number: 
+    format: 
+      delimiter: .
+      precision: 2
+      separator: ","
+  search: Buscar
+  show: Ver detalles
+  user_sessions: 
+    form: 
+      login: Ingresar

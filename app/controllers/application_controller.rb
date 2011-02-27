@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :prepare_for_mobile, :save_location
+  before_filter :set_locale, :prepare_for_mobile, :save_location
   helper_method :current_user_session, :current_user
 
   @@current_list = nil
@@ -77,5 +77,11 @@ class ApplicationController < ActionController::Base
     else
       redirect_to path
     end
+  end
+
+  def set_locale
+    # This is not the optimal way, it's better to use routes scopes I think
+    # Also locale is not stored in session so far
+    I18n.locale = params[:locale].to_sym if params[:locale]
   end
 end
