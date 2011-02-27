@@ -45,4 +45,5 @@ group :development, :test do
   gem 'launchy'    # So you can do Then show me the page
   gem 'summoner'
   gem 'faker'
+  gem 'wirble'
  end
