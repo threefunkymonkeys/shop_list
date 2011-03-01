@@ -29,14 +29,15 @@ es:
       total: Total
       index: Tus listas
       edit: Editar
+      title: Detalles de la lista
     edit:
-      title: Editar %{name}
+      title: Editar «%{name}»
       articles: Tus Articulos
       items: Articulos en tu lista
       rename:
         new_name: Nuevo nombre
       empty:
-        note: Elegí esta opción si deseas vaciar «%{name}» de productos. Esta opción no borrar la lista, solamente elimina los productos agregados y deja el total en cero.
+        note: Elegí esta opción si deseas vaciar «%{name}» de productos. Esta opción no borrará la lista, solamente elimina los productos agregados y deja el total en cero.
       warning:
         undone: Esta opción no se puede deshacer.
       destroy:
@@ -46,10 +47,12 @@ es:
         cancel: Cancelar
         empty: Vaciar
         destroy: Eliminar
+    footer: 
+      edit: Editar
+      index: Tus listas
     item:
       new_item: Artículo nuevo
       set_new_price: Poner precio
-
   items:
     new:
       title: Agregar producto
@@ -215,39 +218,6 @@ es:
   layouts: 
     application: 
       title: Changuito
-  lists: 
-    edit: 
-      articles: Artículos disponibles
-      buttons: 
-        cancel: Cancelar
-        destroy: Eliminar
-        empty: Vaciar
-        rename: Renombrar
-      destroy: 
-        note: "Elegí esta opción si deseas borrar permamente la lista «%{name}». Los productos que hayas creado al utilizar esta lista no serán borrados."
-      empty: 
-        note: "Elegí esta opción si deseas vaciar «%{name}» de productos. Esta opción no borrar la lista, solamente elimina los productos agregados y deja el total en cero."
-      rename: 
-        new_name: Nuevo nombre
-      title: Editar «%{name}»
-      warning: 
-        undone: "Esta opción no se puede deshacer."
-    footer: 
-      edit: Editar
-      index: Tus listas
-    index: 
-      new: Nueva lista
-      title: Tus listas
-    new: 
-      buttons: 
-        cancel: Cancelar
-        create: Crear
-      title: Crear nueva lista
-    show: 
-      buttons: 
-        add_product: Agregar producto
-      title: Detalles de la lista
-      total: Total
   number: 
     format: 
       delimiter: .
