@@ -3,15 +3,16 @@
     %label.articleName= item.article.name
     - if item.price > 0
       %small.counter= "$ #{item.price}"
+      =link_to 'x', list_item_path(@list, item), :method => :delete, :remote => true
     -else
       %span.newArticle
         %label= t('.new_item')
-        =link_to 'x', list_item_path(@list, item), :method => :delete, :remote => true
-        %a.setPrice{ :href => "#" }=t('.set_new_price')
         .priceForm
           =form_for item, :remote => true, :method => :post, :html => {:'data-type' => 'html', :id => 'priceForm'} do |f|
             = f.text_field :price
             = f.submit
+        %a.setPrice{ :href => "#" }=t('.set_new_price')
+      =link_to 'x', list_item_path(@list, item), :method => :delete, :remote => true
 
 
 
