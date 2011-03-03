@@ -215,14 +215,6 @@ es:
         new: Nuevo
     new: 
       title: Agregar producto
-  layouts: 
-    application: 
-      title: Changuito
-  number: 
-    format: 
-      delimiter: .
-      precision: 2
-      separator: ","
   search: Buscar
   show: Ver detalles
   user_sessions: 

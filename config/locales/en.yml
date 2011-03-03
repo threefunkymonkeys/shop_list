@@ -95,6 +95,7 @@ en:
   layouts: 
     application: 
       title: Shop List
+      logout: Log out
   lists: 
     edit: 
       articles: Available articles
@@ -128,6 +129,8 @@ en:
         add_product: Add product
       title: List details
       total: Total
+      index: Your lists
+      edit: Edit
   number: 
     format: 
       delimiter: .
