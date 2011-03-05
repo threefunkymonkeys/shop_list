@@ -14,3 +14,9 @@ Summoner.prepare :item do |i|
   i.price      12.0
   i.quantity   1
 end
+
+Summoner.prepare :user do |u|
+  u.email Faker::Internet.email
+  u.password "secret"
+  u.password_confirmation "secret"
+end
