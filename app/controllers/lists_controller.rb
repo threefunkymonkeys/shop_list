@@ -41,6 +41,7 @@ class ListsController < ApplicationController
   def edit
     @list = List.find(params[:id])
     @article = Article.new
+    @item = Item.new
     @articles = Article.for_list(@list).limit(10)
   end
 
