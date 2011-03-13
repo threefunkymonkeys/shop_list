@@ -11,19 +11,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def add
-    @item = Item.create(:article_id => params[:article_id], :list_id => params[:list_id], :price => 0)
-    @list = @item.list
-    @articles = Article.for_list(@list).limit(10)
-
-    respond_to do |format|
-      format.js
-      format.html do
-        respond_with @list, :notice => "Item created successfully"
-      end
-    end
-  end
-
   #
   # Didn't aliased it to #add because I tried it and didn't worked, and I
   # don't really know what that method does.
