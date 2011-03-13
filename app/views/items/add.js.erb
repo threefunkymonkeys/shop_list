@@ -7,5 +7,5 @@
   $("#listItems #itemList").append("<%= sanitize_partial(render(:partial => "lists/item", :locals => { :item => @item })) -%>");
   list_item = $("#availableArticles #articleList #article_<%= @item.article_id %>");
 
-  $("#availableArticles #articleList").html("<%= sanitize_partial(render(:partial => "articles/article", :collection => @articles )) -%>");
+  $("#availableArticles #articleList").html("<%= sanitize_partial(render(:partial => "lists/article", :collection => @articles )) -%>");
 <% end %>
