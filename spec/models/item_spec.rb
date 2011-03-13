@@ -11,11 +11,6 @@ describe Item do
     item.should_not be_valid
   end
 
-  it "should have a price greater than zero" do
-    item = Summoner.summon :item, :price => 0
-    item.should_not be_valid
-  end
-
   it "should have a quantity greater than zero" do
     item = Summoner.summon :item, :quantity => 0
     item.should_not be_valid

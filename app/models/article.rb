@@ -1,4 +1,6 @@
 class Article < ActiveRecord::Base
+  belongs_to :user
+
   validates :name, :uniqueness => true, :presence => true
 
   scope :for_list, lambda { |list|

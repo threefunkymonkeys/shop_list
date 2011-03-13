@@ -30,6 +30,7 @@ class ItemsController < ApplicationController
   # And the logic seems quite simplistic :P
   def create
     @list = List.find(params[:item][:list_id])
+    params[:article] = params[:article].merge({:user_id => current_user.id})
 
     article_id = unless params[:article][:name].blank?
                    article = Article.find_by_name(params[:article][:name])
