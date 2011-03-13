@@ -1,5 +1,7 @@
 %li{ :id => "item_#{ item.id }"}
   .listItem
+    %label.itemQuantity{ :'data-type' => :item_quantity }
+      = item.quantity
     %label.articleName= item.article.name
     - if item.price > 0
       %small.counter= "$ #{item.price}"
@@ -13,9 +15,3 @@
             = f.submit
         %a.setPrice{ :href => "#" }=t('.set_new_price')
       =link_to 'x', list_item_path(@list, item), :method => :delete, :remote => true
-
-
-
-    -#.newPrice
-      -#%input{ :type => 'text', :name => "new_price[#{item.article.id}]"}
-      -#=link_to 'x', list_item_path(@list, item), :method => :delete, :remote => true
