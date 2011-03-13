@@ -30,9 +30,8 @@ class ItemsController < ApplicationController
   # And the logic seems quite simplistic :P
   def create
     @list = List.find(params[:item][:list_id])
-    params[:article] = params[:article].merge({:user_id => current_user.id})
 
-    article_id = unless params[:article][:name].blank?
+    article_id = unless !params[:article] or params[:article][:name].blank?
                    article = Article.find_by_name(params[:article][:name])
                    if article.nil?
                      Article.create!(params[:article]).id
@@ -49,12 +48,15 @@ class ItemsController < ApplicationController
       @item = Item.create(params[:item].merge({ :article_id => article_id }))
     else
       @item.quantity = @item.quantity + params[:item][:quantity].to_i
-      # TODO: Update the price? Raise an error?
-      # @item.price    = @item.price    + params[:item][:price].to_f
     end
 
     if @item.save
-      redirect_to(list_path(@list), :notice => t('controllers.items.item.created', :count => @item.quantity, :name => @item.article.name))
+      if request.xhr?
+        @articles = Article.for_list(@list)
+        render :create
+      else
+        redirect_to(list_path(@list), :notice => t('controllers.items.item.created', :count => @item.quantity, :name => @item.article.name))
+      end
     else
       @articles = Article.select([:id, :name]).order(:name)
       render :action => "new"

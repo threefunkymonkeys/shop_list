@@ -1,9 +1,10 @@
 %li.article{ :id => "article_#{article.id}", :class => cycle(:odd, :even) }
-  = form_tag(add_list_items_path(current_list), :method => :post, :remote => true) do 
+  = form_for(@item, :remote => true) do |f|
     .articleQuantity
-      %input{ :type => :text, :name => :quantity, :value => 1 }
+      = f.text_field :quantity, :value => 1, :size => 2
     .articleName
       = article.name
-      = hidden_field_tag :article_id, article.id
+      = f.hidden_field :article_id, :value => article.id
+      = f.hidden_field :list_id, :value => @list.id
     .actions
-      = submit_tag t('application.actions.add_to_list')
+      = f.submit t('application.actions.add_to_list')
