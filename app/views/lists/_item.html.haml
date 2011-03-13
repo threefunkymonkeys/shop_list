@@ -8,7 +8,6 @@
       =link_to 'x', list_item_path(@list, item), :method => :delete, :remote => true
     -else
       %span.newArticle
-        %label= t('.new_item')
         .priceForm
           =form_for item, :remote => true, :method => :post, :html => {:'data-type' => 'html', :id => 'priceForm'} do |f|
             = f.text_field :price
