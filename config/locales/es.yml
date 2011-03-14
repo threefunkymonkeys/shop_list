@@ -123,6 +123,7 @@ es:
     actions:
       register: Registrarse
       save: Guardar
+      cancel: Cancelar
       create: Crear
       back: Volver
       show: Mostrar

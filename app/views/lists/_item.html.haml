@@ -3,14 +3,12 @@
     %label.itemQuantity{ :'data-type' => :item_quantity }
       = item.quantity
     %label.articleName= item.article.name
-    - if item.price > 0
-      %small.counter= "$ #{item.price}"
-      =link_to 'x', list_item_path(@list, item), :method => :delete, :remote => true
-    -else
-      %span.newArticle
-        .priceForm
-          =form_for item, :remote => true, :method => :post, :html => {:'data-type' => 'html', :id => 'priceForm'} do |f|
-            = f.text_field :price
-            = f.submit
-        %a.setPrice{ :href => "#" }=t('.set_new_price')
-      =link_to 'x', list_item_path(@list, item), :method => :delete, :remote => true
+    %small.counter{ :id => "item_#{item.id}_price_label" }
+      = "$ #{item.price}"
+    %span.newArticle
+      .priceForm
+        %input{ :type => :text, :name => "item[price]", :id => "item_#{item.id}_price" }
+        %input{ :type => :button, :value => t('application.actions.save'), :'data-item' => item.id, :'data-list' => @list.id}
+        %a.cancelPriceUpdate{ :href => "#" }= t('application.actions.cancel')
+      %a.setPrice{ :href => "#" }=t('.set_new_price')
+    =link_to 'x', list_item_path(@list, item), :method => :delete, :remote => true

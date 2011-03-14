@@ -31,6 +31,8 @@ class ItemsController < ApplicationController
 
     @item = @list.items.find_by_article_id(article_id)
 
+    debugger
+
     if @item.nil?
       @item = Item.create(params[:item].merge({ :article_id => article_id }))
     else
@@ -58,13 +60,18 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update_attributes(params[:item])
+    @item.article.update_attribute(:last_price, @item.price)
 
     unless params[:article].nil? or params[:article][:id].nil?
       article = Article.find(params[:article][:id])
       article.update_attributes(params[:article])
     end
 
-    redirect_to list_path(@item.list)
+    if request.xhr?
+      render :json => @item.to_json
+    else
+      redirect_to list_path(@item.list)
+    end
   end
 
   def destroy
