@@ -31,8 +31,6 @@ class ItemsController < ApplicationController
 
     @item = @list.items.find_by_article_id(article_id)
 
-    debugger
-
     if @item.nil?
       @item = Item.create(params[:item].merge({ :article_id => article_id }))
     else
@@ -42,6 +40,7 @@ class ItemsController < ApplicationController
     if @item.save
       if request.xhr?
         @articles = Article.for_list(@list)
+        @new_item = Item.new
         render :create
       else
         redirect_to(list_path(@list), :notice => t('controllers.items.item.created', :count => @item.quantity, :name => @item.article.name))

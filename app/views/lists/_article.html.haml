@@ -1,5 +1,5 @@
 %li.article{ :id => "article_#{article.id}", :class => cycle(:odd, :even) }
-  = form_for(@item, :remote => true) do |f|
+  = form_for(new_item, :remote => true) do |f|
     .articleQuantity
       = f.text_field :quantity, :value => 1, :size => 2
     .articleName
