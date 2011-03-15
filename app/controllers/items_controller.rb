@@ -77,6 +77,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @list = @item.list
     @item.destroy
+    @new_item = Item.new
     @articles = Article.for_list(@list).limit(10)
 
     respond_to do |format|
