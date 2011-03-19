@@ -15,10 +15,12 @@ es:
       title: Changuito
       logout: Salir
   lists:
+    menu_name: Listas
     index:
       title: Tus listas
       new: Nueva lista
     new:
+      menu_name: Crear Lista
       title: Crear nueva lista
       buttons:
         create: Crear
@@ -31,6 +33,7 @@ es:
       edit: Editar
       title: Detalles de la lista
     edit:
+      menu_name: Editar Lista
       title: Editar «%{name}»
       articles: Tus Articulos
       items: Articulos en tu lista
@@ -69,10 +72,6 @@ es:
         destroy: Borrar
       note:
         destroy: Elegí esta opción si deseas borrar el artículo «%{name}» de la lista «%{list}». Esta opción no borrará el artículo de otras listas.
-
-  articles:
-    new:
-      title: Crear un nuevo artículo
 
   user_sessions:
     form:
@@ -113,6 +112,7 @@ es:
             name: 
               blank: Debes ingresar un nombre para tu lista
   application: 
+    name: Shop List
     messages: 
       forbidden: Debes haber ingresado para ver tus listas
       user_register_ok: Te has registrado correctamente
@@ -129,6 +129,7 @@ es:
       show: Mostrar
       search: Buscar
       login: Ingresar
+      logout: Salir
       add_to_list: Agregar
     titles:
       register: Registro
@@ -138,13 +139,17 @@ es:
       new_price: Nuevo precio
   are_you_sure: ¿Estás seguro?
   articles: 
+    menu_name: Artículos
     index: 
       new_article: Nuevo Artículo
       title: Artículos
     new: 
+      menu_name: Crear Artículo
       title: Nuevo Artículo
     show: 
       title: Detalles del artículo
+    edit:
+      menu_name: Editar Artículo
   authlogic: 
     attributes: 
       user_session: 
