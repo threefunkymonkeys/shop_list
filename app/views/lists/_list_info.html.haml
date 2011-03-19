@@ -1,0 +1,12 @@
+.listDetailContainer
+  .listName= list.name
+  .listDetails
+    .listDate= list.created_at.to_date
+    .listItemCount
+      ="#{list.items.count} item(s)"
+    .listActions
+      = link_to t('show'), list
+      = link_to t('edit'), edit_list_path(list)
+      = link_to t('destroy'), list, :confirm => t('are_you_sure'), :method => :delete
+
+
