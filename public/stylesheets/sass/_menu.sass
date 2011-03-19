@@ -1,0 +1,31 @@
+#menu
+  position: relative
+  width: 80%
+  display: inline-block
+  background-color: $menu_bg_color
+  text-align: left
+  height: 30px
+
+  .menuItem
+    display: inline-block
+    font-size: 0.8em
+    padding: 5px 4px 0px 4px
+    height: 23px
+    cursor: pointer
+    min-width: 70px
+    text-align: center
+
+    &.selected, &:hover
+      background-color: $menu_selected_bg_color
+      color: $menu_selected_color
+
+    &.selected
+      border-bottom: solid 2px $menu_highlite_color
+      font-weight: bold
+
+    a
+      position: relative
+      text-decoration: none
+      color: $menu_selected_color
+      padding-top: -5px
+
