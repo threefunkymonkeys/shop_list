@@ -1,8 +1,8 @@
-%h1= t '.title', :name => @list.name
-%p
-  = link_to t('application.actions.back'), lists_path
-  = link_to t('application.actions.show'), @list
-= render 'form'
+.pageTitle
+  %h3.inline.sectionTitle= t '.title', :name => @list.name
+
+#editListFormContainer
+  = render 'form'
 
 .hBox
   - unless @list.new_record?

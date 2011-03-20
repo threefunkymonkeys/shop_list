@@ -83,7 +83,6 @@ body
     
     .listHead
       padding-bottom: 10px
-      border-bottom: solid 1px #666
 
     .articleName, .lastPrice, .newPrice
       display: inline-block
@@ -114,21 +113,28 @@ body
     .title
       margin: 0px
       font-weight: bold
-      padding: 3px
-
 
   #listEditArticles, #listEditItems
-    padding: 5px 5px 5px 5px
-    width: 48%
-    padding: 5px
-    border: solid 1px black
-    //+border_radius_top(5px)
+    position: relative
+    width: 49%
+    border: solid 1px $body_font_color
+    overflow: hidden
+
+    .title
+      background-color: $body_font_color
+      color: $body_bg_color
+      padding: 5px
 
     #availableArticles, #listItems
       width: 100%
       min-width: 100%
 
+    #availableArticles
+      position: relative
+      float: right
+
     #listItems
+      padding-left: 1%
       .newArticle
         font-size: 0.6em
         display: inline-block
@@ -193,8 +199,11 @@ body
     #query
       width: 43%
 
-#newListFormContainer
+#newListFormContainer  
   padding-top: 2%
+
+#editListFormContainer
+  padding: 2% 0 2% 0
 
 h1,h2,h3,h4,h5,h6
   margin: 0px
