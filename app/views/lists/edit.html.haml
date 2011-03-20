@@ -9,12 +9,15 @@
     = render :partial => 'lists/items'
     = render :partial => 'lists/available_articles'
           
-= render :partial => 'articles/search_form'
+%div{ :style => "width: 99%; position: relative; display: block;" }
+  .inline.half
+  .inline.half
+    = render :partial => 'articles/search_form'
 
 %hr
 #newArticle
   = form_for(@article, :remote => true) do |af|
-    .field
+    .field.hBox
       .articleQuantity
         = af.text_field :quantity, :name => "item[quantity]", :value => 1, :size => 2, :class => :count
       = af.text_field :name, :placeholder => t('articles.new.title')
