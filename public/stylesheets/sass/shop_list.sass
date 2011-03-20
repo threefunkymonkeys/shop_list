@@ -6,6 +6,11 @@
   font-family: DomesticManners
   src: url(DomesticManners.ttf) format("truetype")
 
+a img
+  position: relative
+  border: none
+  top: 0px
+
 body
   //background-color: #E8E4DF
   text-align: center
@@ -243,6 +248,26 @@ h1,h2,h3,h4,h5,h6
 .sectionTitle
   width: 50%
 
+.actions
+  font-size: 0.7em
+  vertical-align: bottom
+  position: relative
+
+  *
+    position: relative
+    top: 0px
+    left: 0px
+    text-decoration: none
+
+  img
+    top: 5px !important
+
+
+.odd
+  background-color: $list_odd_bg_color
+
+.even
+  background-color: $list_even_bg_color
 
 #listsContainer
   padding-top: 10px
@@ -268,7 +293,13 @@ h1,h2,h3,h4,h5,h6
           display: inline-block
           font-size: 0.7em
 
+        .listDate
+          width: 15%
+
         .listActions
-          width: 80%
+          width: 73%
           text-align: right
+
+        .listItemCount
+          font-weight: bold
 

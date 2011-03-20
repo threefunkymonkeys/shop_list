@@ -1,8 +1,11 @@
-%h3.inline.sectionTitle= t('.title')
-%span= link_to t('.new'), new_list_path
+.pageTitle
+  %h3.inline.sectionTitle= t('.title')
+  %span.actions
+    = link_to image_tag('add.png', :alt => t('.new'), :title => t('.new')), new_list_path
+    = link_to t('.new'), new_list_path
 
 #listsContainer
-  %table#listsList
+  %table#listsList{ :cellspacing => 0 }
     %tbody
       - for list in @lists
         %tr{ :class => cycle(:odd, :even) }
