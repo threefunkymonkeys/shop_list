@@ -1,0 +1,8 @@
+#listsMenu.menuItem{ :class => select_for_controller(:lists, :index) }
+  =link_to t('lists.menu_name'), lists_path
+#articlesMenu.menuItem{ :class => select_for_controller(:articles, :index) }
+  =link_to t('articles.menu_name'), articles_path
+
+-if show_current_menu
+  #currentMenu.menuItem.selected
+    =current_menu_title

@@ -1,16 +1,13 @@
-%h1= t('.title')
-%p= link_to t('.new'), new_list_path
+.pageTitle
+  %h3.inline.sectionTitle= t('.title')
+  %span#newList.actions
+    = link_to image_tag('add.png', :alt => t('.new'), :title => t('.new')), new_list_path
+    = link_to t('.new'), new_list_path
 
-%table
-  %thead
-    %tr
-      %th= List.human_attribute_name :name
-      %th{:colspan => 3}= t 'actions'
-  
-  %tbody
-    - for list in @lists
-      %tr{ :class => cycle(:odd, :even) }
-        %td= list.name
-        %td.action= link_to t('show'), list
-        %td.action= link_to t('edit'), edit_list_path(list)
-        %td.action= link_to t('destroy'), list, :confirm => t('are_you_sure'), :method => :delete
+#listsContainer
+  %table#listsList{ :cellspacing => 0 }
+    %tbody
+      - for list in @lists
+        %tr{ :class => cycle(:odd, :even) }
+          %td.listInfo
+            =render :partial => "lists/list_info", :locals => {:list => list}
