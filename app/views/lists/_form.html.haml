@@ -1,10 +1,11 @@
-#listEditForm
+#listForm
   = form_for(@list, :html => {:class => "vBox"}) do |f|
     = render :partial => 'lists/errors'
     
     .field
       = f.label :name, :class => "title"
       %br
-      .actions
-        = f.text_field :name, :id => :name
+      = f.text_field :name, :id => :name
+      %span.actions
         = f.submit t('application.actions.save')
+        = link_to t('application.actions.cancel'), root_path, :class => "button cancel"
