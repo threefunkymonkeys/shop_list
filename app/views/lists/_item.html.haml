@@ -4,7 +4,7 @@
       = item.quantity
     %span.articleName= item.article.name
     %small.counter{ :id => "item_#{item.id}_price_label" }
-      = "$ #{item.article.last_price}"
+      = "$ #{item.article.last_price.to_f / 100}"
     %span.newArticle
       .priceForm
         %input{ :type => :text, :name => "item[price]", :id => "item_#{item.id}_price" }

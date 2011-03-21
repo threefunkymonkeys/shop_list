@@ -58,6 +58,11 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
+
+    if params[:item][:price]
+      params[:item][:price] = (params[:item][:price].to_f * 100).to_i
+    end
+
     @item.update_attributes(params[:item])
     @item.article.update_attribute(:last_price, @item.price)
 

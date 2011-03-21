@@ -25,7 +25,7 @@ $(document).ready(function() {
         success: function(data) {
           var listItem = $("li#item_" + item_id);
           listItem.find(".priceForm").hide();
-          $("#item_" + item_id + "_price_label").html("$ " + data.item.price);
+          $("#item_" + item_id + "_price_label").html("$ " + (parseFloat(data.item.price) / 100) );
         }
       });
 
