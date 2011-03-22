@@ -1,1 +1,1 @@
-$("ul#articleList").html("<%= sanitize_partial(render(:partial => "articles/article", :collection => @articles)) -%>");
+$("#availableArticles #articleList").html("<%= sanitize_partial(render(:partial => "lists/article", :collection => @articles, :locals => {:new_item => @new_item})) -%>");

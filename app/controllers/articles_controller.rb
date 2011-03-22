@@ -88,6 +88,8 @@ class ArticlesController < ApplicationController
 
   def search
     @articles = Article.where("name LIKE ?", "%#{params[:query]}%")
+    @new_item = Item.new
+    @list = current_list
   end
 
 end
