@@ -3,10 +3,10 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   # GET /articles.xml
-  def index
+  def index 
     @articles = Article.all
 
-    respond_to do |format|
+    respond_ to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @articles }
     end
@@ -37,11 +37,11 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
-  end
+  end 
 
   # POST /articles
   # POST /articles.xml
-  def create
+  def create 
     @article = Article.new(params[:article])
 
     respond_to do |format|
@@ -87,9 +87,9 @@ class ArticlesController < ApplicationController
   end
 
   def search
-    @articles = Article.where("name LIKE ?", "%#{params[:query]}%")
+    @list = List.find(params[:list_id])
+    @articles = Article.for_list(@list).where("name LIKE ?", "%#{params[:query]}%")
     @new_item = Item.new
-    @list = current_list
   end
 
 end

@@ -131,6 +131,7 @@ es:
       login: Ingresar
       logout: Salir
       add_to_list: Agregar
+      view_all: Ver Todos
     titles:
       register: Registro
       confirm_password: Confirmar contraseña
