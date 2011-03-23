@@ -4,9 +4,9 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.xml
   def index 
-    @articles = Article.all
+    @articles = current_user.articles
 
-    respond_ to do |format|
+    respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @articles }
     end
