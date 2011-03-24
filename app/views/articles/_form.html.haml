@@ -1,15 +1,13 @@
-= form_for(@article) do |f|
-  - if @article.errors.any?
-    #errorExplanation
-      %h2= "#{pluralize(@article.errors.count, 'error')} prohibited this user from being saved:"
-      %ul
-      - @article.errors.full_messages.each do |msg|
-        %li= msg
-  
-  .field
-    = f.label :name
-    %br
-    = f.text_field :name
-
-  .actions
-    = f.submit
+#articleForm
+  = form_for(@article) do |f|
+    = render :partial => 'shared/errors', :locals => { :object => @article }
+    
+    .field
+      = f.label :name, :class => "title"
+      %br
+      = f.text_field :name, :id => :name
+      $ 
+      = f.text_field :last_price, :id => :last_price, :class => :price
+      %span.actions
+        = f.submit t('application.actions.save')
+        = link_to t('application.actions.cancel'), root_path, :class => "button cancel"

@@ -1,3 +1,5 @@
-%h1= t '.title'
-%p= link_to t('back'), articles_path
-= render 'form'
+.pageTitle
+  %h3.inline.sectionTitle= t('.title')
+
+#newArticleFormContainer
+  = render 'form'

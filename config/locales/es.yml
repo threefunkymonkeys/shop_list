@@ -87,7 +87,7 @@ es:
         article_id: "Artículo"
         price: Precio
         quantity: Cantidad
-      list: 
+      article: 
         name: Nombre
       user: 
         email: "Correo electrónico"

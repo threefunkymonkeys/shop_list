@@ -1,6 +1,6 @@
 #listForm
   = form_for(@list, :html => {:class => "vBox"}) do |f|
-    = render :partial => 'lists/errors'
+    = render :partial => 'shared/errors', :locals => { :object => @list }
     
     .field
       = f.label :name, :class => "title"
