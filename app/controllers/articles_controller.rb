@@ -17,8 +17,6 @@ class ArticlesController < ApplicationController
   def show
     @article = current_user.articles.find(params[:id]) rescue nil
 
-
-
     respond_to do |format|
       format.html do
         if @article.nil?
