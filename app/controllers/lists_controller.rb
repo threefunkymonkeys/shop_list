@@ -91,7 +91,10 @@ class ListsController < ApplicationController
     @list.destroy
 
     respond_to do |format|
-      format.html { redirect_to(lists_url) }
+      format.html do
+        flash[:notice] = t('application.messages.list_destroyed_ok')
+        redirect_to(lists_url)
+      end
       format.xml  { head :ok }
       format.mobile { redirect_to(lists_url) }
     end
@@ -105,7 +108,7 @@ class ListsController < ApplicationController
   
   private
   def set_current_list
-    self.current_list = List.find(params[:id]) if self.current_list.nil? or self.current_list.id != params[:id]
+    self.current_list = current_user.lists.find(params[:id]) rescue nil if self.current_list.nil? or self.current_list.id != params[:id] 
     @list = self.current_list
   end
 end

@@ -17,3 +17,10 @@ When /^I click the remove action for the "([^"]*)" article"$/ do |name|
 
   click_link_or_button "remove_article_#{article.id}"
 end
+
+When /^I click the remove action for the "([^"]*)" list$/ do |name|
+  list = List.find_by_name(name)
+  list.should_not be_nil
+
+  click_link_or_button "remove_list_#{list.id}"
+end

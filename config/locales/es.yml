@@ -118,6 +118,7 @@ es:
       user_register_ok: Te has registrado correctamente
       list_updated_ok: La lista se actualizó correctamente
       list_created_ok: ¡Lista creada!
+      list_destroyed_ok: La lista se ha eliminado
       query_placeholder: Buscar artículo
       need_logout: Necesitás salir para realizar esta acción
       article_not_found: Artículo no encontrado

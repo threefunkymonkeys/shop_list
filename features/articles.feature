@@ -89,7 +89,7 @@ I want to be able to manage only my articles
 
      And I am logged in as "me@test.com" with password "secret"
     When I go to the articles page
-     And I click the remove action for the "Coffee" article"
-     And I should see the "Article destroyed OK" message
+     And I click the remove action for the "Coffee" article
+    Then I should see the "Article destroyed OK" message
      And I should be on the articles page
 

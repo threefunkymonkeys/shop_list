@@ -70,3 +70,22 @@ I want to users to authenticate for create lists
     Then I should be on the lists page
      And I should see the "Forbidden" message
 
+
+  Scenario: Users should delete their lists
+    Given the following users
+      |email         |password    |
+      |ed@test.com   |secret      |
+      |jeff@test.com |notsosecret |
+
+      And the following lists from the users
+        |name        |user          |
+        |Ed's List   |ed@test.com   |
+        |Jeff's List |jeff@test.com |
+
+     And I am logged in as "ed@test.com" with password "secret"
+    When I go to the lists page
+     And I click the remove action for the "Ed's List" list
+    Then I should see the "List destroyed OK" message
+     And I should be on the lists page
+
+
