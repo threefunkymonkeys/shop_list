@@ -29,6 +29,10 @@ module NavigationHelpers
       noun = $1.to_s.downcase.pluralize
       "/#{noun}/new"
 
+    when /"(.+)" article page/
+      article = Article.find_by_name($1)
+      article_path(article)
+
     when /the (.+) page/
       "/#{$1}"
     # Add more mappings here.

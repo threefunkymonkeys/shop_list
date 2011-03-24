@@ -15,10 +15,18 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.xml
   def show
-    @article = Article.find(params[:id])
+    @article = current_user.articles.find(params[:id]) rescue nil
+
+
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html do
+        if @article.nil?
+          flash[:error] = t('application.messages.article_not_found') 
+          redirect_to articles_path
+        end
+
+      end
       format.xml  { render :xml => @article }
     end
   end

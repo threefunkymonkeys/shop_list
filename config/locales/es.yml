@@ -120,6 +120,7 @@ es:
       list_created_ok: ¡Lista creada!
       query_placeholder: Buscar artículo
       need_logout: Necesitás salir para realizar esta acción
+      article_not_found: Artículo no encontrado
     actions:
       register: Registrarse
       save: Guardar
