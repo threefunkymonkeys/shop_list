@@ -124,6 +124,7 @@ es:
       article_not_found: Artículo no encontrado
       article_updated_ok: El artículo se actualizó correctamente
       article_destroyed_ok: El artículo se ha eliminado
+      no_ie: No nos gusta tu navegador. Nos hace trabajar mucho, hace que nuestro trabajo se vea mal y que tu experiencia de usuario sea muy mala.<br/>Intentá con un mejor navegador. Podes usar <a href="http://getfirefox.com">Mozilla Firefox</a> o <a href="http://google.com/chrome">Google Chrome</a><br>Son Gratis, seguros y muy faciles de instalar y de usar!!!
     actions:
       register: Registrarse
       save: Guardar

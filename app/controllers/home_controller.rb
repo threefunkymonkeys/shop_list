@@ -5,4 +5,8 @@ class HomeController < ApplicationController
     @user_session = UserSession.new
   end
 
+  def no_ie
+    @message = t('application.messages.no_ie')
+  end
+
 end
