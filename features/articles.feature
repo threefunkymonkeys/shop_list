@@ -3,7 +3,7 @@ In order to protect my articles
 As a registered user
 I want to be able to manage only my articles
 
-  Scenario: Article listing
+  Scenario: List own articles
     Given the following users
       | email          | password |
       | me@test.com    | secret   |
@@ -12,11 +12,13 @@ I want to be able to manage only my articles
      And the following articles
        | name    | owner          |
        | Coffee  | me@test.com    |
+       | Tea     | me@test.com    |
        | Cookies | other@test.com |
 
      And I am logged in as "me@test.com" with password "secret"
     When I go to the articles page
     Then I should see "Coffe"
+     And I should see "Coffe"
      And I should not see "Cookies"
 
 
@@ -73,4 +75,21 @@ I want to be able to manage only my articles
      And I should see the "Article updated OK" message
      And I should be on the articles page
 
+
+  Scenario: Should delete own articles
+    Given the following users
+      | email          | password |
+      | me@test.com    | secret   |
+      | other@test.com | secret   |
+    
+     And the following articles
+       | name    | owner          |
+       | Coffee  | me@test.com    |
+       | Cookies | other@test.com |
+
+     And I am logged in as "me@test.com" with password "secret"
+    When I go to the articles page
+     And I click the remove action for the "Coffee" article"
+     And I should see the "Article destroyed OK" message
+     And I should be on the articles page
 

@@ -10,3 +10,10 @@ When /^I click the "([^"]*)" action$/ do |action|
 
   click_link_or_button locale_action
 end
+
+When /^I click the remove action for the "([^"]*)" article"$/ do |name|
+  article = Article.find_by_name name
+  article.should_not be_nil
+
+  click_link_or_button "remove_article_#{article.id}"
+end

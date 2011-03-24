@@ -88,11 +88,15 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.xml
   def destroy
-    @article = Article.find(params[:id])
+    @article = current_user.articles.find(params[:id])
     @article.destroy
+    
 
     respond_to do |format|
-      format.html { redirect_to(articles_url) }
+      format.html do
+        flash[:notice] = t('application.messages.article_destroyed_ok')
+        redirect_to(articles_url)
+      end
       format.xml  { head :ok }
     end
   end
