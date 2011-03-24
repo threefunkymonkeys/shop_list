@@ -42,7 +42,12 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
-    @article = Article.find(params[:id])
+    @article = current_user.articles.find(params[:id]) rescue nil
+   
+    if @article.nil?
+      flash[:error] = t('application.messages.article_not_found')
+      redirect_to articles_path
+    end
   end 
 
   # POST /articles
@@ -71,7 +76,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
-        format.html { redirect_to(@article, :notice => 'Article was successfully updated.') }
+        format.html { redirect_to(articles_path, :notice => t('application.messages.article_updated_ok')) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

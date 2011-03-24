@@ -121,6 +121,7 @@ es:
       query_placeholder: Buscar artículo
       need_logout: Necesitás salir para realizar esta acción
       article_not_found: Artículo no encontrado
+      article_updated_ok: El artículo se actualizó correctamente
     actions:
       register: Registrarse
       save: Guardar

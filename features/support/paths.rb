@@ -20,6 +20,11 @@ module NavigationHelpers
       list.should_not be_nil
       edit_list_path(list)
 
+    when /the article named "(.+)" edit page/
+      article = Article.find_by_name($1)
+      article.should_not be_nil
+      edit_article_path(article)
+
     when /the (.+) edit page/
       model = $1.to_s.capitalize.constantize
       record = model.last

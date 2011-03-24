@@ -27,7 +27,12 @@ end
 
 When /^(?:|I )press "([^"]*)"(?: within "([^"]*)")?$/ do |button, selector|
   with_scope(selector) do
-    click_button(button)
+    begin
+      click_button(button)
+    rescue => Capybara::ElementNotFound
+      i18n_button = I18n.translate("application.actions.#{button.downcase.gsub(/ /,"_")}")
+      click_button i18n_button
+    end
   end
 end
 
