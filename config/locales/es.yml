@@ -143,8 +143,9 @@ es:
   articles: 
     menu_name: Artículos
     index: 
-      new_article: Nuevo Artículo
+      #new_article: Nuevo Artículo
       title: Artículos
+      new: Nuevo Articulo
     new: 
       menu_name: Crear Artículo
       title: Nuevo Artículo
