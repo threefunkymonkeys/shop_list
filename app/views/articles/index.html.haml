@@ -5,7 +5,7 @@
     = link_to t('.new'), new_article_path
 
 #articlesContainer  
-  %table#articlesList{ :cellspacing => 0 }
+  %table#articlesList.appList{ :cellspacing => 0 }
     %tbody
       - for article in @articles
         %tr{ :class => cycle(:odd, :even) }

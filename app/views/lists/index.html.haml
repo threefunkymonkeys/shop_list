@@ -5,7 +5,7 @@
     = link_to t('.new'), new_list_path
 
 #listsContainer
-  %table#listsList{ :cellspacing => 0 }
+  %table#listsList.appList{ :cellspacing => 0 }
     %tbody
       - for list in @lists
         %tr{ :class => cycle(:odd, :even) }

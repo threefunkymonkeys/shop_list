@@ -42,7 +42,6 @@ body
     color: $button_font_color
     border: solid 1px $button_bg_color
     cursor: pointer
-    //+border_radius(5px)
 
   input[type='text'], input[type='password'], input[type='email']
     background-color: white
@@ -60,6 +59,7 @@ body
     display: inline-block
     text-align: left
     padding: 1%
+    +border-radius-bottom($border_radius)
 
 
   #homeContainer
@@ -323,4 +323,5 @@ h1,h2,h3,h4,h5,h6
   background-color: $page_title_bg_color
   color: $page_title_color
   padding: 10px
+  +border-radius-top($border_radius)
 
