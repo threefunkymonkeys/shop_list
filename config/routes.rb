@@ -10,7 +10,6 @@ ShopList::Application.routes.draw do
   resources :users
   match 'register' => 'users#new', :as => :register
 
-  #get "items/add"
   resources :items
 
   resources :articles do
