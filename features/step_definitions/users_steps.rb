@@ -59,3 +59,7 @@ Then /^I should be able to authenticate with email "([^"]*)" and password "([^"]
   user.should_not be_nil
   user.should be_valid_password password
 end
+
+Then /^the response should be a page not found$/ do
+  page.driver.status_code.should == 404
+end

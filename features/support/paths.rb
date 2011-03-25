@@ -25,6 +25,11 @@ module NavigationHelpers
       article.should_not be_nil
       edit_article_path(article)
 
+    when /the user "(.+)" edit page/
+      user = User.find_by_email($1)
+      user.should_not be_nil
+      edit_user_path(user)
+
     when /the (.+) edit page/
       model = $1.to_s.capitalize.constantize
       record = model.last

@@ -64,6 +64,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def require_admin_or_owner
+    render :file => "public/404.html", :status => :not_found if current_user.nil? or (!current_user.admin? and (current_user.id != params[:id].to_i))
+  end
+
   def require_no_user
     if current_user
       flash[:error] = t('application.messages.need_logout')

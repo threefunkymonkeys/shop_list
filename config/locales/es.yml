@@ -111,6 +111,10 @@ es:
           attributes: 
             name: 
               blank: Debes ingresar un nombre para tu lista
+  users:
+    edit:
+      menu_name: Editar Usuario
+      title: Editar Datos Personales
   application: 
     name: Shop List
     messages: 
@@ -124,6 +128,7 @@ es:
       article_not_found: Artículo no encontrado
       article_updated_ok: El artículo se actualizó correctamente
       article_destroyed_ok: El artículo se ha eliminado
+      password_changed_ok: Tu contraseña ha sido actualizada
     actions:
       register: Registrarse
       save: Guardar

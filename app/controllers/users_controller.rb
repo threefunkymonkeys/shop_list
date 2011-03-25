@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
-  before_filter :require_user, :only => [:show, :edit, :update]
+  before_filter :require_user, :only => [:index, :show, :edit, :update]
+  before_filter :require_admin_or_owner
   
+  def index
+    @users = User.where("id <> ?", current_user.id)
+  end
+
   def new
     @user = User.new
   end
@@ -28,8 +33,8 @@ class UsersController < ApplicationController
   def update
     @user = @current_user # makes our views "cleaner" and more consistent
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Account updated!"
-      redirect_to account_url
+      flash[:notice] = t('application.messages.password_changed_ok')
+      redirect_to lists_path
     else
       render :action => :edit
     end

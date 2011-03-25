@@ -58,7 +58,12 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
-  fill_in(field, :with => value)
+  begin 
+    fill_in(field, :with => value)
+  rescue => Capybara::ElementNotFound
+    complex_field = field.downcase.gsub(/ /, "_")
+    fill_in(complex_field, :with => value)
+  end
 end
 
 When /^(?:|I )fill in "([^"]*)" for "([^"]*)"$/ do |value, field|
