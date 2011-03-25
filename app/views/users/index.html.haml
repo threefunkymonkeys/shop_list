@@ -1,0 +1,14 @@
+.pageTitle
+  %h3.inline.sectionTitle= t('.title')
+  %span#newList.actions
+    = link_to image_tag('add.png', :alt => t('.new'), :title => t('.new')), new_user_path
+    = link_to t('.new'), new_user_path
+
+#usersContainer  
+  %table#usersList.appList{ :cellspacing => 0 }
+    %tbody
+      - for user in @users
+        %tr{ :class => cycle(:odd, :even) }
+          %td.wide= user.email
+          %td.action= link_to image_tag('edit.png', :alt => t('edit'), :title => t('edit')), edit_user_path(user)
+          %td.action= link_to image_tag('delete.png', :alt => t('destroy'), :title => t('destroy')), user, :confirm => t('are_you_sure'), :method => :delete, :id => "remove_user_#{user.id}"

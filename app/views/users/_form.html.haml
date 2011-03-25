@@ -1,0 +1,15 @@
+= form_for @user do |f| 
+  =render :partial => "shared/errors", :locals => { :object => @user }
+
+  %div
+    %span= User.human_attribute_name(:email)
+    = f.text_field :email, :type => :email, :id => :email
+
+  %div
+    %span= User.human_attribute_name(:password)
+    = f.password_field :password, :id => :password
+
+  %div
+    %span= t('application.titles.confirm_password')
+    = f.password_field :password_confirmation, :id => :password_confirmation
+

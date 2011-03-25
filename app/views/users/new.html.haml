@@ -1,22 +1,5 @@
 %h1= t('application.titles.register')
 
-= form_for @user do |f| 
-  - if @user.errors.any?
-    .errors
-      - @user.errors.full_messages.each do |msg|
-        %li= msg
-
-  %div
-    %span= User.human_attribute_name(:email)
-    = f.text_field :email, :type => :email, :id => :email
-
-  %div
-    %span= User.human_attribute_name(:password)
-    = f.password_field :password, :id => :password
-
-  %div
-    %span= t('application.titles.confirm_password')
-    = f.password_field :password_confirmation, :id => :password_confirmation
-
+= render :partial => 'users/form'
   .buttons
     %button{ :type => :submit }= t('application.actions.register')

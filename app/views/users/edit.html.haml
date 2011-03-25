@@ -1,2 +1,19 @@
-%h1 Users#edit
-%p Find me in app/views/users/edit.html.haml
+.pageTitle
+  %h3.inline.sectionTitle= t '.title'
+
+#editUserFormContainer.formContainer
+  = form_for @user do |f| 
+    =render :partial => "shared/errors", :locals => { :object => @user }
+
+    .field
+      = f.label :password, :class => "title"
+      %br
+      = f.password_field :password, :id => :password
+
+    .field
+      = f.label :password_confirmation, t('application.titles.confirm_password'), :class => "title"
+      %br
+      = f.password_field :password_confirmation, :id => :password_confirmation
+
+    .buttons
+      %button{ :type => :submit }= t('application.actions.save')
