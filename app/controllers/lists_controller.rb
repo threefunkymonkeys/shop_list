@@ -105,7 +105,15 @@ class ListsController < ApplicationController
     @list.items.destroy_all
     redirect_to @list, :notice => t('controllers.lists.list.emptied', :name => @list.name)
   end
-  
+
+  def clone
+    list = List.find(params[:id])
+    @list = list.deep_clone
+    current_list = @list
+    flash[:notice] = t('application.messages.list_cloned_ok')
+    redirect_to edit_list_path(@list)
+  end
+
   private
   def set_current_list
     self.current_list = current_user.lists.find(params[:id]) rescue nil if self.current_list.nil? or self.current_list.id != params[:id] 

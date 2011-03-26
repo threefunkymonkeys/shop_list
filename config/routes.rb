@@ -16,10 +16,12 @@ ShopList::Application.routes.draw do
     collection do
       get 'search'
     end
-  end
+  end 
   resources :lists do
+    member do
+      post 'clone'
+    end
     delete 'items', :on => :member, :to => 'Lists#empty', :as => :empty
-
     resources :items 
   end
 
