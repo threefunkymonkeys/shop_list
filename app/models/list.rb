@@ -23,4 +23,14 @@ class List < ActiveRecord::Base
     item.save
     items << item
   end
+
+  def deep_clone
+    list = self.clone
+    list.save!
+    self.items.each do |item|
+      list.items << Item.new(item.attributes)
+    end
+
+    list
+  end
 end
