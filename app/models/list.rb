@@ -26,8 +26,8 @@ class List < ActiveRecord::Base
 
   def deep_clone
     list = self.clone
-    count = List.count(:all, :conditions => ['name LIKE "? (%)"', self.name])
-    list.name = "#{list.name} (#{count + 1})"
+    count = List.count(:all, :conditions => ['name LIKE ?', "#{self.name} (%)"])
+    list.name = "#{self.name} (#{count + 1})"
     list.save!
     self.items.each do |item|
       list.items << Item.new(item.attributes)

@@ -17,3 +17,10 @@ Given /^I have a list named "([^"]*)"$/ do |list_name|
   list.should be_valid
   list.should_not be_new_record
 end
+
+
+When /^I click the clone action for the list named "([^"]*)"$/ do |list_name|
+  list = List.find_by_name(list_name)
+  list.should_not be_nil
+  click_link_or_button "clone_list_#{list.id}"
+end
