@@ -1,0 +1,355 @@
+#menu {
+  position: relative;
+  width: 78%;
+  display: inline-block;
+  background-color: #bb8261;
+  text-align: left;
+  height: 30px;
+  padding: 0px 1% 0px 1%;
+  -moz-border-radius-topright: 7px;
+  -moz-border-radius-topleft: 7px;
+  -webkit-border-top-right-radius: 7px;
+  -webkit-border-top-left-radius: 7px;
+  -webkit-background-clip: padding-box; }
+  #menu .menuItem {
+    display: inline-block;
+    font-size: 0.8em;
+    padding: 5px 4px 0px 4px;
+    height: 23px;
+    cursor: pointer;
+    min-width: 70px;
+    text-align: center; }
+    #menu .menuItem.selected, #menu .menuItem:hover {
+      background-color: #ccc1a3;
+      color: #5a3320; }
+    #menu .menuItem.selected {
+      border-bottom: solid 2px #5a3320;
+      font-weight: bold; }
+    #menu .menuItem a {
+      position: relative;
+      text-decoration: none;
+      color: #5a3320;
+      padding-top: -5px;
+      font-weight: bold; }
+
+#newList.actions a {
+  color: green;
+  font-weight: bold; }
+
+#listsContainer, #articlesContainer {
+  padding-top: 10px;
+  width: 100%; }
+  #listsContainer #listsList, #listsContainer #articlesList, #articlesContainer #listsList, #articlesContainer #articlesList {
+    width: 100%; }
+    #listsContainer #listsList td.wide, #listsContainer #articlesList td.wide, #articlesContainer #listsList td.wide, #articlesContainer #articlesList td.wide {
+      width: 100%; }
+    #listsContainer #listsList .listInfo, #listsContainer #articlesList .listInfo, #articlesContainer #listsList .listInfo, #articlesContainer #articlesList .listInfo {
+      width: 100%;
+      height: 4em;
+      color: #4e2c1b;
+      padding: 0.5em 0 0.5em 0; }
+      #listsContainer #listsList .listInfo .listDetailContainer, #listsContainer #articlesList .listInfo .listDetailContainer, #articlesContainer #listsList .listInfo .listDetailContainer, #articlesContainer #articlesList .listInfo .listDetailContainer {
+        width: 100%;
+        padding-left: 25px; }
+        #listsContainer #listsList .listInfo .listDetailContainer .listName, #listsContainer #articlesList .listInfo .listDetailContainer .listName, #articlesContainer #listsList .listInfo .listDetailContainer .listName, #articlesContainer #articlesList .listInfo .listDetailContainer .listName {
+          height: 1.5em;
+          display: block;
+          clear: both;
+          font-size: 1.3em; }
+        #listsContainer #listsList .listInfo .listDetailContainer .listDate, #listsContainer #listsList .listInfo .listDetailContainer .listActions, #listsContainer #listsList .listInfo .listDetailContainer .listItemCount, #listsContainer #articlesList .listInfo .listDetailContainer .listDate, #listsContainer #articlesList .listInfo .listDetailContainer .listActions, #listsContainer #articlesList .listInfo .listDetailContainer .listItemCount, #articlesContainer #listsList .listInfo .listDetailContainer .listDate, #articlesContainer #listsList .listInfo .listDetailContainer .listActions, #articlesContainer #listsList .listInfo .listDetailContainer .listItemCount, #articlesContainer #articlesList .listInfo .listDetailContainer .listDate, #articlesContainer #articlesList .listInfo .listDetailContainer .listActions, #articlesContainer #articlesList .listInfo .listDetailContainer .listItemCount {
+          display: inline-block;
+          font-size: 0.7em; }
+        #listsContainer #listsList .listInfo .listDetailContainer .listDate, #listsContainer #articlesList .listInfo .listDetailContainer .listDate, #articlesContainer #listsList .listInfo .listDetailContainer .listDate, #articlesContainer #articlesList .listInfo .listDetailContainer .listDate {
+          width: 15%; }
+        #listsContainer #listsList .listInfo .listDetailContainer .listActions, #listsContainer #articlesList .listInfo .listDetailContainer .listActions, #articlesContainer #listsList .listInfo .listDetailContainer .listActions, #articlesContainer #articlesList .listInfo .listDetailContainer .listActions {
+          width: 73%;
+          text-align: right; }
+        #listsContainer #listsList .listInfo .listDetailContainer .listItemCount, #listsContainer #articlesList .listInfo .listDetailContainer .listItemCount, #articlesContainer #listsList .listInfo .listDetailContainer .listItemCount, #articlesContainer #articlesList .listInfo .listDetailContainer .listItemCount {
+          font-weight: bold; }
+  #listsContainer #articlesList td, #articlesContainer #articlesList td {
+    padding: 1em; }
+
+.appList {
+  -moz-border-radius-bottomright: 7px;
+  -moz-border-radius-bottomleft: 7px;
+  -webkit-border-bottom-right-radius: 7px;
+  -webkit-border-bottom-left-radius: 7px;
+  -webkit-background-clip: padding-box; }
+
+.cloneButton {
+  position: relative;
+  background: url("/images/copy.png") repeat scroll 0 0 transparent !important;
+  min-width: 24px;
+  min-height: 24px;
+  width: 24px;
+  height: 24px;
+  border: none !important;
+  cursor: pointer !important; }
+
+.listCloneForm {
+  position: relative;
+  display: inline-block;
+  padding: 0px;
+  margin: 0px;
+  vertical-align: top; }
+
+@font-face {
+  font-family: DomesticManners;
+  src: url(DomesticManners.ttf) format("truetype"); }
+
+a img {
+  position: relative;
+  border: none;
+  top: 0px; }
+
+.cancel {
+  background-color: #b10002 !important;
+  border-color: #b10002 !important; }
+
+body {
+  background-color: #e8e4df;
+  color: #5a3320;
+  text-align: center;
+  height: 100%;
+  font-family: Verdana, Tahoma, Arial;
+  font-size: 12pt; }
+  body a.button {
+    padding: 5px 7px 6px 7px !important;
+    text-decoration: none; }
+  body .field label {
+    font-size: 1.2em; }
+  body input[type='submit'], body input[type='button'], body button, body a.button {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+    background-color: #889854;
+    color: #f6f6f6;
+    border: solid 1px #889854;
+    cursor: pointer; }
+  body input[type='text'], body input[type='password'], body input[type='email'] {
+    background-color: white;
+    line-height: 17px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: solid 1px #5a3320;
+    width: 49%; }
+  body #content {
+    width: 78%;
+    height: 100%;
+    background-color: white;
+    display: inline-block;
+    text-align: left;
+    padding: 1%;
+    -moz-border-radius-bottomright: 7px;
+    -moz-border-radius-bottomleft: 7px;
+    -webkit-border-bottom-right-radius: 7px;
+    -webkit-border-bottom-left-radius: 7px;
+    -webkit-background-clip: padding-box; }
+  body #homeContainer {
+    vertical-align: top; }
+    body #homeContainer h1 {
+      font-family: "DomesticManners";
+      font-size: 60pt;
+      text-align: center; }
+    body #homeContainer #loginForm, body #homeContainer #picture {
+      display: inline-block;
+      text-align: center; }
+    body #homeContainer #picture img {
+      width: 168px;
+      height: 209px; }
+  body #itemsList {
+    position: relative;
+    padding: 5px; }
+    body #itemsList .listHead {
+      padding-bottom: 10px; }
+    body #itemsList .articleName, body #itemsList .lastPrice, body #itemsList .newPrice {
+      display: inline-block;
+      font-weight: bold; }
+    body #itemsList .articleName {
+      width: 50%; }
+    body #itemsList .lastPrice {
+      width: 20%; }
+    body #itemsList .newPrice {
+      width: 25%; }
+      body #itemsList .newPrice input[type='text'] {
+        width: 85%; }
+    body #itemsList #items {
+      width: 100%;
+      display: inline-block;
+      min-height: 10px;
+      height: auto; }
+      body #itemsList #items .listItem {
+        padding: 5px 0px 5px 0px; }
+  body #listForm .title, body #articleForm .title, body #listEditArticles .title, body #listEditItems .title, body .formContainer .title {
+    margin: 0px;
+    font-weight: bold; }
+  body #articleForm .price {
+    width: 3.2em;
+    text-align: right; }
+  body #listEditArticles, body #listEditItems {
+    position: relative;
+    width: 49%;
+    border: solid 1px #5a3320;
+    overflow: hidden; }
+    body #listEditArticles .title, body #listEditItems .title {
+      background-color: #5a3320;
+      color: #e8e4df;
+      padding: 5px; }
+    body #listEditArticles #availableArticles, body #listEditArticles #listItems, body #listEditItems #availableArticles, body #listEditItems #listItems {
+      width: 100%;
+      min-width: 100%; }
+    body #listEditArticles #availableArticles, body #listEditItems #availableArticles {
+      position: relative;
+      float: right; }
+    body #listEditArticles #listItems, body #listEditItems #listItems {
+      padding-left: 1%; }
+      body #listEditArticles #listItems ul#itemList li, body #listEditItems #listItems ul#itemList li {
+        line-height: 28px;
+        border-bottom: solid 1px #5a3320; }
+      body #listEditArticles #listItems ul#itemList .articleName, body #listEditItems #listItems ul#itemList .articleName {
+        min-width: 60%;
+        width: 60%;
+        display: inline-block;
+        position: relative;
+        font-size: 0.8em; }
+      body #listEditArticles #listItems ul#itemList .counter, body #listEditItems #listItems ul#itemList .counter {
+        width: 11%;
+        max-width: 11%;
+        min-width: 11%;
+        display: inline-block;
+        font-weight: bold; }
+      body #listEditArticles #listItems .newArticle, body #listEditItems #listItems .newArticle {
+        font-size: 0.6em;
+        display: inline-block; }
+        body #listEditArticles #listItems .newArticle a.setPrice, body #listEditItems #listItems .newArticle a.setPrice {
+          display: block;
+          clear: both; }
+        body #listEditArticles #listItems .newArticle .priceForm, body #listEditItems #listItems .newArticle .priceForm {
+          display: none; }
+    body #listEditArticles ul, body #listEditItems ul {
+      list-style: none;
+      height: 100%;
+      padding-left: 0px;
+      min-height: 185px; }
+      body #listEditArticles ul li.article, body #listEditItems ul li.article {
+        padding-left: 5px;
+        vertical-align: middle;
+        height: 30px; }
+        body #listEditArticles ul li.article div, body #listEditItems ul li.article div {
+          line-height: 36px;
+          display: inline-block; }
+        body #listEditArticles ul li.article .articleQuantity, body #listEditItems ul li.article .articleQuantity {
+          width: 2em;
+          line-height: 28px; }
+          body #listEditArticles ul li.article .articleQuantity input, body #listEditItems ul li.article .articleQuantity input {
+            width: 100%;
+            font-size: 0.9em; }
+        body #listEditArticles ul li.article .articleName, body #listEditItems ul li.article .articleName {
+          font-size: 14px;
+          font-weight: bold;
+          min-width: 70%;
+          margin-top: -2px; }
+        body #listEditArticles ul li.article .actions, body #listEditItems ul li.article .actions {
+          text-align: right;
+          width: 19%;
+          line-height: 31px; }
+      body #listEditArticles ul li.odd, body #listEditItems ul li.odd {
+        background-color: #e8e4df; }
+  body #articleSearchFormContainer {
+    position: relative;
+    padding: 5px 0px;
+    text-align: right;
+    display: block;
+    vertical-align: middle;
+    width: 99%; }
+    body #articleSearchFormContainer #query {
+      width: 34%; }
+
+#newListFormContainer, #newArticleFormContainer {
+  padding-top: 2%; }
+
+#editListFormContainer, #editUserFormContainer {
+  padding: 2% 0 2% 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px; }
+
+.hBox div {
+  display: inline-block;
+  text-align: left;
+  vertical-align: top; }
+
+.vBox div {
+  display: block;
+  text-align: left;
+  vertical-align: top; }
+
+.half {
+  width: 49%;
+  max-width: 49%;
+  display: inline-block; }
+
+#newArticle .articleQuantity {
+  width: 2em;
+  display: inline-block; }
+  #newArticle .articleQuantity input[type='text'] {
+    width: 100% !important; }
+#newArticle .field input[type='text'], #newArticle .field input[type='password'], #newArticle .field input[type='email'] {
+  width: 39%; }
+
+#header {
+  position: relative;
+  width: 80%;
+  padding-bottom: 10px;
+  display: inline-block;
+  text-align: left; }
+  #header #headerLogo, #header #headerTitle {
+    display: inline-block;
+    position: relative; }
+  #header #headerTitle {
+    font-family: DomesticManners;
+    font-size: 26pt;
+    width: 60%;
+    height: 100%; }
+  #header #userMenu {
+    font-size: 0.7em;
+    display: inline-block;
+    text-align: right;
+    width: 33%; }
+
+.inline {
+  display: inline-block; }
+
+.sectionTitle {
+  width: 50%; }
+
+.actions {
+  font-size: 0.7em;
+  vertical-align: bottom;
+  position: relative; }
+  .actions * {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    text-decoration: none; }
+  .actions img {
+    top: 5px !important; }
+
+.odd {
+  background-color: #f7eeb1; }
+
+.even {
+  background-color: #ddc488; }
+
+.pageTitle {
+  background-color: #ccc1a3;
+  color: #5a3320;
+  padding: 10px;
+  -moz-border-radius-topright: 7px;
+  -moz-border-radius-topleft: 7px;
+  -webkit-border-top-right-radius: 7px;
+  -webkit-border-top-left-radius: 7px;
+  -webkit-background-clip: padding-box; }
+
+.field {
+  padding-bottom: 1%; }
