@@ -40,6 +40,7 @@ gem 'sass'
 group :development, :test do
   gem 'ruby-debug19', :require => 'ruby-debug'
   #gem 'webrat'
+  gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'cucumber-rails'
