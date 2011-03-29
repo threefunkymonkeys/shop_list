@@ -18,7 +18,6 @@ gem "mongrel", '1.2.0.pre2'
 
 # To use debugger
 # gem 'ruby-debug'
-gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'authlogic'
 gem 'haml-rails'
@@ -35,6 +34,7 @@ gem 'haml'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
+  gem 'ruby-debug19', :require => 'ruby-debug'
   #gem 'webrat'
   gem 'capybara'
   gem 'database_cleaner'
