@@ -237,5 +237,7 @@ es:
   search: Buscar
   show: Ver detalles
   user_sessions: 
+    new:
+      menu_name: Ingresar
     form: 
       login: Ingresar
