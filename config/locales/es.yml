@@ -112,6 +112,11 @@ es:
           attributes: 
             name: 
               blank: Debes ingresar un nombre para tu lista
+
+        article:
+          attributes:
+            name:
+              taken: El articulo ya existe
   users:
     edit:
       menu_name: Editar Usuario
