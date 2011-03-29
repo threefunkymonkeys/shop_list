@@ -164,6 +164,16 @@ articles = [
   }
 ]
 
-articles.each do |article|
-  Article.find_or_create_by_name(article[:name])
+#articles.each do |article|
+  #Article.find_or_create_by_name(article[:name])
+#end
+#
+admin_users = [
+  {:email => "inkel@threefunkymonkeys.com", :password => "1nk3lm4n", :password_confirmation => "1nk3lm4n", :admin => true},
+  {:email => "gato@threefunkymonkeys.com", :password => "g4r4b4t0", :password_confirmation => "g4r4b4t0", :admin => false},
+  {:email => "kandalf@threefunkymonkeys.com", :password => "k4nd4lfm0nk3y", :password_confirmation => "k4nd4lfm0nk3y", :admin => true}
+]
+
+admin_users.each do |user_data|
+  User.create!(user_data) unless User.exists?(:email => user_data[:email])
 end
