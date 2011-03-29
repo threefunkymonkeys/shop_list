@@ -162,11 +162,6 @@ body {
     padding: 5px; }
     body #itemsList .listHead {
       padding-bottom: 10px; }
-    body #itemsList .articleName, body #itemsList .lastPrice, body #itemsList .newPrice {
-      display: inline-block;
-      font-weight: bold; }
-    body #itemsList .articleName {
-      width: 50%; }
     body #itemsList .lastPrice {
       width: 20%; }
     body #itemsList .newPrice {
@@ -208,14 +203,15 @@ body {
         border-bottom: solid 1px #5a3320; }
       body #listEditArticles #listItems ul#itemList .articleName, body #listEditItems #listItems ul#itemList .articleName {
         min-width: 60%;
+        max-width: 60%;
         width: 60%;
         display: inline-block;
         position: relative;
         font-size: 0.8em; }
       body #listEditArticles #listItems ul#itemList .counter, body #listEditItems #listItems ul#itemList .counter {
-        width: 11%;
-        max-width: 11%;
-        min-width: 11%;
+        width: 14%;
+        max-width: 14%;
+        min-width: 14%;
         display: inline-block;
         font-weight: bold; }
       body #listEditArticles #listItems .newArticle, body #listEditItems #listItems .newArticle {
@@ -244,11 +240,6 @@ body {
           body #listEditArticles ul li.article .articleQuantity input, body #listEditItems ul li.article .articleQuantity input {
             width: 100%;
             font-size: 0.9em; }
-        body #listEditArticles ul li.article .articleName, body #listEditItems ul li.article .articleName {
-          font-size: 14px;
-          font-weight: bold;
-          min-width: 70%;
-          margin-top: -2px; }
         body #listEditArticles ul li.article .actions, body #listEditItems ul li.article .actions {
           text-align: right;
           width: 19%;
