@@ -89,3 +89,24 @@ I want to users to authenticate for create lists
      And I should be on the lists page
 
 
+  Scenario: User should see only their items when editing a list
+    Given the following users
+      |email         |password    |
+      |ed@test.com   |secret      |
+      |jeff@test.com |notsosecret |
+
+      And the following lists from the users
+        |name        |user          |
+        |Market      |ed@test.com   |
+
+      And the following articles 
+        |name        |owner         |
+        |Coffee      |ed@test.com   |
+        |Milk        |ed@test.com   |
+        |Cookies     |jeff@test.com |
+
+      And I am logged in as "ed@test.com" with password "secret"
+      When I go to the list named "Market" edit page
+      Then I should see "Coffee"
+       And I should see "Milk"
+       And I should not see "Cookies"

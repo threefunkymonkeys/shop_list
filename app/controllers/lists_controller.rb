@@ -42,7 +42,7 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @article = Article.new
     @item = Item.new
-    @articles = Article.for_list(@list).limit(10)
+    @articles = current_user.articles.for_list(@list).limit(10)
   end
 
   # POST /lists
