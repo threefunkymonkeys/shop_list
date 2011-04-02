@@ -46,4 +46,6 @@ group :development, :test do
   gem 'summoner'
   gem 'faker'
   gem 'wirble'
+  gem 'hirb'
+  gem 'interactive_editor'
  end
