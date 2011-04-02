@@ -6,6 +6,7 @@
     = javascript_include_tag :defaults
     = csrf_meta_tag
   %body
+    =render :partial => "layouts/no_ie"
     #header
       = render :partial => "layouts/header"
       = render :partial => "shared/user_menu", :locals => {:user => current_user}

@@ -40,6 +40,7 @@ en:
       forbidden: "You don't have permissions to do this"
       list_created_ok: List Created Successfuly
       need_logout: You need to be logged out for this action
+      no_ie: We don't like your browser. It makes us work harder for poor results and makes your user experience suck.<br/>Try with a better browser. You can use <a href="http://getfirefox.com">Mozilla Firefox</a> o <a href="http://google.com/chrome">Google Chrome</a><br>They are FREE, safe and very easy to install and use.
     titles: 
       article: Article
       last_price: Last price

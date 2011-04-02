@@ -1,6 +1,7 @@
 ShopList::Application.routes.draw do
 
   get "home/index"
+  match 'no_ie' => "home#no_ie", :as => :no_ie
 
   resource :user_session
   match 'login'  => 'user_sessions#new',     :as => :login
