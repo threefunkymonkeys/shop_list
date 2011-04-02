@@ -39,7 +39,7 @@ class ItemsController < ApplicationController
 
     if @item.save
       if request.xhr?
-        @articles = Article.for_list(@list)
+        @articles = current_user.articles.for_list(@list)
         @new_item = Item.new
         render :create
       else
