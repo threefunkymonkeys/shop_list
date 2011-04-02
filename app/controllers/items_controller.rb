@@ -83,7 +83,7 @@ class ItemsController < ApplicationController
     @list = @item.list
     @item.destroy
     @new_item = Item.new
-    @articles = Article.for_list(@list).limit(10)
+    @articles = current_user.articles.for_list(@list).limit(10)
 
     respond_to do |format|
       format.js
