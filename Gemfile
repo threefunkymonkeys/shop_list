@@ -19,7 +19,7 @@ gem "mongrel", '1.2.0.pre2'
 # To use debugger
 # gem 'ruby-debug'
 
-gem 'authlogic'
+gem 'authlogic', :git => "http://github.com/threefunkymonkeys/authlogic.git"
 gem 'haml-rails'
 gem 'jquery-rails'
 
