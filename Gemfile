@@ -22,6 +22,7 @@ gem "mongrel", '1.2.0.pre2'
 gem 'authlogic', :git => "http://github.com/threefunkymonkeys/authlogic.git"
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'compass'
 
 # Bundle the extra gems:
 # gem 'bj'

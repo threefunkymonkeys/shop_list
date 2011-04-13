@@ -54,6 +54,8 @@ GEM
     childprocess (0.1.8)
       ffi (~> 1.0.6)
     columnize (0.3.2)
+    compass (0.10.6)
+      haml (>= 3.0.4)
     configuration (1.2.0)
     cucumber (0.10.2)
       builder (>= 2.1.2)
@@ -177,6 +179,7 @@ PLATFORMS
 DEPENDENCIES
   authlogic!
   capybara
+  compass
   cucumber
   cucumber-rails
   database_cleaner
