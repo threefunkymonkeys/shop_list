@@ -25,5 +25,11 @@
 =linear-gradient($x0, $y0, $xn, $yn, $from, $to)
   background: -webkit-gradient(linear, $x0 $y0, $xn $yn, from($from), to($to))
 
-=vertical-linear-gradient($from, $to)
-  +linear-gradient(0%, 0%, 0%, 100%, $from, $to)
+=vertical-linear-gradient(!from, !to)
+  +linear-gradient(0%, 0%, 0%, 100%, !from, !to)
+
+=gradient-bg($color1, $color2)
+  background-color: $color1
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#{$color1}, endColorstr=#{$color2})
+  background-image: -moz-linear-gradient(center top, $color1, $color2)
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color1), to($color2))

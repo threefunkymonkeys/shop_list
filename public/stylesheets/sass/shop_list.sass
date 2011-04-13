@@ -17,8 +17,30 @@ a img
   border-color: $cancel_bg_color !important
 
 
+#topBar
+  background-color: $secondary_bg_color
+  height: $top_bar_height
+  border-bottom: 1px solid $separating_border_color
+
+  .container
+    text-align: left
+
+  #userMenu
+    font-size: 0.7em
+    display: inline-block
+    text-align: left
+    width: 50%
+    color: $lighter_font_color
+
+    a
+      color: $light_font_color
+
+
+html
+  +gradient-bg(#FFF7FF, #F6D67F)
+
 body
-  background-color: $body_bg_color
+  //background-color: $body_bg_color
   color: $body_font_color
   text-align: center
   height: 100%
@@ -53,7 +75,7 @@ body
     //+border_radius(5px)
 
   #content
-    width: 78%
+    width: 100%
     height: 100%
     background-color: white
     display: inline-block
@@ -279,12 +301,6 @@ h1,h2,h3,h4,h5,h6
     width: 60%
     height: 100%
   
-  #userMenu
-    font-size: 0.7em
-    display: inline-block
-    text-align: right
-    width: 33%
-
 
 .inline
   display: inline-block
