@@ -2,7 +2,7 @@
   position: relative
   width: 78%
   display: inline-block
-  background-color: $menu_bg_color
+  //background-color: $menu_bg_color
   text-align: left
   height: 30px
   padding: 0px 1% 0px 1%
@@ -14,21 +14,26 @@
     padding: 5px 4px 0px 4px
     height: 23px
     cursor: pointer
-    min-width: 70px
+    min-width: $menu_item_width
     text-align: center
+    background-color: $secondary_bg_color
+    color: $light_font_color
+    +border-radius-top($border_radius)
 
     &.selected, &:hover
-      background-color: $menu_selected_bg_color
-      color: $menu_selected_color
+      +gradient-bg($menu_item_gradient_from, $menu_item_grandient_to)
+      //background-color: $menu_selected_bg_color
+      a
+        color: $dark_font_color
 
-    &.selected
-      border-bottom: solid 2px $menu_highlite_color
-      font-weight: bold
+    //&.selected
+      //border-bottom: solid 2px $menu_highlite_color
+      //font-weight: bold
 
     a
       position: relative
       text-decoration: none
-      color: $menu_selected_color
+      color: $light_font_color
       padding-top: -5px
       font-weight: bold
 
