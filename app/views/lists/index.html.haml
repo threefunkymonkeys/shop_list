@@ -1,13 +1,14 @@
-.pageTitle
-  %h3.inline.sectionTitle= t('.title')
-  %span#newList.actions
-    = link_to image_tag('add.png', :alt => t('.new'), :title => t('.new')), new_list_path
-    = link_to t('.new'), new_list_path
+.appContainer
+  .pageTitle
+    %h3.inline.sectionTitle= t('.title')
+    %span#newList.actions
+      = link_to image_tag('add.png', :alt => t('.new'), :title => t('.new')), new_list_path
+      = link_to t('.new'), new_list_path
 
-#listsContainer
-  %table#listsList.appList{ :cellspacing => 0 }
-    %tbody
-      - for list in @lists
-        %tr{ :class => cycle(:odd, :even) }
-          %td.listInfo
-            =render :partial => "lists/list_info", :locals => {:list => list}
+  #listsContainer
+    %table#listsList.appList{ :cellspacing => 0 }
+      %tbody
+        - for list in @lists
+          %tr{ :class => cycle(:odd, :even) }
+            %td.listInfo
+              =render :partial => "lists/list_info", :locals => {:list => list}
