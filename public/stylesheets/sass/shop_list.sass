@@ -312,7 +312,8 @@ h1,h2,h3,h4,h5,h6
   display: inline-block
 
 .sectionTitle
-  width: 100%
+  width: 73%
+  display: inline-block
 
 .actions
   font-size: 0.7em
@@ -328,6 +329,25 @@ h1,h2,h3,h4,h5,h6
   img
     top: 5px !important
 
+.actionTitle
+  position: relative
+  display: inline-block
+
+  .actionHeader
+    position: relative
+    display: inline-block
+    width: 50px
+    min-width: 50px
+    max-width: 50px
+    height: 100%
+    color: $light_font_color
+    border-right: solid 1px $light_font_color
+    font-size: 0.7em
+    text-align: center
+    padding: 0 1em
+
+  .last
+    border-right: none !important
 
 .odd
   background-color: $list_odd_bg_color

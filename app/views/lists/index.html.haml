@@ -4,8 +4,10 @@
     =t('.title')
     &nbsp;
     = link_to t('.new'), new_list_path, :class => "button"
-  -#%span#newList.actions
-    = link_to image_tag('add.png', :alt => t('.new'), :title => t('.new')), new_list_path
+  #newList.actionTitle
+    .actionHeader= t('application.actions.clone').upcase
+    .actionHeader= t('application.actions.edit').upcase
+    .actionHeader.last= t('application.actions.destroy').upcase
 
 #listsContainer
   %table#listsList.appList{ :cellspacing => 0 }
