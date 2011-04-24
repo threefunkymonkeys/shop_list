@@ -51,7 +51,7 @@ body
   font-size: 12pt
 
   a.button
-    padding: 5px 7px 6px 7px !important
+    padding: 0.3em 0.8em !important
     text-decoration: none
 
 
@@ -60,13 +60,15 @@ body
       font-size: 1.2em
 
   input[type='submit'], input[type='button'], button, a.button
-    font-size: 12px
+    font-size: 0.7em
     font-weight: bold
     padding: 5px
     background-color: $button_bg_color
     color: $button_font_color
     border: solid 1px $button_bg_color
     cursor: pointer
+    +border-radius(5px)
+    +gradient-bg($button_bg_gradient_from, $button_bg_gradient_to)
 
   input[type='text'], input[type='password'], input[type='email']
     background-color: white
@@ -78,13 +80,13 @@ body
     //+border_radius(5px)
 
   #content
-    width: 100%
+    width: 98%
     height: 100%
     background-color: $menu_item_grandient_to
     display: inline-block
     text-align: left
     padding: 1%
-    +border-radius-bottom($border_radius)
+    +border-radius($border_radius)
 
 
   #homeContainer
@@ -310,7 +312,7 @@ h1,h2,h3,h4,h5,h6
   display: inline-block
 
 .sectionTitle
-  width: 50%
+  width: 100%
 
 .actions
   font-size: 0.7em
@@ -334,10 +336,18 @@ h1,h2,h3,h4,h5,h6
   background-color: $list_even_bg_color
 
 .pageTitle
-  background-color: $page_title_bg_color
-  color: $page_title_color
-  padding: 10px
+  +gradient-bg($title_bg_gradient_from, $title_bg_gradient_to)
+  padding: 0.5em
+  width: 98%
+  max-width: 98%
+  min-width: 98%
+  height: 1.5em
   +border-radius-top($border_radius)
+  h3
+    color: $light_font_color !important
+    font-size: 1.2em
+    padding: 0 0.2em
+
 
 .field
   padding-bottom: 1%
