@@ -4,15 +4,11 @@
     =t('.title')
     &nbsp;
     = link_to t('.new'), new_list_path, :class => "button"
-  #newList.actionTitle
+  .actionTitle
     .actionHeader= t('application.actions.clone').upcase
     .actionHeader= t('application.actions.edit').upcase
     .actionHeader.last= t('application.actions.destroy').upcase
 
 #listsContainer
-  %table#listsList.appList{ :cellspacing => 0 }
-    %tbody
-      - for list in @lists
-        %tr{ :class => cycle(:odd, :even) }
-          %td.listInfo
-            =render :partial => "lists/list_info", :locals => {:list => list}
+  - for list in @lists
+    =render :partial => "lists/list_info", :locals => {:list => list}

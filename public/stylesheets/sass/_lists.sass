@@ -3,10 +3,43 @@
     color: green
     font-weight: bold
 
-#listsContainer, #articlesContainer
-  padding-top: 10px
-  width: 100%
+#listsContainer
+  .listDetailContainer
+    padding: 0.2em 0.5em
 
+    .listName
+      height: 1.5em
+      display: inline-block
+      clear: both
+      font-size: 0.8em
+      width: 73%
+      max-width: 73%
+      min-width: 73%
+      padding: 0 0.2em
+
+    .listActions
+      text-align: right
+      display: inline-block
+
+      .actionHeader
+        position: relative
+        display: inline-block
+        width: 73px
+        min-width: 73px
+        max-width: 73px
+        color: $light_font_color
+        border-right: solid 1px $light_font_color
+        text-align: center
+
+      .last
+        border-right: none !important
+
+    .listItemCount
+      font-weight: bold
+
+
+
+#listsContainer, #articlesContainer
   #listsList, #articlesList
     width: 100%
 
@@ -20,29 +53,6 @@
       color: $list_font_color
       padding: 0.5em 0 0.5em 0
 
-      .listDetailContainer
-        width: 100%
-        padding-left: 25px
-
-        .listName
-          height: 1.5em
-          display: block
-          clear: both
-          font-size: 1.3em
-
-        .listDate, .listActions, .listItemCount
-          display: inline-block
-          font-size: 0.7em
-
-        .listDate
-          width: 15%
-
-        .listActions
-          width: 73%
-          text-align: right
-
-        .listItemCount
-          font-weight: bold
   
   #articlesList
     td
