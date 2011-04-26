@@ -2,6 +2,7 @@
 @import mixins
 @import menu
 @import lists
+@import footer
 
 @font-face
   font-family: DomesticManners
@@ -40,13 +41,14 @@ a img
   background-color: $app_container_bg_color
 
 html
-  +gradient-bg(#FFF7FF, #F6D67F)
+  height: 100%
+  +gradient-bg($footer_bg_gradient_from, $footer_bg_gradient_to)
+
+.contentWrapper
+  +gradient-bg($body_bg_gradient_from, $body_bg_gradient_to)
+  padding-bottom: 10px
 
 body
-  //background-color: $body_bg_color
-  color: $body_font_color
-  text-align: center
-  height: 100%
   font-family: Verdana, Tahoma, Arial
   font-size: 12pt
 
