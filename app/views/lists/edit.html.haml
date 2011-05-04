@@ -2,7 +2,6 @@
   %h3.inline.sectionTitle= t '.title', :name => @list.name
 #editListFormContainer.contentWrapper
   = render 'form'
-  %br
   .hBox
     - unless @list.new_record?
       = render :partial => 'lists/items'
