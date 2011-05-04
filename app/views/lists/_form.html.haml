@@ -3,7 +3,7 @@
     = render :partial => 'shared/errors', :locals => { :object => @list }
     
     .field
-      = f.label :name, :class => "title"
+      = f.label :name, t('.new'), :class => :small
       %br
       = f.text_field :name, :id => :name
       %span.actions
