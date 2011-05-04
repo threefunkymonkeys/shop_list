@@ -44,9 +44,19 @@ html
   height: 100%
   +gradient-bg($footer_bg_gradient_from, $footer_bg_gradient_to)
 
+body
+  font-size: 1em !important
+
+
 .contentWrapper
   +gradient-bg($body_bg_gradient_from, $body_bg_gradient_to)
   padding-bottom: 10px
+
+
+.subForm
+  background-color: $alternative_bg_color
+  padding: 0.3em
+
 
 body
   font-family: Verdana, Tahoma, Arial
@@ -70,10 +80,12 @@ body
 
   input[type='text'], input[type='password'], input[type='email']
     background-color: white
-    font-size: 0.7em
+    font-size: 1em
     font-weight: bold
     border: solid 1px #ccc
     width: 45%
+    padding: 3px
+    margin: 0
     +border_radius(5px)
 
   #content
@@ -147,13 +159,16 @@ body
   #listEditArticles, #listEditItems
     position: relative
     width: 49%
-    border: solid 1px $body_font_color
     overflow: hidden
 
     .title
-      background-color: $body_font_color
-      color: $body_bg_color
+      color: $light_font_color
+      font-size: 0.8em
+      font-weight: normal
       padding: 5px
+      +border_radius_top(5px)
+      +gradient_bg($title_bg_gradient_from, $title_bg_gradient_to)
+
 
     #availableArticles, #listItems
       width: 100%
@@ -282,6 +297,14 @@ h1,h2,h3,h4,h5,h6
     input[type='text']
       width: 100% !important
 
+  form
+    width: 95%
+    display: inline-block
+
+  #addIcon
+    position: relative
+    top: 3px
+
   .field
     input[type='text'],input[type='password'],input[type='email']
       width: 39%
@@ -313,9 +336,9 @@ h1,h2,h3,h4,h5,h6
   display: inline-block
 
 .actions
-  font-size: 0.7em
-  vertical-align: bottom
+  vertical-align: middle
   position: relative
+  display: inline-block
 
   *
     position: relative
@@ -362,6 +385,3 @@ h1,h2,h3,h4,h5,h6
     font-size: 1.2em
     padding: 0 0.2em
 
-
-.field
-  padding-bottom: 1%
