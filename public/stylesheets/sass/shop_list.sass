@@ -143,6 +143,7 @@ body
       height: auto
 
       .listItem
+        vertical-align: middle
         padding: 5px 0px 5px 0px
 
 
@@ -180,27 +181,42 @@ body
       float: right
 
     #listItems
-      padding-left: 1%
 
       ul#itemList
+        font-size: 0.9em
+        margin: 0
         li
-          line-height: 28px
-          border-bottom: solid 1px $body_font_color
+          line-height: 2.5em
+          vertical-align: middle
+
+        .itemQuantity
+          position: relative
+          display: inline-block
+          text-align: center
+          width: 2em
+          max-width: 2em
 
         .articleName
-          min-width: 60%
-          max-width: 60%
+          min-width: 58%
+          max-width: 58%
           width: 60%
           display: inline-block
           position: relative
-          font-size: 0.8em
 
         .counter
-          width: 14%
-          max-width: 14%
-          min-width: 14%
+          max-width: 15%
+          min-width: 15%
           display: inline-block
-          font-weight: bold
+          position: relative
+          vertical-align: middle
+          height: 1.3em
+          padding: 1px 1px 2px
+          line-height: 1.5em
+          border: solid 1px gray
+          font-size: 1.1em
+          text-align: right
+          +gradient_bg($number_bg_gradient_from, $number_bg_gradient_to)
+
 
       .newArticle
         font-size: 0.6em
@@ -228,7 +244,6 @@ body
           line-height: 36px
           display: inline-block
 
-
         .articleQuantity
           width: 2em
           line-height: 28px
@@ -248,8 +263,6 @@ body
           width: 19%
           line-height: 31px
 
-      li.odd
-        background-color: #E8E4DF
   
 
   #articleSearchFormContainer

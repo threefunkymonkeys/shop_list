@@ -1,14 +1,14 @@
-%li{ :id => "item_#{ item.id }"}
-  .listItem
-    %label.itemQuantity{ :'data-type' => :item_quantity }
-      = item.quantity
-    %span.articleName= item.article.name
-    %small.counter{ :id => "item_#{item.id}_price_label" }
-      = "$ #{item.article.last_price.to_f / 100}"
-    %span.newArticle
-      .priceForm
-        %input{ :type => :text, :name => "item[price]", :id => "item_#{item.id}_price" }
-        %input{ :type => :button, :value => t('application.actions.save'), :'data-item' => item.id, :'data-list' => @list.id}
-        %a.cancelPriceUpdate{ :href => "#" }= t('application.actions.cancel')
-      %a.setPrice{ :href => "#" }=t('.set_new_price')
-    =link_to 'x', list_item_path(@list, item), :method => :delete, :remote => true, :class => "button cancel"
+%li.listItem{ :id => "item_#{ item.id }", :class => cycle(:even, :odd)}
+
+  %span.itemQuantity{ :'data-type' => :item_quantity }
+    = item.quantity
+  %span.articleName= item.article.name
+  %small.counter{ :id => "item_#{item.id}_price_label" }
+    = number_to_currency(item.article.last_price.to_f / 100)
+  %span.newArticle
+    .priceForm
+      %input{ :type => :text, :name => "item[price]", :id => "item_#{item.id}_price" }
+      %input{ :type => :button, :value => t('application.actions.save'), :'data-item' => item.id, :'data-list' => @list.id}
+      %a.cancelPriceUpdate{ :href => "#" }= t('application.actions.cancel')
+    %a.setPrice{ :href => "#" }=t('.set_new_price')
+    -#=link_to 'x', list_item_path(@list, item), :method => :delete, :remote => true, :class => "button cancel"
