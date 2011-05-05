@@ -7,7 +7,7 @@
       %br
       = f.text_field :name, :id => :name
       $ 
-      = f.text_field :last_price, :id => :last_price, :class => :price
+      = f.text_field :last_price, :id => :price, :class => :price, :value => @article.last_price.to_f / 100
       %span.actions
         = f.submit t('application.actions.save')
         = link_to t('application.actions.cancel'), root_path, :class => "button cancel"
