@@ -93,3 +93,16 @@ I want to be able to manage only my articles
     Then I should see the "Article destroyed OK" message
      And I should be on the articles page
 
+
+  Scenario: Should assign articles when created
+    Given the following users
+      | email          | password |
+      | me@test.com    | secret   |
+     And I am logged in as "me@test.com" with password "secret"
+     And I have 0 articles
+    When I go to the new article page
+     And I fill in "Name" with "Beer"
+     And I fill in "Price" with "2.5"
+     And I click the "Save" action
+    Then I should see the "Article created OK" message
+     And I should have 1 articles

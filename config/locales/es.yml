@@ -17,6 +17,8 @@ es:
       logout: Salir
   lists:
     menu_name: Listas
+    form:
+      new: Dale un nombre a tu lista
     index:
       title: Tus listas
       new: Nueva lista
@@ -56,7 +58,8 @@ es:
       index: Tus listas
     item:
       new_item: Artículo nuevo
-      set_new_price: Poner precio
+      set_new_price: Agregar precio
+      price: Precio
   items:
     new:
       title: Agregar producto
@@ -122,7 +125,7 @@ es:
       menu_name: Editar Usuario
       title: Editar Datos Personales
   application: 
-    name: Shop List
+    name: JOP
     messages: 
       forbidden: Debes haber ingresado para ver tus listas
       user_register_ok: Te has registrado correctamente
@@ -134,6 +137,7 @@ es:
       need_logout: Necesitás salir para realizar esta acción
       article_not_found: Artículo no encontrado
       article_updated_ok: El artículo se actualizó correctamente
+      article_created_ok: El artículo se creó correctamente
       article_destroyed_ok: El artículo se ha eliminado
       password_changed_ok: Tu contraseña ha sido actualizada
       no_ie: No nos gusta tu navegador. Nos hace trabajar mucho, hace que nuestro trabajo se vea mal y que tu experiencia de usuario sea muy mala.<br/>Intentá con un mejor navegador. Podes usar <a href="http://getfirefox.com">Mozilla Firefox</a> o <a href="http://google.com/chrome">Google Chrome</a><br>Son Gratis, seguros y muy faciles de instalar y de usar!!!
@@ -149,6 +153,10 @@ es:
       logout: Salir
       add_to_list: Agregar
       view_all: Ver Todos
+      clone: Clonar
+      edit: Editar
+      destroy: Eliminar
+      add: Agregar
     titles:
       register: Registro
       confirm_password: Confirmar contraseña
@@ -164,7 +172,7 @@ es:
       new: Nuevo Articulo
     new: 
       menu_name: Crear Artículo
-      title: Nuevo Artículo
+      title: Agregá un nuevo artículo
     show: 
       title: Detalles del artículo
     edit:

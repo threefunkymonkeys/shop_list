@@ -6,3 +6,16 @@ Given /^the following articles$/ do |table|
     Article.create(:name => attrs["name"], :user_id => owner.id).should_not be_nil
   end
 end
+
+Given /^I have (\d+) articles$/ do |count|
+  user = UserSession.find.try(:record)
+  user.should_not be_nil
+
+  user.articles.count.should == count.to_i
+end
+
+Then /^I should have (\d+) articles$/ do |count|
+  user = UserSession.find.try(:record)
+  user.should_not be_nil
+  user.articles.count.should == count.to_i
+end

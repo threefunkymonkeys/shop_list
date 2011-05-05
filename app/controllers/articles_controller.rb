@@ -53,12 +53,16 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.xml
   def create 
+    if params[:article][:last_price]
+      params[:article][:last_price] = (params[:article][:last_price].to_f * 100).to_i
+    end
     @article = Article.new(params[:article])
+    @article.user_id = current_user.id
 
     respond_to do |format|
       if @article.save
         @item = Item.create(:article_id => @article.id, :list_id => params[:list_id], :quantity => params[:item][:quantity], :price => 0) if params[:list_id]
-        format.html { redirect_to(@article, :notice => 'Article was successfully created.') }
+        format.html { redirect_to(@article, :notice => t('application.messages.article_created_ok')) }
         format.xml  { render :xml => @article, :status => :created, :location => @article }
         format.js { @list = @item.list}
       else
