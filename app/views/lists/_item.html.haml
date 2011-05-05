@@ -13,8 +13,8 @@
       %a.cancelPriceUpdate{ :href => "#" }= t('application.actions.cancel')
     %a.setPrice{ :href => "#" }
       .tiny
-        Agregar
+        = t('application.actions.add')
       .tiny
-        Precio
+        = t('.price')
       =#t('.set_new_price')
     =link_to 'x', list_item_path(@list, item), :method => :delete, :remote => true, :class => "cancelButton"
