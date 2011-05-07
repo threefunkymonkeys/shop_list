@@ -78,7 +78,7 @@ body
 
 
   input[type='submit'], input[type='button'], button, a.button
-    font-size: 0.7em
+    font-size: 1em
     font-weight: bold
     padding: 5px
     background-color: $button_bg_color
@@ -297,13 +297,19 @@ body
   #articleSearchFormContainer
     position: relative
     padding: 5px 0px
-    text-align: right
+    text-align: center
     display: block
     vertical-align: middle
-    width: 99%
+    width: 100%
 
     #query
-      width: 34%
+      position: relative
+      left: 0px
+      width: 61%
+
+    #searchIcon
+      position: relative
+      top: 3px
 
 #newListFormContainer, #newArticleFormContainer  
   padding-top: 2%
@@ -332,7 +338,7 @@ h1,h2,h3,h4,h5,h6
   max-width: 49%
   display: inline-block
 
-#newArticle
+#newArticle, #articleSearchFormContainer
   font-size: 0.8em
   padding: 4px
   .articleQuantity
