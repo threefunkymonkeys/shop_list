@@ -11,7 +11,7 @@
       %input{ :type => :text, :name => "item[price]", :id => "item_#{item.id}_price" }
       %input{ :type => :button, :value => t('application.actions.save'), :'data-item' => item.id, :'data-list' => @list.id}
       %a.cancelPriceUpdate{ :href => "#" }= t('application.actions.cancel')
-    %a.mini{ :href => "#" }
+    %a.mini.setPrice{ :href => "#" }
       .tiny
         = t('application.actions.add')
       .tiny
