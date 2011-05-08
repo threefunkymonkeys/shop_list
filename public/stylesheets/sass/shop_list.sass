@@ -170,12 +170,74 @@ body
       width: 3.2em
       text-align: right
 
+
+  #listEditItems, #listEditArticles, #availableArticles
+    font-size: 0.9em !important
+    number
+      display: inline-block
+      height: 2.5em
+      padding-bottom: 2px
+      position: relative
+      top: 0px
+
+    .counter
+      max-width: 15%
+      min-width: 15%
+      display: inline-block
+      position: relative
+      vertical-align: middle
+      height: 1.3em
+      padding: 1px 1px 2px
+      line-height: 1.5em
+      border: solid 1px gray
+      font-size: 1.1em !important
+      text-align: right
+      +gradient_bg($number_bg_gradient_from, $number_bg_gradient_to)
+
+    input.counter
+      +border_radius(0px)
+
+    ul
+      font-size: 0.9em
+      margin: 0
+      li
+        line-height: 2.5em
+        vertical-align: middle
+
+      .itemQuantity
+        position: relative
+        display: inline-block
+        text-align: center
+        width: 2em
+        max-width: 2em
+
+      .articleName
+        min-width: 58%
+        max-width: 58%
+        display: inline-block
+        position: relative
+
+
+
+  #availableArticles
+    input.counter
+      width: 2em
+      max-width: 2em
+      min-width: 2em
+      text-align: center
+
+    ul
+      li
+        height: 3.3em
+        line-height: 3.3em
+        padding: 0 6px
+
+
   #listEditArticles, #listEditItems
     position: relative
     width: 49%
     overflow: hidden
     margin: 3px
-    font-size: 0.9em !important
     background-color: white
     +border_radius(5px)
 
@@ -196,42 +258,39 @@ body
       position: relative
       float: right
 
+      #addIcon
+        position: relative
+        display: inline-block
+        top: 3px
+
+      .articleName
+        width: 78%
+        min-width: 78%
+        max-width: 78%
+        overflow: hidden
+
+      form
+        position: relative
+        display: block
+        line-height: 3.3em
+        height: 3.3em
+        vertical-align: middle
+
+
+      a.mini
+        position: relative
+        display: inline-block
+        width: 5em
+        max-width: 7.2em
+        line-height: 1.5em
+        vertical-align: top
+        font-size: 6pt
+        top: 5px
+
+        .tiny
+          display: block
+
     #listItems
-
-      ul#itemList
-        font-size: 0.9em
-        margin: 0
-        li
-          line-height: 2.5em
-          vertical-align: middle
-
-        .itemQuantity
-          position: relative
-          display: inline-block
-          text-align: center
-          width: 2em
-          max-width: 2em
-
-        .articleName
-          min-width: 58%
-          max-width: 58%
-          display: inline-block
-          position: relative
-
-        .counter
-          max-width: 15%
-          min-width: 15%
-          display: inline-block
-          position: relative
-          vertical-align: middle
-          height: 1.3em
-          padding: 1px 1px 2px
-          line-height: 1.5em
-          border: solid 1px gray
-          font-size: 1.1em !important
-          text-align: right
-          +gradient_bg($number_bg_gradient_from, $number_bg_gradient_to)
-
 
       .newArticle
         font-size: 6pt
@@ -239,7 +298,7 @@ body
         position: relative
         padding: 0 5px
 
-        a.setPrice
+        a.mini
           position: relative
           display: inline-block
           clear: both

@@ -1,10 +1,16 @@
-%li.article{ :id => "article_#{article.id}", :class => cycle(:odd, :even) }
+%li.listItem{ :id => "article_#{article.id}", :class => cycle(:even, :odd) }
   = form_for(new_item, :remote => true) do |f|
     %number
-      = f.text_field :quantity, :value => 1, :size => 2
+      = f.text_field :quantity, :value => 1, :size => 2, :class => "counter"
     .articleName
       = article.name
       = f.hidden_field :article_id, :value => article.id
       = f.hidden_field :list_id, :value => @list.id
-    .actions
-      = f.submit t('application.actions.add_to_list')
+
+    = image_tag 'add_arrow.png', :class => :inline, :id => :addIcon
+    %a.mini{ :href => "#" }
+      .tiny
+        = t('application.actions.add')
+      .tiny
+        = t('.list')
+      -#= f.submit t('application.actions.add_to_list')

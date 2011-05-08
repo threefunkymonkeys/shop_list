@@ -17,6 +17,8 @@ es:
       logout: Salir
   lists:
     menu_name: Listas
+    article:
+      list: a la lista
     form:
       new: Dale un nombre a tu lista
     index:
@@ -152,7 +154,7 @@ es:
       login: Ingresar
       logout: Salir
       add_to_list: Agregar
-      view_all: Ver Todos
+      view_all: Todos
       clone: Clonar
       edit: Editar
       destroy: Eliminar
