@@ -353,7 +353,6 @@ body
           width: 19%
           line-height: 31px
 
-  
 
   #articleSearchFormContainer
     position: relative
@@ -377,10 +376,10 @@ body
 
 #editListFormContainer, #editUserFormContainer
   padding: 1%
+  +gradient_bg($edit_forms_bg_gradient_from, $edit_forms_bg_gradient_to)
 
 h1,h2,h3,h4,h5,h6
   margin: 0px
-
 
 .hBox
   div
@@ -501,3 +500,9 @@ h1,h2,h3,h4,h5,h6
     font-size: 1.2em
     padding: 0 0.2em
 
+#listEditFooter
+  position: relative
+  display: block
+  height: 50px
+  +gradient-bg($title_bg_gradient_to, $title_bg_gradient_from)
+  +border_radius_bottom(5px)
