@@ -4,5 +4,12 @@
     $("#errorExplanation #errors").append("<li><%= msg %></li>");
   <% end %>
 <% else %>
+  var lastClass = $("#listItems #itemList li:last").attr("class");
   $("#listItems #itemList").append("<%= sanitize_partial(render(:partial => "lists/item", :locals => { :item => @item })) -%>");
+  if (lastClass.indexOf('even') >= 0) {
+    $("#listItems #itemList li:last").addClass("odd");
+    $("#listItems #itemList li:last").removeClass("even");
+  } else {
+    $("#listItems #itemList li:last").addClass("even");
+  }
 <% end %>
