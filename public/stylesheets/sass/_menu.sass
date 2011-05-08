@@ -22,14 +22,12 @@
     +border-radius-top($border_radius)
 
     &.selected, &:hover
+      color: $dark_font_color
+      font-weight: bold
       +gradient-bg($menu_item_gradient_from, $menu_item_grandient_to)
-      //background-color: $menu_selected_bg_color
       a
         color: $dark_font_color
 
-    //&.selected
-      //border-bottom: solid 2px $menu_highlite_color
-      //font-weight: bold
 
     a
       position: relative
