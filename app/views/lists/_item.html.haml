@@ -3,7 +3,7 @@
   %span.itemQuantity{ :'data-type' => :item_quantity }
     = item.quantity
   %span.articleName{ :title => item.article.name }
-    = truncate(item.article.name, :length => 37)
+    = truncate(item.article.name, :length => 35)
   %small.counter{ :id => "item_#{item.id}_price_label" }
     = number_to_currency(item.article.last_price.to_f / 100)
   %span.newArticle
