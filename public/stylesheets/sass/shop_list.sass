@@ -217,8 +217,6 @@ body
         display: inline-block
         position: relative
 
-
-
   #availableArticles
     input.counter
       width: 2em
@@ -450,6 +448,9 @@ h1,h2,h3,h4,h5,h6
   width: 73%
   display: inline-block
 
+  a.button
+    font-size: 0.7em
+
 .actions
   vertical-align: middle
   position: relative
@@ -509,3 +510,14 @@ h1,h2,h3,h4,h5,h6
   height: 50px
   +gradient-bg($title_bg_gradient_to, $title_bg_gradient_from)
   +border_radius_bottom(5px)
+
+#flashNotice
+  position: relative
+  display: block
+  border: solid 1px $flash_notice_border_color
+  background-color: $flash_notice_bg_color
+  color: $flash_notice_color
+  margin-bottom: 10px
+  padding: 5px
+  +border_radius(7px)
+
