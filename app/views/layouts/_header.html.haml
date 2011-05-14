@@ -3,5 +3,6 @@
 %div
 %h1#headerTitle= t('application.name')
 
-#menu
-  = render :partial => "shared/menu"
+-if current_user
+  #menu
+    = render :partial => "shared/menu"

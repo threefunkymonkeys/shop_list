@@ -24,14 +24,9 @@
           = render :partial => "layouts/header"
 
 
-        #flashNotice
-          = flash[:notice]
-        #flashWarning
-          = flash[:warning]
-        #flashError
-          = flash[:error]
 
         #content
+          = render :partial => 'shared/flash', :locals => { :flash => flash}
           = yield
 
     #footer
