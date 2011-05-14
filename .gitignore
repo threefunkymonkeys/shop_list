@@ -6,3 +6,4 @@ tmp/**/*
 *.lock
 tags
 .sass-cache/
+public/stylesheets/*.css
