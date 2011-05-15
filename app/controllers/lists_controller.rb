@@ -17,7 +17,9 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.xml
   def show
-    #@list = List.find(params[:id])
+    @list = List.find(params[:id])
+    @article = Article.new
+    @item = Item.new
 
     respond_to do |format|
       format.html
@@ -68,12 +70,14 @@ class ListsController < ApplicationController
   # PUT /lists/1.xml
   def update
     @list = List.find(params[:id])
+    @article = Article.new
+    @item = Item.new
 
     old_name = @list.name
 
     respond_to do |format|
       if @list.update_attributes(params[:list])
-        format.html { redirect_to(@list, :notice => t('application.messages.list_updated_ok')) }
+        format.html { redirect_to(edit_list_path(@list), :notice => t('application.messages.list_updated_ok')) }
         format.xml  { head :ok }
         format.mobile { redirect_to(@list, :notice => t('controllers.lists.list.renamed', :old => old_name, :new => @list.name)) }
       else
