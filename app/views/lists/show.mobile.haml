@@ -17,4 +17,4 @@
 
 %div#total
   %span.label= t '.total'
-  %span.amount= number_to_currency(@list.total)
+  %span.amount= number_to_currency(@list.total.to_f / 100)
