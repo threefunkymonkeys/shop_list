@@ -47,7 +47,7 @@ group :development, :test do
   gem 'spork'
   gem 'launchy'    # So you can do Then show me the page
   gem 'summoner'
-  gem 'faker'
+  gem 'faker', '0.3.1'
   gem 'wirble'
   gem 'hirb'
   gem 'interactive_editor'
