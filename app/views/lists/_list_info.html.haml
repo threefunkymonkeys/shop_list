@@ -1,13 +1,11 @@
-.listDetailContainer
-  .listName= list.name
-  .listDetails
-    .listDate= list.created_at.to_date
-    .listItemCount
-      ="#{list.items.count} item(s)"
-    .listActions
+.listDetailContainer{ :class => cycle('even', 'odd') }
+  .listName= "#{list.name} - #{list.created_at.to_date}"
+  .listActions
+    .actionHeader
       =form_tag clone_list_path(list), :class => "listCloneForm" do
         = submit_tag '', {:class => "cloneButton", :id => "clone_list_#{list.id}"}
-      = link_to image_tag('view.png', :alt => t('show'), :title => t('show')), list
+    .actionHeader
       = link_to image_tag('edit.png', :alt => t('edit'), :title => t('edit')), edit_list_path(list)
+    .actionHeader.last
       = link_to image_tag('delete.png', :alt => t('destroy'), :title => t('destroy')), list, :confirm => t('are_you_sure'), :method => :delete, :id => "remove_list_#{list.id}"
 

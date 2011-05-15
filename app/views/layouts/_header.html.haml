@@ -1,4 +1,8 @@
-#headerLogo
-  =image_tag('logo.png')
-
+-##headerLogo
+  -#=image_tag('logo.png')
+%div
 %h1#headerTitle= t('application.name')
+
+-if current_user
+  #menu
+    = render :partial => "shared/menu"

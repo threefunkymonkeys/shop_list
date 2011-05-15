@@ -31,5 +31,14 @@ $(document).ready(function() {
 
      return false;
    });
+
+   $("[data-type=submitter]").live('click', function() {
+     try {
+      $(this).parent().submit();
+     } catch (e) {
+      console.log("Cannot submit a non-form element");
+     }
+     return false;
+   });
 });
 

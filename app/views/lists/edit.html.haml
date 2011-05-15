@@ -1,23 +1,10 @@
 .pageTitle
   %h3.inline.sectionTitle= t '.title', :name => @list.name
-
-#editListFormContainer
+#editListFormContainer.contentWrapper
   = render 'form'
+  .hBox
+    - unless @list.new_record?
+      = render :partial => 'lists/items'
+      = render :partial => 'lists/available_articles'
 
-.hBox
-  - unless @list.new_record?
-    = render :partial => 'lists/items'
-    = render :partial => 'lists/available_articles'
-          
-= render :partial => 'articles/search_form'
-
-%hr
-#newArticle
-  = form_for(@article, :remote => true) do |af|
-    .field.hBox
-      .articleQuantity
-        = af.text_field :quantity, :name => "item[quantity]", :value => 1, :size => 2, :class => :count
-      = af.text_field :name, :placeholder => t('articles.new.title')
-      = hidden_field_tag :list_id, @list.id
-      = hidden_field_tag "article[user_id]", current_user.id
-      = af.submit :value => t('application.actions.create')
+#listEditFooter

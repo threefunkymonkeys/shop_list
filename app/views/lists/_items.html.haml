@@ -1,5 +1,6 @@
 #listEditItems.vBox
   %h4.title= t('lists.edit.items') 
+  = render :partial => 'lists/new_article'
   #listItems
     %ul#itemList
       =render :partial => "lists/item", :collection => @list.items

@@ -22,6 +22,7 @@ gem "mongrel", '1.2.0.pre2'
 gem 'authlogic', :git => "http://github.com/threefunkymonkeys/authlogic.git"
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'compass'
 
 # Bundle the extra gems:
 # gem 'bj'
@@ -42,7 +43,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~>2.6.0'
   gem 'spork'
   gem 'launchy'    # So you can do Then show me the page
   gem 'summoner'

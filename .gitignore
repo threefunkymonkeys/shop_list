@@ -5,5 +5,5 @@ log/*.log
 tmp/**/*
 *.lock
 tags
-public/stylesheets/*.css
 .sass-cache/
+public/stylesheets/*.css

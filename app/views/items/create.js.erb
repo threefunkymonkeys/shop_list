@@ -4,8 +4,16 @@
     $("#errorExplanation #errors").append("<li><%= msg %></li>");
   <% end %>
 <% else %>
+  var lastClass = $("#listItems #itemList li:last").attr("class");
   $("#listItems #itemList").append("<%= sanitize_partial(render(:partial => "lists/item", :locals => { :item => @item })) -%>");
   list_item = $("#availableArticles #articleList #article_<%= @item.article_id %>");
 
   $("#availableArticles #articleList").html("<%= sanitize_partial(render(:partial => "lists/article", :collection => @articles, :locals => {:new_item => @new_item} )) -%>");
+
+  if (lastClass.indexOf('even') >= 0) {
+    $("#listItems #itemList li:last").addClass("odd");
+    $("#listItems #itemList li:last").removeClass("even");
+  } else {
+    $("#listItems #itemList li:last").addClass("even");
+  }
 <% end %>

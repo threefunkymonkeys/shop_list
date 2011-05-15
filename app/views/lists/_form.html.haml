@@ -3,9 +3,8 @@
     = render :partial => 'shared/errors', :locals => { :object => @list }
     
     .field
-      = f.label :name, :class => "title"
+      = f.label :name, t('.new'), :class => :small
       %br
       = f.text_field :name, :id => :name
       %span.actions
         = f.submit t('application.actions.save')
-        = link_to t('application.actions.cancel'), root_path, :class => "button cancel"
