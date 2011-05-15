@@ -10,7 +10,7 @@ body
   padding: 10px 5px
   font:
     family: sans-serif
-  +vertical-linear-gradient(#bdbdbd, #8a8080)
+  +gradient-bg(#bdbdbd, #8a8080)
 
 $default-radius: 0.5em
 $elements-background: #fff
@@ -86,11 +86,11 @@ ul li a#add
   color: #fff
   padding: 0
   +border-radius-bottom($default_radius)
-  +vertical-linear-gradient(#54BD0D, #418A1D)
+  +gradient-bg(#54BD0D, #418A1D)
 
 /* http://robots.thoughtbot.com/post/2718077289/make-css3-buttons-like-a-boss
 a.button, button
-  +vertical-linear-gradient(#52a8e8, #377ad0)
+  +gradient-bg(#52a8e8, #377ad0)
   border-top: 1px solid #4081af
   border-right: 1px solid #2e69a3
   border-bottom: 1px solid #20559a
@@ -161,17 +161,17 @@ form
       width: 40%
 
     button[type=submit]
-      +vertical-linear-gradient(#54BD0D, #418A1D)
+      +gradient-bg(#54BD0D, #418A1D)
       -webkit-box-shadow: inset 0 1px 0 0 #54BD0D, 0 1px 2px 0 #418A1D
       border: none
 
     a.cancel, button.cancel
-      +vertical-linear-gradient(#72969C, #6F8D9C)
+      +gradient-bg(#72969C, #6F8D9C)
       -webkit-box-shadow: inset 0 1px 0 0 #72969C, 0 1px 2px 0 #6F8D9C
       border: none
 
     a.destroy, button.destroy
-      +vertical-linear-gradient(#bd2020, #8a1717)
+      +gradient-bg(#bd2020, #8a1717)
       -webkit-box-shadow: inset 0 1px 0 0 #bd2020, 0 1px 2px 0 #8a1717
       border: none
 
@@ -194,7 +194,7 @@ footer
     a
       display: inline-block
       padding: 0.25em 0.5em
-      +vertical-linear-gradient(#666, #333)
+      +gradient-bg(#666, #333)
       color: #fff
       height: 2.5em
       line-height: 2.5em
@@ -209,21 +209,21 @@ footer
   padding-left: 0.5em
 
 .errors li
-  +vertical-linear-gradient(#bd2020, #8a1717)
+  +gradient-bg(#bd2020, #8a1717)
   color: #fff
   +notification
 
 #flash-notice
-  +vertical-linear-gradient(#F7F72B, #E6D810)
+  +gradient-bg(#F7F72B, #E6D810)
   color: #000
   +notification
 
 #flash-error, #flash-alert
-  +vertical-linear-gradient(#bd2020, #8a1717)
+  +gradient-bg(#bd2020, #8a1717)
   color: #fff
   +notification
 
 #logout
-  +vertical-linear-gradient(#bd2020, #8a1717)
+  +gradient-bg(#bd2020, #8a1717)
   color: #fff
   float: right
