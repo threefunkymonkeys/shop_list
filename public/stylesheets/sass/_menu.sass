@@ -6,7 +6,7 @@
   text-align: left
   height: 30px
   padding: 0px 1% 0px 1%
-  +border-radius-top($border_radius)
+  +border-radius-top($default-radius)
 
   .menuItem
     display: inline-block
@@ -19,7 +19,7 @@
     text-align: center
     +gradient-bg($title_bg_gradient_from, $title_bg_gradient_to)
     color: $light_font_color
-    +border-radius-top($border_radius)
+    +border-radius-top($default-radius)
 
     &.selected, &:hover
       color: $dark_font_color

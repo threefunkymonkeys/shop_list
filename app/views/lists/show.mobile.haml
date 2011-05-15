@@ -8,7 +8,7 @@
 %ul#items
   - @list.items.each do |item|
     %li
-      %a{ :href => edit_list_item_path(@list, item) }
+      %a{ :href => edit_list_item_path(@list, item), :class => cycle(:even, :odd) }
         %span.total= number_to_currency(item.quantity * item.article.last_price.to_f / 100)
         %strong= item.article.name
         %span.quantity= "#{item.quantity} x #{number_to_currency(item.article.last_price.to_f / 100)}"

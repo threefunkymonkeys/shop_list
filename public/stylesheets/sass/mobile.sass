@@ -1,4 +1,6 @@
-@import "mixins"
+@import vars
+@import mixins
+@import "common"
 
 html
   height: 100%
@@ -10,20 +12,20 @@ body
   padding: 10px 5px
   font:
     family: sans-serif
-  +gradient-bg(#bdbdbd, #8a8080)
+  +gradient-bg($body_bg_gradient_from, $body_bg_gradient_to)
+  //+gradient-bg(#bdbdbd, #8a8080)
 
-$default-radius: 0.5em
-$elements-background: #fff
 
 h1
   font-size: 1.3em
-  background: $elements-background
+  //background: $elements-background
   margin: 0px 0px 0.5em
   padding: 0.25em
   text-align: center
-  border: 1px solid black
+  color: $light_font_color
+  border: solid 1px $light_font_color
   +border-radius($default-radius)
-
+  +gradient-bg($title_bg_gradient_from, $title_bg_gradient_to)
 ul
   background: transparent
   margin: 0px 0px 0.5em
@@ -31,7 +33,6 @@ ul
   list-style: none
 
 li
-  background: $elements-background
   padding: 0px
   border: 1px solid black
   border-top: none
@@ -47,7 +48,7 @@ li
   a
     display: block
     padding: 0px 0.5em
-    width: 100%
+    //width: 100%
     height: 100%
     text-decoration: none
     color: #000
@@ -176,12 +177,14 @@ form
       border: none
 
 #total
-  background: $elements-background
+  //background: $elements-background
+  color: $lighter_font_color 
   padding: 0.5em
   margin: 0px 0px 0.5em
   border: 1px solid black
   +border-radius($default-radius)
   font-size: 1.5em
+  +gradient-bg($title_bg_gradient_from, $title_bg_gradient_to)
 
   .amount
     float: right

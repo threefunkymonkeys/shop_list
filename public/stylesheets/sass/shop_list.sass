@@ -1,5 +1,6 @@
 @import vars
 @import mixins
+@import "common"
 @import menu
 @import lists
 @import footer
@@ -48,7 +49,7 @@ a img
       color: $light_font_color
 
 .appContainer
-  +border-radius-top($border_radius)
+  +border-radius-top($default-radius)
   background-color: $app_container_bg_color
 
 html
@@ -105,7 +106,7 @@ body
     display: inline-block
     text-align: left
     padding: 1%
-    +border-radius($border_radius)
+    +border-radius($default-radius)
 
 
   #homeContainer
@@ -488,12 +489,6 @@ h1,h2,h3,h4,h5,h6
   .last
     border-right: none !important
 
-.odd
-  background-color: $list_odd_bg_color
-
-.even
-  background-color: $list_even_bg_color
-
 .submitter
   cursor: pointer
 
@@ -501,7 +496,7 @@ h1,h2,h3,h4,h5,h6
   +gradient-bg($title_bg_gradient_from, $title_bg_gradient_to)
   padding: 0.5em
   height: 1.5em
-  +border-radius-top($border_radius)
+  +border-radius-top($default-radius)
   h3
     color: $light_font_color !important
     font-size: 1.2em
