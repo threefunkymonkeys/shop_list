@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
   # And the logic seems quite simplistic :P
   def create
     @list = List.find(params[:item][:list_id])
+    params[:item][:price] = params[:item][:price].nil? ? 0 : (params[:item][:price].to_f * 100).to_i
 
     article_id = unless !params[:article] or params[:article][:name].blank?
                    article = Article.find_by_name(params[:article][:name])
@@ -35,9 +36,11 @@ class ItemsController < ApplicationController
       @item = Item.create(params[:item].merge({ :article_id => article_id }))
     else
       @item.quantity = @item.quantity + params[:item][:quantity].to_i
+      @item.update_attribute(:price, params[:item][:price]) unless @item.price == params[:item][:price]
     end
 
     if @item.save
+      @item.article.update_attribute(:last_price, @item.price) unless @item.price == @item.article.last_price
       if request.xhr?
         @articles = current_user.articles.for_list(@list)
         @new_item = Item.new

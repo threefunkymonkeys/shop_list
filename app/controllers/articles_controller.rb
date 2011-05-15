@@ -61,7 +61,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        @item = Item.create(:article_id => @article.id, :list_id => params[:list_id], :quantity => params[:item][:quantity], :price => 0) if params[:list_id]
+        @item = Item.create(:article_id => @article.id, :list_id => params[:list_id], :quantity => params[:item][:quantity], :price => @article.last_price) if params[:list_id]
         format.html { redirect_to(@article, :notice => t('application.messages.article_created_ok')) }
         format.xml  { render :xml => @article, :status => :created, :location => @article }
         format.js { @list = @item.list}
