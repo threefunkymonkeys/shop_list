@@ -5,6 +5,6 @@
   - @lists.each do |list|
     %li
       %span.counter= list.items.size
-      = link_to list.name, list
+      = link_to list.name, list, :class => cycle(:even, :odd)
   %li
     %a#add{ :href => new_list_path }= t '.new'
