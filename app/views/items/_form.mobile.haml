@@ -26,7 +26,7 @@
 
   %label
     %span= Item.human_attribute_name(:price)
-    = f.number_field :price, :min => 1, :step => 0.5
+    = f.number_field :price, :min => 1, :step => 0.5, :value => @item.price.to_f / 100
 
   %label
     %span= Item.human_attribute_name(:quantity)
