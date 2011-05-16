@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title hopList
+    %link{ :href => 'http://fonts.googleapis.com/css?family=Lobster', :rel => 'stylesheet', :type => 'text/css' } 
+    = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
+    = stylesheet_link_tag "shop_list"
+    = csrf_meta_tag
+
+  %body
+    #topBar
+
+    #homeContainer.contentWrapper
+      .container
+        =render :partial => "layouts/no_ie"
+        = yield
+
+    #footer
+      = render :partial => "layouts/footer"
