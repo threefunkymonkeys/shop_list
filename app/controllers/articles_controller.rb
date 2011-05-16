@@ -107,7 +107,7 @@ class ArticlesController < ApplicationController
 
   def search
     @list = List.find(params[:list_id])
-    @articles = Article.for_list(@list).where("name LIKE ?", "%#{params[:query]}%")
+    @articles = current_user.articles.for_list(@list).where("name LIKE ?", "%#{params[:query]}%")
     @new_item = Item.new
   end
 
