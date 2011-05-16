@@ -1,11 +1,6 @@
 #homeContainer
   %h1
-    Shop List
-
-  #loginForm.half
+    =link_to(image_tag('home_logo.png'), root_path)
+  %br
+  #loginForm
     =render :partial => "user_sessions/form"
-
-  #picture.half
-    = image_tag 'shopping_list.jpg'
-
-
