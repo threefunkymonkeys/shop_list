@@ -1,0 +1,33 @@
+#homeContainer
+  vertical-align: top
+  background: url('/images/home_bg.png') repeat-x
+  background-height: 100%
+  text-align: center
+
+  h1
+    text-align: center
+
+  #loginForm
+    display: inline-block
+    text-align: center
+    width: 330px
+    height: 184px
+    margin: 15px
+    border: solid 1px $login_box_border_color
+    padding-top: 30px
+    font-size: 0.9em
+    color: $login_box_font_color
+    +gradient-bg($login_box_bg_gradient_from, $login_box_bg_gradient_to)
+    +border-radius($default-radius)
+    +box-shadow(0, 0, 20px)
+
+    input[type='email'], input[type='password']
+      width: 90%
+
+    #login
+      +gradient-bg($login_box_bg_gradient_to, $login_box_bg_gradient_from)
+      color: $login_box_font_color 
+
+    #rememberBox
+      line-height: 4em
+
