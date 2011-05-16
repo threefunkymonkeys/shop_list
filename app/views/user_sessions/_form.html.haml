@@ -6,16 +6,14 @@
      
   = f.label :email
   %br
-  = f.text_field :email, :id => :email
+  = f.email_field :email, :id => :email
   %br
   %br
   = f.label :password
   %br
   = f.password_field :password, :id => :password
   %br
-  %br
   = f.check_box :remember_me 
-  = f.label :remember_me 
-  %br
+  = f.label :remember_me, :class => "small", :id => :rememberBox
   %br
   = f.submit t('application.actions.login'), :id => :login
