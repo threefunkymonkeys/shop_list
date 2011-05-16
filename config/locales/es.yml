@@ -142,6 +142,7 @@ es:
       article_created_ok: El artículo se creó correctamente
       article_destroyed_ok: El artículo se ha eliminado
       password_changed_ok: Tu contraseña ha sido actualizada
+      invalid_login: Los datos son incorrectos
       no_ie: No nos gusta tu navegador. Nos hace trabajar mucho, hace que nuestro trabajo se vea mal y que tu experiencia de usuario sea muy mala.<br/>Intentá con un mejor navegador. Podes usar <a href="http://getfirefox.com">Mozilla Firefox</a> o <a href="http://google.com/chrome">Google Chrome</a><br>Son Gratis, seguros y muy faciles de instalar y de usar!!!
     actions:
       register: Registrarse

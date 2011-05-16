@@ -11,7 +11,8 @@ class UserSessionsController < ApplicationController
       flash[:notice] = t('controllers.user_session.login_successful')
       redirect_back_or_default lists_path
     else
-      render "new"
+      flash[:error] = t('application.messages.invalid_login')
+      redirect_to root_path
     end
   end
 
