@@ -1,6 +1,9 @@
 #homeContainer
   %h1
     =link_to(image_tag('home_logo.png'), root_path)
+
+  =render :partial => "shared/flash", :locals => { :flash => flash }
+
   %br
   #loginForm
     =render :partial => "user_sessions/form"
