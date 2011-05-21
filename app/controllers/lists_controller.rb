@@ -5,7 +5,7 @@ class ListsController < ApplicationController
 
   # GET /lists
   # GET /lists.xml
-  def index
+  def index 
     @lists = current_user.lists
 
     respond_to do |format|
@@ -116,6 +116,11 @@ class ListsController < ApplicationController
     current_list = @list
     flash[:notice] = t('application.messages.list_cloned_ok')
     redirect_to edit_list_path(@list)
+  end
+
+  def search
+    @lists = current_user.lists.where("name LIKE ?", "%#{params[:query]}%")
+    render 'index'
   end
 
   private

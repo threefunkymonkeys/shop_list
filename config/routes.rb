@@ -22,6 +22,10 @@ ShopList::Application.routes.draw do
     member do
       post 'clone'
     end
+
+    collection do
+      get 'search'
+    end
     delete 'items', :on => :member, :to => 'Lists#empty', :as => :empty
     resources :items 
   end
