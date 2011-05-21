@@ -34,13 +34,17 @@ a img
 #topBar
   background-color: $secondary_bg_color
   height: $top_bar_height
-  padding: 3px 0
+  //padding: 0.5em 0
   border-bottom: 1px solid $separating_border_color
+
 
   .container
     text-align: left
 
   form
+    position: relative
+    display: inline-block
+    //vertical-align: bottom
     padding: 0px
     margin: 0px
     font-size: 0.7em
@@ -51,8 +55,9 @@ a img
 
   input[type='text']
     border: solid 1px $secondary_bg_color
-    background-color: white
+    background-color: $app_container_bg_color
     color: $secondary_bg_color
+    +border-radius(0px)
 
   #userMenu
     font-size: 0.7em
