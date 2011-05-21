@@ -106,9 +106,15 @@ class ArticlesController < ApplicationController
   end
 
   def search
-    @list = List.find(params[:list_id])
-    @articles = current_user.articles.for_list(@list).where("name LIKE ?", "%#{params[:query]}%")
-    @new_item = Item.new
+    conditions = ["name LIKE ?", "%#{params[:query]}%"]
+    if params[:list_id]
+      @list = List.find(params[:list_id])
+      @articles = current_user.articles.for_list(@list).where(conditions)
+      @new_item = Item.new
+    else
+      @articles = current_user.articles.where(conditions)
+      render :index
+    end
   end
 
 end
