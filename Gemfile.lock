@@ -191,6 +191,7 @@ DEPENDENCIES
   launchy
   mongrel (= 1.2.0.pre2)
   rails (= 3.0.6)
+  rake (= 0.8.7)
   rspec-rails (~> 2.6.0)
   ruby-debug19
   sass
