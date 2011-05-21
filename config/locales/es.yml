@@ -15,6 +15,7 @@ es:
     application:
       title: JOP
       logout: Salir
+      search: Buscar
   lists:
     menu_name: Listas
     article:

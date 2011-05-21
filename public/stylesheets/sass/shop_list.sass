@@ -34,10 +34,25 @@ a img
 #topBar
   background-color: $secondary_bg_color
   height: $top_bar_height
+  padding: 3px 0
   border-bottom: 1px solid $separating_border_color
 
   .container
     text-align: left
+
+  form
+    padding: 0px
+    margin: 0px
+    font-size: 0.7em
+    line-height: 0.7em
+    color: $lighter_font_color
+    width: 49%
+    text-align: right
+
+  input[type='text']
+    border: solid 1px $secondary_bg_color
+    background-color: white
+    color: $secondary_bg_color
 
   #userMenu
     font-size: 0.7em
@@ -48,6 +63,7 @@ a img
 
     a
       color: $light_font_color
+
 
 .appContainer
   +border-radius-top($default-radius)
@@ -117,13 +133,6 @@ body
     .listHead
       padding-bottom: 10px
 
-    //.articleName, .lastPrice, .newPrice
-      //display: inline-block
-      //font-weight: bold
-
-    //.articleName
-      //width: 50%
-    
     .lastPrice
       width: 20%
 

@@ -16,6 +16,11 @@
     #topBar
       .container
         = render :partial => "shared/user_menu", :locals => {:user => current_user}
+        %form.inline{ :action => "/#{request.params[:controller]}/search", :method => :get, :'data-remote' => true }
+          %label
+            = t('.search')
+          = text_field_tag :query
+
 
     .contentWrapper
       .container
