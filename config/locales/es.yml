@@ -16,6 +16,7 @@ es:
       title: JOP
       logout: Salir
       search: Buscar
+      feedback: Dejanos tu opinión!
   lists:
     menu_name: Listas
     article:
