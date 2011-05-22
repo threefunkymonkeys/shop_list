@@ -31,6 +31,24 @@ a img
   position: relative
   vertical-align: middle
 
+.formFooter
+  position: relative
+  display: block
+  padding: 0.5em
+  text-align: right
+  +border-radius($default-radius)
+  +gradient-bg($title_bg_gradient_from, $title_bg_gradient_to)
+
+#new_feedback
+  position: relative
+  overflow: hidden
+  padding: 0.5em
+  width: 50%
+
+  textarea
+    position: relative
+    width: 98%
+  
 #topBar
   background-color: $secondary_bg_color
   height: $top_bar_height
@@ -537,3 +555,4 @@ h1,h2,h3,h4,h5,h6
   border-color: $flash_warning_border_color
   background-color: $flash_warning_bg_color
   color: $flash_warning_color
+

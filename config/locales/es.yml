@@ -17,6 +17,10 @@ es:
       logout: Salir
       search: Buscar
       feedback: Dejanos tu opinión!
+  feedback:
+    new:
+      menu_name: Opiniones - Sugerencias
+      title: Dejanos tu opinion o sugerencia
   lists:
     menu_name: Listas
     article:
@@ -162,6 +166,7 @@ es:
       edit: Editar
       destroy: Eliminar
       add: Agregar
+      send: Enviar
     titles:
       register: Registro
       confirm_password: Confirmar contraseña

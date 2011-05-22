@@ -1,0 +1,10 @@
+=form_for(@feedback, :url => {:controller => :feedback, :action => :create}, :id => :feedbackForm ) do |f|
+
+  = f.hidden_field :email
+  %br
+  %label= current_user.email
+  %br
+  = f.text_area :content
+
+  .formFooter
+    = f.submit t('application.actions.send') 
