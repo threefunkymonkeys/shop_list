@@ -49,6 +49,19 @@ a img
     position: relative
     width: 98%
   
+.feedbackPopup
+  display: none
+  width: 50%
+  +gradient-bg($body_bg_gradient_from, $body_bg_gradient_to)
+  +border-radius($default-radius)
+
+  form
+    width: 98% !important
+
+  .close
+    cursor: pointer
+    float: right
+
 #topBar
   background-color: $secondary_bg_color
   height: $top_bar_height

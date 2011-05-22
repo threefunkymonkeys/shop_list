@@ -17,7 +17,7 @@
     #topBar
       .container
         = render :partial => "shared/user_menu", :locals => {:user => current_user}
-        = link_to t('.feedback'), "/feedback/new", :class => :feedback 
+        = link_to t('.feedback'), "/feedback/new", :class => :feedback, :'data-container' => '#feedbackContainer'
         %form.inline{ :action => "/#{request.params[:controller]}/search", :method => :get, :'data-remote' => true }
           %label
             = t('.search')
@@ -39,3 +39,9 @@
 
     #footer
       = render :partial => "layouts/footer"
+
+    #feedbackContainer.feedbackPopup
+      .pageTitle
+        %h3.sectionTitle= t('feedback.new.title') 
+        =image_tag 'delete.png', :class => "close"
+      = render :partial => "feedback/form"
