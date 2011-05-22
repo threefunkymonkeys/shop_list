@@ -1,5 +1,11 @@
 if @feedback.errors.empty?
+  page["#flashNotice"].remove()
+  page["#flashError"].remove()
+  page["#flashWarning"].remove()
   page["#flashContainer"].append("<div id='flashNotice'>#{flash[:notice]}</div>")
 else
+  page["#flashNotice"].remove()
+  page["#flashError"].remove()
+  page["#flashWarning"].remove()
   page["#flashContainer"].append("<div id='flashError'>#{flash[:error]}</div>")
 end
