@@ -30,6 +30,7 @@ ShopList::Application.routes.draw do
     resources :items 
   end
 
+  resources :feedback, :only => [:new, :create]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

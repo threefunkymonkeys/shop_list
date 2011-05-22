@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :set_locale, :prepare_for_mobile, :save_location, :create_feedback
+  before_filter :set_locale, :prepare_for_mobile, :save_location
+  before_filter :create_feedback, :except => [{:controller => "feedback"}]
   helper_method :current_user_session, :current_user
 
   @@current_list = nil
