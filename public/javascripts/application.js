@@ -43,6 +43,13 @@ $(document).ready(function() {
 
    $(".feedback").click(function(){
      var container = $(this).attr('data-container');
+     var form = $(container + " form:first") 
+     
+     form.attr("data-remote", 'true'); //make it an AJAX form for rails
+     form.submit(function(){
+       $(container).trigger('close');
+     });
+
      $(container).lightbox_me({
       onLoad: function(){
                 $(container).find("textarea:first").focus();
