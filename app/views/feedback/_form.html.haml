@@ -1,6 +1,6 @@
 =form_for(@feedback, :url => {:controller => :feedback, :action => :create}, :id => :feedbackForm ) do |f|
 
-  = f.hidden_field :email
+  = f.hidden_field :email, :value => current_user.email
   %br
   %label= current_user.email
   %br
