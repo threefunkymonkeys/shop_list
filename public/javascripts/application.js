@@ -43,8 +43,11 @@ $(document).ready(function() {
 
    $(".feedback").click(function(){
      var container = $(this).attr('data-container');
-     $(container).lightbox_me();
-     $(container).find("textarea:first").focus();
+     $(container).lightbox_me({
+      onLoad: function(){
+                $(container).find("textarea:first").focus();
+              }
+     });
      return false;
    });
 
