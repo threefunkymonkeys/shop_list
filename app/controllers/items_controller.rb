@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new(:list_id => params[:list_id])
     @list = List.find(params[:list_id])
-    @articles = Article.select([:id, :name]).order(:name)
+    @articles = current_user.articles.select([:id, :name]).order(:name)
 
     respond_to do |format|
       format.mobile
