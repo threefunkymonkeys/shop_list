@@ -1,9 +1,10 @@
--if flash[:notice]
-  #flashNotice
-    = flash[:notice]
--if flash[:warning]
-  #flashWarning
-    = flash[:warning]
--if flash[:error]
-  #flashError
-    = flash[:error]
+#flashContainer
+  -if flash[:notice]
+    #flashNotice
+      = flash[:notice]
+  -if flash[:warning]
+    #flashWarning
+      = flash[:warning]
+  -if flash[:error]
+    #flashError
+      = flash[:error]

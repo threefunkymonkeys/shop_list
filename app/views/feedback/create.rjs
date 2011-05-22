@@ -1,0 +1,5 @@
+if @feedback.errors.empty?
+  page["#flashContainer"].append("<div id='flashNotice'>#{flash[:notice]}</div>")
+else
+  page["#flashContainer"].append("<div id='flashError'>#{flash[:error]}</div>")
+end
