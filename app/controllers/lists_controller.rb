@@ -6,7 +6,7 @@ class ListsController < ApplicationController
   # GET /lists
   # GET /lists.xml
   def index 
-    @lists = current_user.lists
+    @lists = current_user.lists.order "created_at DESC"
 
     respond_to do |format|
       format.html # index.html.erb
