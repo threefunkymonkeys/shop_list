@@ -1,20 +1,20 @@
 $(document).ready(function() {
-    $("a.setPrice").live('click', function(){
-      $(this).parent().find(".priceForm").show();
-      return false;
+    
+    $("#listItems .listItem input[type='number']").live('input, keypress, change, keyup', function(event) {
+      if (event.keyCode == 13) {
+        //call it's a.setPrice#click sibling 
+      } else {
+        $(this).addClass("priceChanged");
+      }
     });
 
-    $("a.cancelPriceUpdate").live('click', function() {
-      $(this).parent().hide();
-      return false;
-    });
-
-   $("#listItems .listItem .priceForm input[type='button']").live('click', function() {
+   $("#listItems .listItem a.setPrice").live('click', function() {
       var button = $(this);
       
       var item_id = $(this).attr('data-item');
       var list_id = $(this).attr('data-list');
-      var item_price = $("#item_" + item_id + "_price").val();
+      var inputBox = $("#item_" + item_id + "_price");
+      var item_price = inputBox.val();
 
       $.ajax({
         url: '/items/' + item_id,
@@ -26,6 +26,8 @@ $(document).ready(function() {
           var listItem = $("li#item_" + item_id);
           listItem.find(".priceForm").hide();
           $("#item_" + item_id + "_price_label").html("$ " + (parseFloat(data.item.price) / 100) );
+          inputBox.removeClass("priceChanged");
+          inputBox.addClass("priceUpdated");
         }
       });
 
