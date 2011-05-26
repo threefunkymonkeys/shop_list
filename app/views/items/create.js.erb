@@ -4,16 +4,16 @@
     $("#errorExplanation #errors").append("<li><%= msg %></li>");
   <% end %>
 <% else %>
-  var lastClass = $("#listItems #itemList li:last").attr("class");
-  $("#listItems #itemList").append("<%= sanitize_partial(render(:partial => "lists/item", :locals => { :item => @item })) -%>");
+  var lastClass = $("#listItems #itemList li:first").attr("class");
+  $("#listItems #itemList").prepend("<%= sanitize_partial(render(:partial => "lists/item", :locals => { :item => @item })) -%>");
   list_item = $("#availableArticles #articleList #article_<%= @item.article_id %>");
 
   $("#availableArticles #articleList").html("<%= sanitize_partial(render(:partial => "lists/article", :collection => @articles, :locals => {:new_item => @new_item} )) -%>");
 
   if (lastClass.indexOf('even') >= 0) {
-    $("#listItems #itemList li:last").addClass("odd");
-    $("#listItems #itemList li:last").removeClass("even");
+    $("#listItems #itemList li:first").addClass("odd");
+    $("#listItems #itemList li:first").removeClass("even");
   } else {
-    $("#listItems #itemList li:last").addClass("even");
+    $("#listItems #itemList li:first").addClass("even");
   }
 <% end %>
