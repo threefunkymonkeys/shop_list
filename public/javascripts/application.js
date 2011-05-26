@@ -2,6 +2,7 @@ $(document).ready(function() {
     
     $("#listItems .listItem input[type='number']").live('input, keypress, change, keyup', function(event) {
       if (event.keyCode == 13) {
+        $(this).parent().find("a.setPrice").click();
         //call it's a.setPrice#click sibling 
       } else {
         $(this).addClass("priceChanged");
