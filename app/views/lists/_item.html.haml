@@ -4,15 +4,9 @@
     = item.quantity
   %span.articleName{ :title => item.article.name }
     = truncate(item.article.name, :length => 35)
-  -#%small.counter{ :id => "item_#{item.id}_price_label" }
-    -#= number_to_currency(item.article.last_price.to_f / 100)
   %small= "$"
   %input.counter{ :type => :number, :name => "item[price]", :id => "item_#{item.id}_price", :value => (item.article.last_price.to_f / 100)}
   %span.newArticle
-    -#.priceForm
-      -#%input{ :type => :text, :name => "item[price]", :id => "item_#{item.id}_price" }
-      -#%input{ :type => :button, :value => t('application.actions.save'), :'data-item' => item.id, :'data-list' => @list.id}
-      -#%a.cancelPriceUpdate{ :href => "#" }= t('application.actions.cancel')
     %a.mini.setPrice{ :href => "#", :'data-item' => item.id, :'data-list' => @list.id }
       .tiny
         = t('application.actions.add')
