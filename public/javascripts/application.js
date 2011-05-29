@@ -16,6 +16,11 @@ $(document).ready(function() {
       var list_id = $(this).attr('data-list');
       var inputBox = $("#item_" + item_id + "_price");
       var item_price = inputBox.val();
+      var listItem = $("li#item_" + item_id);
+      var itemLoader = listItem.find(".itemLoader"); 
+
+      inputBox.hide();
+      itemLoader.show();
 
       $.ajax({
         url: '/items/' + item_id,
@@ -24,11 +29,12 @@ $(document).ready(function() {
         dataType: 'json',
         async: 'false',
         success: function(data) {
-          var listItem = $("li#item_" + item_id);
           listItem.find(".priceForm").hide();
           $("#item_" + item_id + "_price_label").html("$ " + (parseFloat(data.item.price) / 100) );
           inputBox.removeClass("priceChanged");
           inputBox.addClass("priceUpdated");
+          itemLoader.hide();
+          inputBox.show();
         }
       });
 

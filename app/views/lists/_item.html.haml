@@ -6,6 +6,8 @@
     = truncate(item.article.name, :length => 35)
   %small= "$"
   %input.counter{ :type => :number, :name => "item[price]", :id => "item_#{item.id}_price", :value => (item.article.last_price.to_f / 100)}
+  %span.inline.itemLoader
+    =image_tag 'loader.gif', :width => "16px", :height => "16px"
   %span.newArticle
     %a.mini.setPrice{ :href => "#", :'data-item' => item.id, :'data-list' => @list.id }
       .tiny
