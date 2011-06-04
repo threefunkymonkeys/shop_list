@@ -1,7 +1,7 @@
 %li.listItem{ :id => "item_#{ item.id }", :class => cycle(:even, :odd)}
 
   %span.itemQuantity{ :'data-type' => :item_quantity }
-    = item.quantity
+    %input.counter{ :type => :number, :name => "item[quantity]", :id => "item_#{item.id}_quantity", :value => item.quantity }
   %span.articleName{ :title => item.article.name }
     = truncate(item.article.name, :length => 35)
   %small= "$"
