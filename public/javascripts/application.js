@@ -14,27 +14,31 @@ $(document).ready(function() {
       
       var item_id = $(this).attr('data-item');
       var list_id = $(this).attr('data-list');
-      var inputBox = $("#item_" + item_id + "_price");
-      var item_price = inputBox.val();
+      var priceBox = $("#item_" + item_id + "_price");
+      var quantityBox = $("#item_" + item_id + "_quantity");
+      var item_price = priceBox.val();
+      var item_quantity = quantityBox.val();
       var listItem = $("li#item_" + item_id);
       var itemLoader = listItem.find(".itemLoader"); 
 
-      inputBox.hide();
+      priceBox.hide();
       itemLoader.show();
 
       $.ajax({
         url: '/items/' + item_id,
         type: 'post',
-        data: {item: {price: item_price}, _method: "put"},
+        data: {item: {price: item_price, quantity: item_quantity}, _method: "put"},
         dataType: 'json',
         async: 'false',
         success: function(data) {
           listItem.find(".priceForm").hide();
           $("#item_" + item_id + "_price_label").html("$ " + (parseFloat(data.item.price) / 100) );
-          inputBox.removeClass("priceChanged");
-          inputBox.addClass("priceUpdated");
+          priceBox.removeClass("priceChanged");
+          quantityBox.removeClass("priceChanged");
+          priceBox.addClass("priceUpdated");
+          quantityBox.addClass("priceUpdated");
           itemLoader.hide();
-          inputBox.show();
+          priceBox.show();
         }
       });
 
