@@ -1,17 +1,18 @@
 %li.listItem{ :id => "item_#{ item.id }", :class => cycle(:even, :odd)}
-
-  %span.itemQuantity{ :'data-type' => :item_quantity }
-    %input.counter{ :type => :number, :name => "item[quantity]", :id => "item_#{item.id}_quantity", :value => item.quantity }
-  %span.articleName{ :title => item.article.name }
-    = truncate(item.article.name, :length => 35)
-  %small= "$"
-  %input.counter{ :type => :number, :name => "item[price]", :id => "item_#{item.id}_price", :value => (item.article.last_price.to_f / 100)}
   %span.inline.itemLoader
     =image_tag 'loader.gif', :width => "16px", :height => "16px"
-  %span.newArticle
-    %a.mini.setPrice{ :href => "#", :'data-item' => item.id, :'data-list' => @list.id }
-      .tiny
-        = t('application.actions.add')
-      .tiny
-        = t('.price')
-    =link_to 'x', list_item_path(@list, item), :method => :delete, :remote => true, :class => :cancelButton
+
+  %span.itemDataContainer
+    %span.itemQuantity{ :'data-type' => :item_quantity }
+      %input.counter{ :type => :number, :name => "item[quantity]", :id => "item_#{item.id}_quantity", :value => item.quantity }
+    %span.articleName{ :title => item.article.name }
+      = truncate(item.article.name, :length => 35)
+    %small= "$"
+    %input.counter{ :type => :number, :name => "item[price]", :id => "item_#{item.id}_price", :value => (item.article.last_price.to_f / 100)}
+    %span.newArticle
+      %a.mini.setPrice{ :href => "#", :'data-item' => item.id, :'data-list' => @list.id }
+        .tiny
+          = t('application.actions.add')
+        .tiny
+          = t('.price')
+      =link_to 'x', list_item_path(@list, item), :method => :delete, :remote => true, :class => :cancelButton

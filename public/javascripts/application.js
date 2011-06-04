@@ -20,8 +20,10 @@ $(document).ready(function() {
       var item_quantity = quantityBox.val();
       var listItem = $("li#item_" + item_id);
       var itemLoader = listItem.find(".itemLoader"); 
+      var dataContainer = listItem.find(".itemDataContainer");
 
-      priceBox.hide();
+      //priceBox.hide();
+      dataContainer.hide();
       itemLoader.show();
 
       $.ajax({
@@ -38,7 +40,8 @@ $(document).ready(function() {
           priceBox.addClass("priceUpdated");
           quantityBox.addClass("priceUpdated");
           itemLoader.hide();
-          priceBox.show();
+          dataContainer.show();
+          //priceBox.show();
         }
       });
 
