@@ -2,6 +2,8 @@
   %h3.inline.sectionTitle= t '.title', :name => @list.name
 #editListFormContainer.contentWrapper
   = render 'form'
+  %span#loaderIndicator.inline.itemLoader{ :style => "display: none;" }
+    =image_tag 'loader.gif'
   .hBox
     - unless @list.new_record?
       = render :partial => 'lists/items'

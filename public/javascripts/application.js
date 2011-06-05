@@ -57,6 +57,20 @@ $(document).ready(function() {
      return false;
    });
 
+   $(".showLoader").click(function() {
+    var indicator = $("#loaderIndicator")
+
+    indicator.show();
+    indicator.lightbox_me({
+      centered: true,
+      closeClick: false,
+      closeEsc: false,
+      onClose: function(){
+        indicator.hide();
+      }
+    });
+   });
+
    $(".feedback").click(function(){
      var container = $(this).attr('data-container');
      var form = $(container + " form:first") 
