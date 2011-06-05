@@ -18,18 +18,40 @@
       padding: 0 0.2em
 
     .listActions
+      position: relative
       text-align: right
       display: inline-block
+      padding-top: 2px
 
       .actionHeader
         position: relative
         display: inline-block
+        vertical-align: middle
         width: 73px
         min-width: 73px
         max-width: 73px
         color: $light_font_color
         border-right: solid 1px $light_font_color
         text-align: center
+        height: 29px
+
+        .editButton
+          display: inline-block
+          *display: inline
+          zoom: 1
+          position: relative
+          background: url("/images/edit.png") no-repeat scroll 0pt 0pt transparent
+          width: 24px 
+          height: 24px
+
+        .deleteButton
+          display: inline-block
+          *display: inline
+          zoom: 1
+          position: relative
+          background: url("/images/delete.png") no-repeat scroll 0pt 0pt transparent
+          width: 24px 
+          height: 24px
 
       .last
         border-right: none !important
@@ -69,11 +91,11 @@
 
 .cloneButton
   position: relative
-  background: url("/images/copy.png") repeat scroll 0 0 transparent !important
+  background: url("/images/copy.png") no-repeat scroll 0 0 transparent !important
   min-width: 24px
-  min-height: 24px
+  //min-height: 24px
   width: 24px
-  height: 24px
+  //height: 24px
   border: none !important
   cursor: pointer !important
 
